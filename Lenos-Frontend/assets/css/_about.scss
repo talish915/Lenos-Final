@@ -1,0 +1,86 @@
+main{
+    // brand start
+    .brand-section{
+        padding-bottom: 6rem;
+        .brand-logo{
+            background-color: #F5F3F2;
+            padding: 6rem 0;
+            .title{
+                width: 60%;
+                margin: auto;
+                text-align: center;
+                margin-bottom: 5rem;
+                h1{
+                    font-size: 24px;
+                }
+            }
+            .logos{
+                .box{
+                    width: 20%;
+                    padding: 0 40px;
+                    img{
+                        width: 100%;
+                        vertical-align: middle;
+                        max-width: 144px;
+                        max-height: 34px;
+                    }
+                }
+            }
+        }
+    }
+    // brand end
+
+    // our-mission start
+    .our-mission-section{
+        padding-bottom: 6rem;
+        .our-mission{
+            .left{
+                padding-right: 5rem;
+                align-items: center;
+                h1{
+                    margin-bottom: 30px;
+                }
+                p{
+                    color: #767676;
+                    font-size: 17px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+    // our-mission end
+
+    // team start
+    .team-section{
+        padding-bottom: 6rem;
+        h1{
+            width: 60%;
+            font-size: 45px;
+            margin: auto;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        p{
+            text-align: center;
+            color: #767676;
+            margin-bottom: 50px;
+        }
+        img{
+            width: 100%;
+        }
+        span{
+            display: block;
+        }
+        .position{
+            margin-top: 30px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #767676;
+        }
+        .fullname{
+            margin-top: 10px;
+            font-size: 25px;
+        }
+    }
+    // team end
+}
