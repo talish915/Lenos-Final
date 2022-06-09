@@ -1,0 +1,71 @@
+main{
+    .wishlist-section{
+        padding-bottom: 5rem;
+        .table {
+            margin: 0;
+            white-space: nowrap;
+            tbody {
+                tr {
+                    td {
+                        border-color: #ccc;
+                        text-align: center;
+                        padding: 10px 20px;
+                        vertical-align: middle;
+                        color: #333333;
+                        a {
+                            color: #333333;
+                            font-weight: 500;
+                            transition: all 0.2s;
+                            text-transform: capitalize;
+                            text-decoration: none;
+                            &:hover {
+                                color: #AE845F;
+                            }
+                        }
+                        i{
+                            cursor: pointer;
+                        }
+                    }
+                    .pro-img {
+                        width: 10%;
+                    }
+                    .pro-content{
+                        width: 65%;
+                        text-align: left;
+                        .pro-price{
+                            span{
+                                font-size: 15px;
+                            }
+                            .line-price{
+                                text-decoration: line-through;
+                                color: #787676;
+                            }
+                            .price{
+                                color: #AE845F;
+                            }
+                        }
+                        .pro-date{
+                            span{
+                                font-size: 14px;
+                                color: #787676;
+                            }
+                        }
+                    }
+                    .pro-action{
+                        width: 25%;
+                        text-align: left;
+                        .left{
+                            span{
+                                font-size: 13px;
+                            }
+                            a{
+                                text-decoration: none;
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

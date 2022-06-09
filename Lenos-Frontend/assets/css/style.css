@@ -139,50 +139,40 @@ main .categories ul li span {
 
 main .price-range-wrap {
   padding-top: 8px;
+  margin-bottom: 20px;
+}
+
+main .price-range-wrap h4 {
+  margin-bottom: 30px;
 }
 
 main .price-range-wrap .price-range {
   border-radius: 0;
-  margin-right: 13px;
+  margin-right: 10px;
+  margin-left: 10px;
   margin-bottom: 20px;
 }
 
 main .price-range-wrap .price-range.ui-widget-content {
   border: none;
   background: #eeeeee;
-  height: 10px;
-  border-radius: 20px;
+  height: 3px;
 }
 
 main .price-range-wrap .price-range.ui-widget-content .ui-slider-range {
-  background-color: #e3a51e;
+  background-color: #000;
   border-radius: 0;
 }
 
 main .price-range-wrap .price-range.ui-widget-content .ui-slider-handle {
-  border: none;
+  border: 2px solid #000;
   background-color: #fff;
   height: 20px;
   width: 20px;
   outline: none;
-  top: -5px;
-  cursor: ew-resize;
+  top: -8px;
+  cursor: pointer;
   border-radius: 50%;
-  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
-}
-
-main .price-range-wrap .price-range.ui-widget-content .ui-slider-handle:before {
-  top: 50%;
-  left: 50%;
-  content: "";
-  width: 8px;
-  height: 8px;
-  position: absolute;
-  background-color: #e3a51e;
-  border-radius: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
 }
 
 main .price-range-wrap .range-slider {
@@ -190,8 +180,20 @@ main .price-range-wrap .range-slider {
   margin-top: 22px;
 }
 
+main .price-range-wrap .range-slider form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 main .price-range-wrap .range-slider .price-input {
-  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 main .price-range-wrap .range-slider .price-input label {
@@ -200,7 +202,8 @@ main .price-range-wrap .range-slider .price-input label {
 }
 
 main .price-range-wrap .range-slider .price-input input {
-  color: #666666;
+  margin-left: 5px;
+  color: #AE845F;
   border: none;
   outline: none;
   pointer-events: none;
@@ -208,33 +211,45 @@ main .price-range-wrap .range-slider .price-input input {
 
 main .price-range-wrap .range-slider button.filter-btn {
   border: none;
-  color: #333333;
+  color: #fff;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   text-transform: uppercase;
   line-height: 36px;
-  padding: 0 15px;
-  border-radius: 3px;
-  background-color: #ebebeb;
+  padding: 0 20px;
+  background-color: #AE845F;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 main .price-range-wrap .range-slider button.filter-btn:hover {
   color: #fff;
-  background-color: #e3a51e;
+  background-color: #4E4E4E;
 }
 
 main .tags h4 {
   margin-bottom: 20px;
 }
 
-main .tags span {
+main .tags a {
+  text-decoration: none;
+}
+
+main .tags a span {
   border: 1px solid #EEEEEE;
   padding: 3px 6px;
   color: #76768C;
   margin-right: 5px;
   font-size: 17px;
   font-weight: 400;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+main .tags a span:hover {
+  background-color: #AE845F;
+  color: #fff;
 }
 
 main .product-option {
@@ -312,6 +327,227 @@ main .product-option .filter .product-sort .nice-select:after {
 
 main .shop .box {
   margin-bottom: 20px;
+}
+
+main .map-section {
+  padding-bottom: 3rem;
+}
+
+main .map-section iframe {
+  -webkit-filter: brightness(100%) contrast(100%) saturate(0%) blur(0px) hue-rotate(0deg);
+          filter: brightness(100%) contrast(100%) saturate(0%) blur(0px) hue-rotate(0deg);
+  height: 500px;
+}
+
+main .contact-section {
+  padding-bottom: 5rem;
+}
+
+main .contact-section .title {
+  margin-bottom: 30px;
+}
+
+main .contact-section .subtitle {
+  color: #767676;
+  font-size: 16px;
+}
+
+main .contact-section .left {
+  padding-right: 4rem;
+}
+
+main .contact-section .left a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+}
+
+main .contact-section .left .tel {
+  margin-top: 30px;
+}
+
+main .contact-section .left .address {
+  margin-top: 15px;
+}
+
+main .contact-section .left .mail {
+  color: #AE845F;
+  text-decoration: underline;
+  display: inline-block;
+}
+
+main .contact-section .left .socials {
+  margin-top: 20px;
+}
+
+main .contact-section .left .socials ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .contact-section .left .socials ul li {
+  margin-right: 10px;
+}
+
+main .contact-section .left .socials ul li a {
+  background-color: #F5F3F2;
+  padding: 20px;
+  border: 1px solid #DDDDDD;
+  border-radius: 50%;
+  position: relative;
+}
+
+main .contact-section .left .socials ul li a i {
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+main .contact-section .right input {
+  width: 100%;
+  padding: 10px 25px;
+  margin: 10px 0;
+  border: 1px solid #EEEEEE;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+main .contact-section .right input:focus-visible {
+  outline: none;
+  border: 1px solid #AE845F;
+}
+
+main .contact-section .right input:focus-visible::-webkit-input-placeholder {
+  color: #000;
+}
+
+main .contact-section .right input:focus-visible:-ms-input-placeholder {
+  color: #000;
+}
+
+main .contact-section .right input:focus-visible::-ms-input-placeholder {
+  color: #000;
+}
+
+main .contact-section .right input:focus-visible::placeholder {
+  color: #000;
+}
+
+main .contact-section .right textarea {
+  width: 100%;
+  padding: 10px 25px;
+  margin: 10px 0;
+  border: 1px solid #EEEEEE;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  max-height: 200px;
+}
+
+main .contact-section .right textarea:focus-visible {
+  outline: none;
+  border: 1px solid #AE845F;
+}
+
+main .contact-section .right textarea:focus-visible::-webkit-input-placeholder {
+  color: #000;
+}
+
+main .contact-section .right textarea:focus-visible:-ms-input-placeholder {
+  color: #000;
+}
+
+main .contact-section .right textarea:focus-visible::-ms-input-placeholder {
+  color: #000;
+}
+
+main .contact-section .right textarea:focus-visible::placeholder {
+  color: #000;
+}
+
+main .contact-section .right .btn-submit {
+  background-color: #AE845F;
+  color: #fff;
+  border: none;
+  padding: 10px 30px;
+}
+
+main .wishlist-section {
+  padding-bottom: 5rem;
+}
+
+main .wishlist-section .table {
+  margin: 0;
+  white-space: nowrap;
+}
+
+main .wishlist-section .table tbody tr td {
+  border-color: #ccc;
+  text-align: center;
+  padding: 10px 20px;
+  vertical-align: middle;
+  color: #333333;
+}
+
+main .wishlist-section .table tbody tr td a {
+  color: #333333;
+  font-weight: 500;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+main .wishlist-section .table tbody tr td a:hover {
+  color: #AE845F;
+}
+
+main .wishlist-section .table tbody tr td i {
+  cursor: pointer;
+}
+
+main .wishlist-section .table tbody tr .pro-img {
+  width: 10%;
+}
+
+main .wishlist-section .table tbody tr .pro-content {
+  width: 65%;
+  text-align: left;
+}
+
+main .wishlist-section .table tbody tr .pro-content .pro-price span {
+  font-size: 15px;
+}
+
+main .wishlist-section .table tbody tr .pro-content .pro-price .line-price {
+  text-decoration: line-through;
+  color: #787676;
+}
+
+main .wishlist-section .table tbody tr .pro-content .pro-price .price {
+  color: #AE845F;
+}
+
+main .wishlist-section .table tbody tr .pro-content .pro-date span {
+  font-size: 14px;
+  color: #787676;
+}
+
+main .wishlist-section .table tbody tr .pro-action {
+  width: 25%;
+  text-align: left;
+}
+
+main .wishlist-section .table tbody tr .pro-action .left span {
+  font-size: 13px;
+}
+
+main .wishlist-section .table tbody tr .pro-action .left a {
+  text-decoration: none;
+  font-size: 15px;
 }
 
 html {
@@ -1294,6 +1530,7 @@ footer .top .left .address {
 footer .top .left .mail {
   color: #AE845F;
   text-decoration: underline;
+  display: inline-block;
 }
 
 footer .top .left .socials {

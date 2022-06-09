@@ -28,54 +28,52 @@ main{
 
     .price-range-wrap {
         padding-top: 8px;
+        margin-bottom: 20px;
+        h4{
+            margin-bottom: 30px;
+        }
         .price-range {
             border-radius: 0;
-            margin-right: 13px;
+            margin-right: 10px;
+            margin-left: 10px;
             margin-bottom: 20px;
         }
         .price-range.ui-widget-content {
             border: none;
             background: #eeeeee;
-            height: 10px;
-            border-radius: 20px;
+            height: 3px;
             .ui-slider-range {
-                background-color: #e3a51e;
+                background-color: #000;
                 border-radius: 0;
             }
             .ui-slider-handle {
-                border: none;
+                border: 2px solid #000;
                 background-color: #fff;
                 height: 20px;
                 width: 20px;
                 outline: none;
-                top: -5px;
-                cursor: ew-resize;
+                top: -8px;
+                cursor: pointer;
                 border-radius: 50%;
-                box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
-                &:before {
-                    top: 50%;
-                    left: 50%;
-                    content: "";
-                    width: 8px;
-                    height: 8px;
-                    position: absolute;
-                    background-color: #e3a51e;
-                    border-radius: 50%;
-                    transform: translate(-50%, -50%);
-                }
             }
         }
         .range-slider {
             color: #333333;
             margin-top: 22px;
+            form{
+                display: flex;
+            }
             .price-input {
-                margin-bottom: 20px;
+                display: flex;
+                margin-left: 30px;
+                align-items: center;
                 label {
                     color: #333333;
                     margin-bottom: 0;
                 }
                 input {
-                    color: #666666;
+                    margin-left: 5px;
+                    color: #AE845F;
                     border: none;
                     outline: none;
                     pointer-events: none;
@@ -83,18 +81,18 @@ main{
             }
             button.filter-btn {
                 border: none;
-                color: #333333;
+                color: #fff;
                 font-size: 14px;
                 font-weight: 600;
                 cursor: pointer;
                 text-transform: uppercase;
                 line-height: 36px;
-                padding: 0 15px;
-                border-radius: 3px;
-                background-color: #ebebeb;
+                padding: 0 20px;
+                background-color: #AE845F;
+                transition: all 0.3s;
                 &:hover {
                     color: #fff;
-                    background-color: #e3a51e;
+                    background-color: #4E4E4E;
                 }
             }
         }
@@ -105,13 +103,21 @@ main{
         h4{
             margin-bottom: 20px;
         }
-        span{
-            border: 1px solid #EEEEEE;
-            padding: 3px 6px;
-            color: #76768C;
-            margin-right: 5px;
-            font-size: 17px;
-            font-weight: 400;
+        a{
+            text-decoration: none;
+            span{
+                border: 1px solid #EEEEEE;
+                padding: 3px 6px;
+                color: #76768C;
+                margin-right: 5px;
+                font-size: 17px;
+                font-weight: 400;
+                transition: all 0.3s;
+                &:hover{
+                    background-color: #AE845F;
+                    color: #fff;
+                }
+            }
         }
     }
     .product-option{

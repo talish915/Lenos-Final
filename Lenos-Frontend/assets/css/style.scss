@@ -1,6 +1,8 @@
 @import '_reset.scss';
 @import '_about.scss';
 @import '_shop.scss';
+@import '_contacts.scss';
+@import '_wishlist.scss';
 
 // Scrollbar Option start
 html{
@@ -454,7 +456,7 @@ main{
             }
         }
     }
-    // Product-Promo start
+    // Product-Promo end
     
     // Banner start
     .banner{
@@ -489,7 +491,7 @@ main{
             }
         }
     }
-    // Banner start
+    // Banner end
 
     // Feature start
     .feature{
@@ -818,7 +820,7 @@ main{
             }
         }
     }
-    // Product Box start
+    // Product Box end
 }
 
 // Footer start
@@ -849,6 +851,7 @@ footer{
             .mail{
                 color: #AE845F;
                 text-decoration: underline;
+                display: inline-block;
             }
             .socials{
                 margin-top: 20px;
@@ -876,7 +879,7 @@ footer{
         }
     }
 }
-// Footer start
+// Footer end
 
 // Product Modal start
 .product-modal{
