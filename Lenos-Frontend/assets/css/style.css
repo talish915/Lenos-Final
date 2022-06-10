@@ -550,6 +550,239 @@ main .wishlist-section .table tbody tr .pro-action .left a {
   font-size: 15px;
 }
 
+.login-section {
+  padding-bottom: 5rem;
+}
+
+.login-section .sign-in {
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.login-section .sign-in h2 {
+  padding-left: 15px;
+}
+
+.login-section .sign-in input[type=text], .login-section .sign-in input[type=password] {
+  width: 100%;
+  padding: 10px 25px;
+  margin: 10px 0;
+  border: 1px solid #EEEEEE;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.login-section .sign-in input[type=text]::-webkit-input-placeholder, .login-section .sign-in input[type=password]::-webkit-input-placeholder {
+  font-style: italic;
+}
+
+.login-section .sign-in input[type=text]:-ms-input-placeholder, .login-section .sign-in input[type=password]:-ms-input-placeholder {
+  font-style: italic;
+}
+
+.login-section .sign-in input[type=text]::-ms-input-placeholder, .login-section .sign-in input[type=password]::-ms-input-placeholder {
+  font-style: italic;
+}
+
+.login-section .sign-in input[type=text]::placeholder, .login-section .sign-in input[type=password]::placeholder {
+  font-style: italic;
+}
+
+.login-section .sign-in input[type=text]:focus-visible, .login-section .sign-in input[type=password]:focus-visible {
+  outline: none;
+  border: 1px solid #AE845F;
+}
+
+.login-section .sign-in input[type=text]:focus-visible::-webkit-input-placeholder, .login-section .sign-in input[type=password]:focus-visible::-webkit-input-placeholder {
+  color: #000;
+}
+
+.login-section .sign-in input[type=text]:focus-visible:-ms-input-placeholder, .login-section .sign-in input[type=password]:focus-visible:-ms-input-placeholder {
+  color: #000;
+}
+
+.login-section .sign-in input[type=text]:focus-visible::-ms-input-placeholder, .login-section .sign-in input[type=password]:focus-visible::-ms-input-placeholder {
+  color: #000;
+}
+
+.login-section .sign-in input[type=text]:focus-visible::placeholder, .login-section .sign-in input[type=password]:focus-visible::placeholder {
+  color: #000;
+}
+
+.login-section .sign-in .re-checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-section .sign-in .re-checkbox label {
+  margin-bottom: 0;
+  margin-left: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.login-section .sign-in .re-checkbox input {
+  accent-color: #AE845F;
+  width: 18px;
+  height: 18px;
+}
+
+.login-section .sign-in .forget {
+  text-decoration: none;
+  color: #AE845F;
+}
+
+.login-section .sign-in button {
+  border: none;
+  background-color: #AE845F;
+  color: #fff;
+  padding: 5px 20px;
+  font-size: 19px;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.login-section .sign-in .register {
+  border-top: 1px solid #EEEEEE;
+  margin-top: 30px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.login-section .sign-in .register a {
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #000;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.login-section .sign-in .register a:hover {
+  color: #AE845F;
+}
+
+.register-section {
+  padding-bottom: 5rem;
+}
+
+.register-section .sign-up {
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.register-section .sign-up h2 {
+  padding-left: 15px;
+}
+
+.register-section .sign-up input[type=text], .register-section .sign-up input[type=password] {
+  width: 100%;
+  padding: 10px 25px;
+  margin: 10px 0;
+  border: 1px solid #EEEEEE;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.register-section .sign-up input[type=text]::-webkit-input-placeholder, .register-section .sign-up input[type=password]::-webkit-input-placeholder {
+  font-style: italic;
+}
+
+.register-section .sign-up input[type=text]:-ms-input-placeholder, .register-section .sign-up input[type=password]:-ms-input-placeholder {
+  font-style: italic;
+}
+
+.register-section .sign-up input[type=text]::-ms-input-placeholder, .register-section .sign-up input[type=password]::-ms-input-placeholder {
+  font-style: italic;
+}
+
+.register-section .sign-up input[type=text]::placeholder, .register-section .sign-up input[type=password]::placeholder {
+  font-style: italic;
+}
+
+.register-section .sign-up input[type=text]:focus-visible, .register-section .sign-up input[type=password]:focus-visible {
+  outline: none;
+  border: 1px solid #AE845F;
+}
+
+.register-section .sign-up input[type=text]:focus-visible::-webkit-input-placeholder, .register-section .sign-up input[type=password]:focus-visible::-webkit-input-placeholder {
+  color: #000;
+}
+
+.register-section .sign-up input[type=text]:focus-visible:-ms-input-placeholder, .register-section .sign-up input[type=password]:focus-visible:-ms-input-placeholder {
+  color: #000;
+}
+
+.register-section .sign-up input[type=text]:focus-visible::-ms-input-placeholder, .register-section .sign-up input[type=password]:focus-visible::-ms-input-placeholder {
+  color: #000;
+}
+
+.register-section .sign-up input[type=text]:focus-visible::placeholder, .register-section .sign-up input[type=password]:focus-visible::placeholder {
+  color: #000;
+}
+
+.register-section .sign-up .re-checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.register-section .sign-up .re-checkbox label {
+  margin-bottom: 0;
+  margin-left: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.register-section .sign-up .re-checkbox input {
+  accent-color: #AE845F;
+  width: 18px;
+  height: 18px;
+}
+
+.register-section .sign-up button {
+  border: none;
+  background-color: #AE845F;
+  color: #fff;
+  padding: 5px 20px;
+  font-size: 19px;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.register-section .sign-up .login {
+  border-top: 1px solid #EEEEEE;
+  margin-top: 30px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.register-section .sign-up .login a {
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #000;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.register-section .sign-up .login a:hover {
+  color: #AE845F;
+}
+
 html {
   scroll-behavior: smooth;
 }
