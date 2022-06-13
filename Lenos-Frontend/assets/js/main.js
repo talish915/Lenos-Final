@@ -1,5 +1,26 @@
 $(document).ready(function () {
+    function bodyShow() {
+        document.getElementById("header").style.opacity = 1;
+        document.getElementById("main").style.opacity = 1;
+        document.getElementById("footer").style.opacity = 1;
+    }
+    $.blockUI({ 
+        message: $('#input-gif'), 
+        css: { 
+            top:  ($(window).height() - 100) /2 + 'px', 
+            left: ($(window).width() - 500) /2 + 'px', 
+            width: '0px',
+            opacity: 1
+        },
+        overlayCSS : {
+            opacity: 1
+        }
+    }); 
+    setTimeout(bodyShow, 1000)
+    setTimeout($.unblockUI, 2000)
     
+    $('#stars').raty({ starType: 'i' });
+
     $('.single-item').slick({
         autoplay: true,
         autoplaySpeed: 7000,
@@ -14,6 +35,22 @@ $(document).ready(function () {
         infinite: true,
         slidesToShow: 5,
     });
+
+    // prodct details slider active
+	$('.product-large-slider').slick({
+		fade: true,
+		arrows: false,
+		asNavFor: '.pro-nav'
+	});
+
+
+	// product details slider nav active
+	$('.pro-nav').slick({
+		slidesToShow: 4,
+		asNavFor: '.product-large-slider',
+		arrows: false,
+		focusOnSelect: true
+	});
 
     $(".add-cart").click(function(){
         $(".add").addClass("d-none")
@@ -58,10 +95,10 @@ $(document).ready(function () {
 		if ($button.hasClass('inc')) {
 			var newVal = parseFloat(oldValue) + 1;
 		} else {
-			if (oldValue > 0) {
+			if (oldValue > 1) {
 				var newVal = parseFloat(oldValue) - 1;
 			} else {
-				newVal = 0;
+				newVal = 1;
 			}
 		}
 		$button.parent().find('input').val(newVal);
@@ -110,5 +147,23 @@ $(document).ready(function () {
 		}
 	});
 	amount.val(" $" + rangeSlider.slider("values", 0) +
-		" - $" + rangeSlider.slider("values", 1));
+		" - $" + rangeSlider.slider("values", 1)
+    );
+
+    
+    $("#share").jsSocials({
+        showLabel: false,
+        showCount: false,
+        shares: [{
+            share: "facebook",
+            logo: "i: bi bi-facebook"
+        }, {
+            share: "twitter",
+            logo: "i: bi bi-twitter"
+        }, {
+            share: "pinterest",
+            logo: "i: bi bi-pinterest"
+        }]
+    });
+    $( "#tabs" ).tabs();
 })
