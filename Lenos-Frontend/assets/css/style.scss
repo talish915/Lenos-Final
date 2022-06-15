@@ -6,6 +6,7 @@
 @import '_login.scss';
 @import '_register.scss';
 @import '_product-details.scss';
+@import '_my-account.scss';
 
 #header{
     opacity: 0;
@@ -840,8 +841,9 @@ main{
 // Footer start
 footer{
     background-color: #F5F3F2;
-    padding: 4rem 0;
     .top{
+        border-bottom: 1px solid #EDECEC;
+        padding: 3rem 0;
         .left{
             .img{
                 width: 40%;
@@ -857,7 +859,7 @@ footer{
                 text-decoration: none;
             }
             .tel{
-                margin-top: 30px;
+                margin-top: 20px;
             }
             .address{
                 margin-top: 15px;
@@ -871,6 +873,7 @@ footer{
                 margin-top: 20px;
                 ul{
                     display: flex;
+                    margin: 0;
                     li{
                         margin-right: 10px;
                         a{
@@ -889,6 +892,96 @@ footer{
                         }
                     }
                 }
+            }
+        }
+        .center{
+            ul{
+                p{
+                    font-size: 18px;
+                    font-weight: 400;
+                    margin-bottom: 15px;
+                    text-transform: uppercase;
+                }
+                li{
+                    a{
+                        padding: 10px 0;
+                        text-decoration: none;
+                        color: #817676;
+                        font-weight: 400;
+                        transition: all 0.3s;
+                        &:hover{
+                            color: #AE845F;
+                            margin-left: 5px;
+                        }
+                    }
+                    padding: 5px 0;
+                }
+            }
+        }
+        .right{
+            i{
+                &::before{
+                    font-size: 50px;
+                }
+            }
+            h5{
+                font-size: 16px;
+                margin-top: 20px;
+                font-weight: 500;
+            }
+            p{
+                font-size: 15px;
+                color: #7E7E7E;
+                margin-top: 10px;
+            }
+            form{
+                display: flex;
+                input{
+                    outline: none;
+                    border: none;
+                    border-bottom: 2px solid #000;
+                    background-color: #F5F3F2;
+                    padding: 10px 0;
+                    transition: all 0.3s;
+                    width: 100%;
+                    &:focus-visible{
+                        outline: none;
+                        border-bottom: 2px solid #AE845F;
+                        &::placeholder{
+                            color: #AE845F;
+                        }
+                    }
+                }
+                button{
+                    margin-left: 20px;
+                    border: none;
+                    border-bottom: 2px solid #000;
+                    background-color: #F5F3F2;
+                    transition: all 0.3s;
+                    &:hover{
+                        color: #AE845F;
+                        border-bottom: 2px solid #AE845F;
+                    }
+                }
+            }
+        }
+    }
+    .bottom{
+        padding: 1rem 0;
+        .left{
+            p{
+                font-size: 15px;
+                font-weight: 500;
+                color: #817676;
+                margin: 0;
+                span{
+                    color: #AE845F;
+                }
+            }
+        }
+        .right{
+            img{
+                float: right;
             }
         }
     }

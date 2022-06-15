@@ -542,6 +542,56 @@
                         }
                     }
                 }
+                .review-user{
+                    border-top: 1px solid #bebbbb;
+                    margin-top: 30px;
+                    padding-top: 30px;
+                    .user-img{
+                        display: flex;
+                        align-items: center;
+                        .img{
+                            width: 10%;
+                            img{
+                                border-radius: 50%;
+                                width: 100%;
+                            }
+                        }
+                        span{
+                            margin-left: 10px;
+                            color: #7C7676;
+                            font-style: italic;
+                            font-size: 15px;
+                        }
+                    }
+                }
+                .stars-date{
+                    display: flex;
+                    align-items: center;
+                    margin-top: 10px;
+                    .rev-stars{
+                        i{
+                            color: orange;
+                            font-size: 14px;
+                        }
+                    }
+                    ul{
+                        margin: 0;
+                        li{
+                            font-size: 14px;
+                            color: #7C7676;
+                            margin-left: 10px;
+                            list-style: inside;
+                        }
+                    }
+                }
+                .rev-title{
+                    color: #000;
+                    margin-top: 20px;
+                }
+                .rev{
+                    color: #7C7676;
+                    margin-top: 20px;
+                }
             }
         }
     }

@@ -11,11 +11,10 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-ui-slider@1.12.1/jquery-ui.css">
+    
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" />
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-minima.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/raty/3.1.1/jquery.raty.css" integrity="sha512-eAw/PBoRwV3poi1Cgw4W6dZ/7XyetSWjhSqnCevCghOJ6J+TCcJgt8qcEml8It83K6GQVZbXeFA8d3z8pgo82w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <title>Lenos</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -23,8 +22,8 @@
     <!-- Site Input Animations start -->
     <div id="input-gif" style="display:none;">
         <div id="icorta">    
-            <img src="assets/img/Clock.gif">   
-            <img class="logo" src="assets/img/logo.png" alt="">   
+            <img src="assets/img/Clock.gif"> 
+            <img class="logo" src="assets/img/logo.png" alt="">     
         </div>
     </div>
     <!-- Site Input Animations end -->
@@ -128,101 +127,217 @@
             <div class="content">
                 <img src="assets/img/breadcrumb/banner.jpg" alt="">
                 <div class="crumbcontent">
-                    <h1>Wishlist</h1>
+                    <h1>My Account</h1>
                     <div>
-                        <a href="index.html">Home</a> <span>/</span> <span>Wishlist</span>
+                        <a href="index.html">Home</a> <span>/</span> <span>My Account</span>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Breadcrumb end -->
 
-        <section class="wishlist-section">
-            <div class="container">
-                <table class="table table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="pro-img"><a href="#"><img class="img-fluid" src="assets/img/product/product-1.jpg" alt="Product"/></a></td>
-                            <td class="pro-content">
-                                <a href="#">element snowboard</a>
-                                <div class="pro-price">
-                                    <span class="line-price">$600</span>
-                                    <span class="price">$500</span>
+        <div class="my-account-wrapper section-padding">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- My Account Page Start -->
+                        <div class="myaccount-page-wrapper">
+                            <!-- My Account Tab Menu Start -->
+                            <div id="tabs" class="row">
+                                <div class="col-lg-3 col-md-4">
+                                    <ul class="myaccount-tab-menu nav">
+                                        <li><a href="#dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                                        <li><a href="#orders"><i class="fa fa-cart-arrow-down"></i> Orders</a></li>
+                                        <li><a href="#download"><i class="fa fa-cloud-download"></i> Download</a></li>
+                                        <li><a href="#payment-method"><i class="fa fa-credit-card"></i> Payment Method</a></li>
+                                        <li><a href="#address-edit"><i class="fa fa-map-marker"></i> Address</a></li>
+                                        <li><a href="#account-info"><i class="fa fa-user"></i> Account Details</a></li>
+                                        <li><a href="login-register.html"><i class="fa fa-sign-out"></i> Logout</a></li>
+                                    </ul>
                                 </div>
-                                <div class="pro-date">
-                                    <span>May 17, 2022</span>
-                                </div>
-                            </td>
-                            <td class="pro-action">
-                                <span class="text-success d-block">In Stock</span>
-                                <a href="">ADD TO CART</a>
-                            </td>
-                            <td>
-                                <i class="bi bi-x-lg"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="pro-img"><a href="#"><img class="img-fluid" src="assets/img/product/product-1.jpg" alt="Product"/></a></td>
-                            <td class="pro-content">
-                                <a href="#">element snowboard</a>
-                                <div class="pro-price">
-                                    <span class="line-price">$600</span>
-                                    <span class="price">$500</span>
-                                </div>
-                                <div class="pro-date">
-                                    <span>May 17, 2022</span>
-                                </div>
-                            </td>
-                            <td class="pro-action">
-                                <span class="text-success d-block">In Stock</span>
-                                <a href="">ADD TO CART</a>
-                            </td>
-                            <td>
-                                <i class="bi bi-x-lg"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="pro-img"><a href="#"><img class="img-fluid" src="assets/img/product/product-1.jpg" alt="Product"/></a></td>
-                            <td class="pro-content">
-                                <a href="#">element snowboard</a>
-                                <div class="pro-price">
-                                    <span class="pro-price">$500</span>
-                                </div>
-                                <div class="pro-date">
-                                    <span>May 17, 2022</span>
-                                </div>
-                            </td>
-                            <td class="pro-action">
-                                <span class="text-success d-block">In Stock</span>
-                                <a href="">ADD TO CART</a>
-                            </td>
-                            <td>
-                                <i class="bi bi-x-lg"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="pro-img"><a href="#"><img class="img-fluid" src="assets/img/product/product-1.jpg" alt="Product"/></a></td>
-                            <td class="pro-content">
-                                <a href="#">element snowboard</a>
-                                <div class="pro-price">
-                                    <span class="pro-price">$500</span>
-                                </div>
-                                <div class="pro-date">
-                                    <span>May 17, 2022</span>
-                                </div>
-                            </td>
-                            <td class="pro-action">
-                                <span class="text-success d-block">In Stock</span>
-                                <a href="">ADD TO CART</a>
-                            </td>
-                            <td>
-                                <i class="bi bi-x-lg"></i>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                                <!-- My Account Tab Menu End -->
+        
+                                <!-- My Account Tab Content Start -->
+                                <div class="col-lg-9 col-md-8">
+                                    <div class="tab-content">
+                                        <!-- Single Tab Content Start -->
+                                        <div class="tab-pane" id="dashboard">
+                                            <div class="myaccount-content">
+                                                <h3>Dashboard</h3>
+                                                <div class="welcome">
+                                                    <p>Hello, <strong>Alex Tuntuni</strong> (If Not <strong>Tuntuni !</strong><a href="login-register.html" class="logout"> Logout</a>)</p>
+                                                </div>
+                                                <p class="mb-0">From your account dashboard. you can easily check & view your recent orders, manage your shipping and billing addresses and edit your password and account details.</p>
+                                            </div>
+                                        </div>
+                                        <!-- Single Tab Content End -->
+        
+                                        <!-- Single Tab Content Start -->
+                                        <div class="tab-pane" id="orders">
+                                            <div class="myaccount-content">
+                                                <h3>Orders</h3>
+                                                <div class="myaccount-table table-responsive text-center">
+                                                    <table class="table table-bordered">
+                                                        <thead class="thead-light">
+                                                            <tr>
+                                                                <th>Order</th>
+                                                                <th>Date</th>
+                                                                <th>Status</th>
+                                                                <th>Total</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>1</td>
+                                                                <td>Aug 22, 2018</td>
+                                                                <td>Pending</td>
+                                                                <td>$3000</td>
+                                                                <td><a href="cart.html" class="btn ">View</a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2</td>
+                                                                <td>July 22, 2018</td>
+                                                                <td>Approved</td>
+                                                                <td>$200</td>
+                                                                <td><a href="cart.html" class="btn ">View</a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>3</td>
+                                                                <td>June 12, 2017</td>
+                                                                <td>On Hold</td>
+                                                                <td>$990</td>
+                                                                <td><a href="cart.html" class="btn ">View</a></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Single Tab Content End -->
+        
+                                        <!-- Single Tab Content Start -->
+                                        <div class="tab-pane" id="download" role="tabpanel">
+                                            <div class="myaccount-content">
+                                                <h3>Downloads</h3>
+                                                <div class="myaccount-table table-responsive text-center">
+                                                    <table class="table table-bordered">
+                                                        <thead class="thead-light">
+                                                        <tr>
+                                                            <th>Product</th>
+                                                            <th>Date</th>
+                                                            <th>Expire</th>
+                                                            <th>Download</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Haven - Free Real Estate PSD Template</td>
+                                                                <td>Aug 22, 2018</td>
+                                                                <td>Yes</td>
+                                                                <td><a href="#" class="btn "><i class="fa fa-cloud-download"></i> Download File</a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>HasTech - Profolio Business Template</td>
+                                                                <td>Sep 12, 2018</td>
+                                                                <td>Never</td>
+                                                                <td><a href="#" class="btn "><i class="fa fa-cloud-download"></i> Download File</a></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Single Tab Content End -->
+        
+                                        <!-- Single Tab Content Start -->
+                                        <div class="tab-pane" id="payment-method" role="tabpanel">
+                                            <div class="myaccount-content">
+                                                <h3>Payment Method</h3>
+                                                <p class="saved-message">You Can't Saved Your Payment Method yet.</p>
+                                            </div>
+                                        </div>
+                                        <!-- Single Tab Content End -->
+        
+                                        <!-- Single Tab Content Start -->
+                                        <div class="tab-pane" id="address-edit" role="tabpanel">
+                                            <div class="myaccount-content">
+                                                <h3>Billing Address</h3>
+                                                <address>
+                                                    <p><strong>Alex Tuntuni</strong></p>
+                                                    <p>1355 Market St, Suite 900 <br>
+                                                        San Francisco, CA 94103</p>
+                                                    <p>Mobile: (123) 456-7890</p>
+                                                </address>
+                                                <a href="#" class="check-btn sqr-btn "><i class="fa fa-edit"></i> Edit Address</a>
+                                            </div>
+                                        </div>
+                                        <!-- Single Tab Content End -->
+        
+                                        <!-- Single Tab Content Start -->
+                                        <div class="tab-pane" id="account-info" role="tabpanel">
+                                            <div class="myaccount-content">
+                                                <h3>Account Details</h3>
+                                                <div class="account-details-form">
+                                                    <form action="#">
+                                                        <div class="row">
+                                                            <div class="col-lg-6">
+                                                                <div class="single-input-item">
+                                                                    <label for="first-name" class="required">First Name</label>
+                                                                    <input type="text" id="first-name" placeholder="First Name" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6">
+                                                                <div class="single-input-item">
+                                                                    <label for="last-name" class="required">Last Name</label>
+                                                                    <input type="text" id="last-name" placeholder="Last Name" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="single-input-item">
+                                                            <label for="display-name" class="required">Display Name</label>
+                                                            <input type="text" id="display-name" placeholder="Display Name" />
+                                                        </div>
+                                                        <div class="single-input-item">
+                                                            <label for="email" class="required">Email Addres</label>
+                                                            <input type="email" id="email" placeholder="Email Address" />
+                                                        </div>
+                                                        <fieldset>
+                                                            <legend>Password change</legend>
+                                                            <div class="single-input-item">
+                                                                <label for="current-pwd" class="required">Current Password</label>
+                                                                <input type="password" id="current-pwd" placeholder="Current Password" />
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-lg-6">
+                                                                    <div class="single-input-item">
+                                                                        <label for="new-pwd" class="required">New Password</label>
+                                                                        <input type="password" id="new-pwd" placeholder="New Password" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    <div class="single-input-item">
+                                                                        <label for="confirm-pwd" class="required">Confirm Password</label>
+                                                                        <input type="password" id="confirm-pwd" placeholder="Confirm Password" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+                                                        <div class="single-input-item">
+                                                            <button class="check-btn sqr-btn ">Save Changes</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div> <!-- Single Tab Content End -->
+                                    </div>
+                                </div> <!-- My Account Tab Content End -->
+                            </div>
+                        </div> <!-- My Account Page End -->
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
     </main>
     <!-- Main end -->
 

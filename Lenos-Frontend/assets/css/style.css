@@ -1463,6 +1463,73 @@ main .wishlist-section .table tbody tr .pro-action .left a {
   background-color: #000;
 }
 
+.product #tabs .all-tabs #tabs-3 .review-user {
+  border-top: 1px solid #bebbbb;
+  margin-top: 30px;
+  padding-top: 30px;
+}
+
+.product #tabs .all-tabs #tabs-3 .review-user .user-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.product #tabs .all-tabs #tabs-3 .review-user .user-img .img {
+  width: 10%;
+}
+
+.product #tabs .all-tabs #tabs-3 .review-user .user-img .img img {
+  border-radius: 50%;
+  width: 100%;
+}
+
+.product #tabs .all-tabs #tabs-3 .review-user .user-img span {
+  margin-left: 10px;
+  color: #7C7676;
+  font-style: italic;
+  font-size: 15px;
+}
+
+.product #tabs .all-tabs #tabs-3 .stars-date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+}
+
+.product #tabs .all-tabs #tabs-3 .stars-date .rev-stars i {
+  color: orange;
+  font-size: 14px;
+}
+
+.product #tabs .all-tabs #tabs-3 .stars-date ul {
+  margin: 0;
+}
+
+.product #tabs .all-tabs #tabs-3 .stars-date ul li {
+  font-size: 14px;
+  color: #7C7676;
+  margin-left: 10px;
+  list-style: inside;
+}
+
+.product #tabs .all-tabs #tabs-3 .rev-title {
+  color: #000;
+  margin-top: 20px;
+}
+
+.product #tabs .all-tabs #tabs-3 .rev {
+  color: #7C7676;
+  margin-top: 20px;
+}
+
 .related {
   padding-top: 3rem;
   padding-bottom: 4rem;
@@ -1472,6 +1539,194 @@ main .wishlist-section .table tbody tr .pro-action .left a {
   text-align: center;
   margin-bottom: 50px;
   font-size: 45px;
+}
+
+.myaccount-tab-menu {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+
+.myaccount-tab-menu a {
+  border-bottom: 1px solid #ccc;
+  color: #333333;
+  font-weight: 500;
+  font-size: 15px;
+  display: block;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.myaccount-tab-menu a:hover {
+  background-color: #AE845F;
+  border-color: #AE845F;
+  color: #fff;
+}
+
+.myaccount-tab-menu a i.fa {
+  font-size: 14px;
+  text-align: center;
+  width: 25px;
+}
+
+.ui-tabs-active a {
+  background-color: #AE845F;
+  color: #fff;
+  border-color: #AE845F;
+}
+
+.myaccount-content {
+  border: 1px solid #eeeeee;
+  padding: 30px;
+}
+
+.myaccount-content form {
+  margin-top: -20px;
+}
+
+.myaccount-content form input[type=text], .myaccount-content form input[type=password], .myaccount-content form input[type=email] {
+  width: 100%;
+  padding: 10px 25px;
+  margin: 10px 0;
+  border: 1px solid #EEEEEE;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.myaccount-content form input[type=text]::-webkit-input-placeholder, .myaccount-content form input[type=password]::-webkit-input-placeholder, .myaccount-content form input[type=email]::-webkit-input-placeholder {
+  font-style: italic;
+}
+
+.myaccount-content form input[type=text]:-ms-input-placeholder, .myaccount-content form input[type=password]:-ms-input-placeholder, .myaccount-content form input[type=email]:-ms-input-placeholder {
+  font-style: italic;
+}
+
+.myaccount-content form input[type=text]::-ms-input-placeholder, .myaccount-content form input[type=password]::-ms-input-placeholder, .myaccount-content form input[type=email]::-ms-input-placeholder {
+  font-style: italic;
+}
+
+.myaccount-content form input[type=text]::placeholder, .myaccount-content form input[type=password]::placeholder, .myaccount-content form input[type=email]::placeholder {
+  font-style: italic;
+}
+
+.myaccount-content form input[type=text]:focus-visible, .myaccount-content form input[type=password]:focus-visible, .myaccount-content form input[type=email]:focus-visible {
+  outline: none;
+  border: 1px solid #AE845F;
+}
+
+.myaccount-content form input[type=text]:focus-visible::-webkit-input-placeholder, .myaccount-content form input[type=password]:focus-visible::-webkit-input-placeholder, .myaccount-content form input[type=email]:focus-visible::-webkit-input-placeholder {
+  color: #000;
+}
+
+.myaccount-content form input[type=text]:focus-visible:-ms-input-placeholder, .myaccount-content form input[type=password]:focus-visible:-ms-input-placeholder, .myaccount-content form input[type=email]:focus-visible:-ms-input-placeholder {
+  color: #000;
+}
+
+.myaccount-content form input[type=text]:focus-visible::-ms-input-placeholder, .myaccount-content form input[type=password]:focus-visible::-ms-input-placeholder, .myaccount-content form input[type=email]:focus-visible::-ms-input-placeholder {
+  color: #000;
+}
+
+.myaccount-content form input[type=text]:focus-visible::placeholder, .myaccount-content form input[type=password]:focus-visible::placeholder, .myaccount-content form input[type=email]:focus-visible::placeholder {
+  color: #000;
+}
+
+.myaccount-content form label {
+  margin: 0;
+  font-size: 14px;
+}
+
+.myaccount-content form button {
+  border: none;
+  background-color: #AE845F;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.myaccount-content h3 {
+  font-size: 20px;
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.myaccount-content .welcome a {
+  color: #333333;
+}
+
+.myaccount-content .welcome a:hover {
+  color: #e3a51e;
+}
+
+.myaccount-content .welcome strong {
+  font-weight: 600;
+  color: #e3a51e;
+}
+
+.myaccount-content fieldset {
+  margin-top: 20px;
+}
+
+.myaccount-content fieldset legend {
+  color: #333333;
+  font-size: 20px;
+  margin-top: 20px;
+  font-weight: 500;
+  border-bottom: 1px dashed #ccc;
+}
+
+.myaccount-table {
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.myaccount-table table th {
+  color: #333333;
+  padding: 10px;
+  font-weight: 500;
+  background-color: #f8f8f8;
+  border-color: #ccc;
+  border-bottom: 0;
+}
+
+.myaccount-table table td {
+  padding: 10px;
+  vertical-align: middle;
+  border-color: #ccc;
+}
+
+.myaccount-table .table th {
+  color: #333333;
+  padding: 10px;
+  font-weight: 500;
+  background-color: #f8f8f8;
+  border-color: #ccc;
+  border-bottom: 0;
+}
+
+.myaccount-table .table td {
+  padding: 10px;
+  vertical-align: middle;
+  border-color: #ccc;
+}
+
+.saved-message {
+  background-color: #f4f5f7;
+  border-top: 3px solid #e3a51e;
+  border-radius: 5px 5px 0 0;
+  font-weight: 600;
+  font-size: 15px;
+  color: #666666;
+  padding: 20px;
 }
 
 #header {
@@ -2439,7 +2694,11 @@ main .product-box .content .price-box .price {
 
 footer {
   background-color: #F5F3F2;
-  padding: 4rem 0;
+}
+
+footer .top {
+  border-bottom: 1px solid #EDECEC;
+  padding: 3rem 0;
 }
 
 footer .top .left .img {
@@ -2457,7 +2716,7 @@ footer .top .left a {
 }
 
 footer .top .left .tel {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 footer .top .left .address {
@@ -2478,6 +2737,7 @@ footer .top .left .socials ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 0;
 }
 
 footer .top .left .socials ul li {
@@ -2499,6 +2759,118 @@ footer .top .left .socials ul li a i {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+footer .top .center ul p {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+footer .top .center ul li {
+  padding: 5px 0;
+}
+
+footer .top .center ul li a {
+  padding: 10px 0;
+  text-decoration: none;
+  color: #817676;
+  font-weight: 400;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+footer .top .center ul li a:hover {
+  color: #AE845F;
+  margin-left: 5px;
+}
+
+footer .top .right i::before {
+  font-size: 50px;
+}
+
+footer .top .right h5 {
+  font-size: 16px;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+footer .top .right p {
+  font-size: 15px;
+  color: #7E7E7E;
+  margin-top: 10px;
+}
+
+footer .top .right form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .top .right form input {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #000;
+  background-color: #F5F3F2;
+  padding: 10px 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+footer .top .right form input:focus-visible {
+  outline: none;
+  border-bottom: 2px solid #AE845F;
+}
+
+footer .top .right form input:focus-visible::-webkit-input-placeholder {
+  color: #AE845F;
+}
+
+footer .top .right form input:focus-visible:-ms-input-placeholder {
+  color: #AE845F;
+}
+
+footer .top .right form input:focus-visible::-ms-input-placeholder {
+  color: #AE845F;
+}
+
+footer .top .right form input:focus-visible::placeholder {
+  color: #AE845F;
+}
+
+footer .top .right form button {
+  margin-left: 20px;
+  border: none;
+  border-bottom: 2px solid #000;
+  background-color: #F5F3F2;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+footer .top .right form button:hover {
+  color: #AE845F;
+  border-bottom: 2px solid #AE845F;
+}
+
+footer .bottom {
+  padding: 1rem 0;
+}
+
+footer .bottom .left p {
+  font-size: 15px;
+  font-weight: 500;
+  color: #817676;
+  margin: 0;
+}
+
+footer .bottom .left p span {
+  color: #AE845F;
+}
+
+footer .bottom .right img {
+  float: right;
 }
 
 .product-modal {

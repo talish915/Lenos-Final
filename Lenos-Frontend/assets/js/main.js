@@ -18,8 +18,6 @@ $(document).ready(function () {
     }); 
     setTimeout(bodyShow, 1000)
     setTimeout($.unblockUI, 2000)
-    
-    $('#stars').raty({ starType: 'i' });
 
     $('.single-item').slick({
         autoplay: true,
@@ -166,4 +164,5 @@ $(document).ready(function () {
         }]
     });
     $( "#tabs" ).tabs();
+    $('#stars').raty({ starType: 'i' });
 })
