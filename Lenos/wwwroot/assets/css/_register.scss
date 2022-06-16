@@ -1,0 +1,66 @@
+.register-section{
+    padding-bottom: 5rem;
+    .sign-up{
+        box-shadow: 0 0 6px rgba(0, 0, 0 , 0.1px);
+        padding: 20px;
+        h2{
+            padding-left: 15px;
+        }
+        input[type = text], input[type = password]{
+            width: 100%;
+            padding: 10px 25px;
+            margin: 10px 0;
+            border: 1px solid #EEEEEE;
+            transition: all 0.3s;
+            &::placeholder{
+                font-style: italic;
+            }
+            &:focus-visible{
+                outline: none;
+                border: 1px solid #AE845F;
+                &::placeholder{
+                    color: #000;
+                }
+            }
+        }
+        .re-checkbox{
+            display: flex;
+            align-items: center;
+            label{
+                margin-bottom: 0;
+                margin-left: 10px;
+                user-select: none;
+            }
+            input{
+                accent-color: #AE845F;
+                width: 18px;
+                height: 18px;
+            }
+        }
+        button{
+            border: none;
+            background-color: #AE845F;
+            color: #fff;
+            padding: 5px 20px;
+            font-size: 19px;
+            font-weight: 600;
+            border-radius: 3px;
+        }
+        .login{
+            border-top: 1px solid #EEEEEE;
+            margin-top: 30px;
+            text-align: center;
+            padding-top: 15px;
+            a{
+                font-size: 18px;
+                text-decoration: none;
+                font-weight: 500;
+                color: #000;
+                transition: all 0.3s;
+                &:hover{
+                    color: #AE845F;
+                }
+            }
+        }
+    }
+}

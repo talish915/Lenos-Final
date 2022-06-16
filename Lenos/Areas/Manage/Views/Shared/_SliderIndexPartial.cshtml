@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Slider>
+@{ int count = (ViewBag.PageIndex - 1) * 5; }
+
+
+<table class="table table-striped text-center">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Status</th>
+            <th scope="col">Setting</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Slider slider in Model)
+        {
+            count++;
+<tr>
+    <th scope="row">@count</th>
+    <td>@slider.Title</td>
+    <td style="color:@(slider.IsDeleted ? "red":"green")">@(slider.IsDeleted ? "DeActive":"Active")</td>
+    <td>
+        <a class="btn btn-primary w-25" asp-action="Detail" asp-route-id="@slider.Id">Detail</a>
+        <a class="btn btn-warning w-25" asp-action="Update" asp-route-id="@slider.Id">Update</a>
+        <a id="@(slider.IsDeleted ? "restoreCategory":"deleteCategory")" class="btn w-25 @(slider.IsDeleted ? "btn-primary":"btn-danger")" asp-route-status="@ViewBag.Status" asp-route-page="@ViewBag.PageIndex" asp-action="@(slider.IsDeleted ? "Restore":"Delete")" asp-route-id="@slider.Id">@(slider.IsDeleted ? "Restore":"Delete")</a>
+    </td>
+</tr>
+}
+    </tbody>
+</table>

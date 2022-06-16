@@ -1,0 +1,46 @@
+﻿@model Setting
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="d-sm-flex mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Setting</h1>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Data</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Logo</td>
+            <td><img src="~/assets/img/@Model.Logo" alt="" style="width:10%" /></td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Offer</td>
+            <td>@Model.Offer</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Address</td>
+            <td>@Model.Address</td>
+        </tr>
+        <tr>
+            <th scope="row">4</th>
+            <td>Email</td>
+            <td>@Model.Email</td>
+        </tr>
+        <tr>
+            <th scope="row">5</th>
+            <td>Phone</td>
+            <td>@Model.Phone</td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <a class="btn btn-warning" asp-action="Update">Update</a>
+</div>
