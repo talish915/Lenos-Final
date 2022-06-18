@@ -23,7 +23,7 @@
 
                     return response.text();
                 }).then(data => {
-                    $(".tagTable").html(data);
+                    $(".dataTable").html(data);
                 })
             }
         })
@@ -54,7 +54,7 @@
 
                     return response.text();
                 }).then(data => {
-                    $(".tagTable").html(data);
+                    $(".dataTable").html(data);
                 })
             }
         })

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Social>
+@{ int count = (ViewBag.PageIndex - 1) * 5; }
+
+
+<table class="table table-striped text-center">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Icon</th>
+            <th scope="col">Name</th>
+            <th scope="col">Status</th>
+            <th scope="col">Setting</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Social social in Model)
+        {
+            count++;
+            <tr>
+                <th scope="row">@count</th>
+                <td><i class="@social.Icon"></i></td>
+                <td><a target="_blank" href="@social.Link">@social.Name</a></td>
+                <td style="color:@(social.IsDeleted ? "red":"green")">@(social.IsDeleted ? "DeActive":"Active")</td>
+                <td>
+                    <a class="btn btn-warning w-25" asp-action="Update" asp-route-id="@social.Id">Update</a>
+                    <a id="@(social.IsDeleted ? "restoreCategory":"deleteCategory")" class="btn w-25 @(social.IsDeleted ? "btn-primary":"btn-danger")" asp-route-status="@ViewBag.Status" asp-route-page="@ViewBag.PageIndex" asp-action="@(social.IsDeleted ? "Restore":"Delete")" asp-route-id="@social.Id">@(social.IsDeleted ? "Restore":"Delete")</a>
+                </td>
+            </tr>            
+        }
+    </tbody>
+</table>

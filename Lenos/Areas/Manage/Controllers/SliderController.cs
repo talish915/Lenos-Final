@@ -30,26 +30,15 @@ namespace Lenos.Areas.Manage.Controllers
         {
             ViewBag.Status = status;
 
-            IEnumerable<Slider> serviceOffers = await _context.Sliders
+            IEnumerable<Slider> sliders = await _context.Sliders
                 .Where(s => status != null ? s.IsDeleted == status : true)
                 .OrderByDescending(s => s.CreatedAt)
                 .ToListAsync();
 
             ViewBag.PageIndex = page;
-            ViewBag.PageCount = Math.Ceiling((double)serviceOffers.Count() / 5);
+            ViewBag.PageCount = Math.Ceiling((double)sliders.Count() / 2);
 
-            return View(serviceOffers.Skip((page - 1) * 5).Take(5));
-        }
-
-        public async Task<IActionResult> Detail(int? id)
-        {
-            if (id == null) return BadRequest();
-
-            Slider slider = await _context.Sliders.FirstOrDefaultAsync(s => s.Id == id);
-
-            if (slider == null) return NotFound();
-
-            return View(slider);
+            return View(sliders.Skip((page - 1) * 2).Take(2));
         }
 
         public async Task<IActionResult> Create()
@@ -199,9 +188,9 @@ namespace Lenos.Areas.Manage.Controllers
                 .ToListAsync();
 
             ViewBag.PageIndex = page;
-            ViewBag.PageCount = Math.Ceiling((double)sliders.Count() / 5);
+            ViewBag.PageCount = Math.Ceiling((double)sliders.Count() / 2);
 
-            return PartialView("_SliderIndexPartial", sliders.Skip((page - 1) * 5).Take(5));
+            return PartialView("_SliderIndexPartial", sliders.Skip((page - 1) * 2).Take(2));
         }
 
         public async Task<IActionResult> Restore(int? id, bool? status, int page = 1)
@@ -224,7 +213,7 @@ namespace Lenos.Areas.Manage.Controllers
             ViewBag.PageIndex = page;
             ViewBag.PageCount = Math.Ceiling((double)sliders.Count() / 5);
 
-            return PartialView("_SliderIndexPartial", sliders.Skip((page - 1) * 5).Take(5));
+            return PartialView("_SliderIndexPartial", sliders.Skip((page - 1) * 2).Take(2));
         }
     }
 }

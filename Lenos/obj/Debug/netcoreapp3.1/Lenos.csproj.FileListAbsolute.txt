@@ -260,3 +260,13 @@ C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Ma
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Setting\Update.cshtml.g.cs
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Slider\Index.cshtml.g.cs
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_SliderIndexPartial.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Slider\Update.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Slider\Create.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Social\Index.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_SocialIndexPartial.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Social\Create.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Social\Update.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\CategoryBanner\Index.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_CategoryBannerIndexPartial.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\CategoryBanner\Create.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\CategoryBanner\Update.cshtml.g.cs

@@ -12,5 +12,8 @@ namespace Lenos.DAL
         public LenosDbContext(DbContextOptions<LenosDbContext> options) : base(options) { }
         public DbSet<Setting> Settings { get; set; }
         public DbSet<Slider> Sliders { get; set; }
+        public DbSet<Social> Socials { get; set; }
+        public DbSet<CategoryBanner> CategoryBanners { get; set; }
+        public DbSet<ProductPromo> ProductPromos { get; set; }
     }
 }
