@@ -1,0 +1,25 @@
+﻿@model IEnumerable<ProductPromo>
+@{ int count = (ViewBag.PageIndex - 1) * 2; }
+
+<div class="row">
+    @foreach (ProductPromo productPromo in Model)
+    {
+        count++;
+        <div class="col-lg-12 bg-white border py-3 mb-5">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <img src="~/assets/img/product-promo/@productPromo.Image" alt="Alternate Text" />
+                </div>
+                <div class="col-lg-5">
+                    <h1 style="color:#000" class="mb-5">@productPromo.Title</h1>
+                    <p>@productPromo.Description</p>
+                </div>
+            </div>
+            <div class="mt-4 align-items-center d-flex justify-content-between">
+                    <a class="btn btn-warning w-25" asp-action="Update" asp-route-id="@productPromo.Id">Update</a>
+                    <h1 style="border-radius: 25%" class="px-2 user-select-none mx-auto d-inline border my-2">@count</h1>
+                    <a id="@(productPromo.IsDeleted ? "restoreCategory":"deleteCategory")" class="btn w-25 @(productPromo.IsDeleted ? "btn-primary":"btn-danger")" asp-route-status="@ViewBag.Status" asp-route-page="@ViewBag.PageIndex" asp-action="@(productPromo.IsDeleted ? "Restore":"Delete")" asp-route-id="@productPromo.Id">@(productPromo.IsDeleted ? "Restore":"Delete")</a>
+                </div>
+        </div>
+    }
+</div>

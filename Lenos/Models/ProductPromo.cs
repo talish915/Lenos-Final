@@ -18,6 +18,6 @@ namespace Lenos.Models
         public string Image { get; set; }
 
         [NotMapped]
-        public IFormFile SliderImage { get; set; }
+        public IFormFile PromoImage { get; set; }
     }
 }

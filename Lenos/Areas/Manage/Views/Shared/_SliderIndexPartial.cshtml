@@ -17,7 +17,7 @@
             </div>
             <div class="mt-4 align-items-center d-flex justify-content-between">
                 <a class="btn btn-warning w-25" asp-action="Update" asp-route-id="@slider.Id">Update</a>
-                <h1 class="px-2 user-select-none mx-auto d-inline border my-2">@count</h1>
+                <h1 style="border-radius: 25%" class="px-2 user-select-none mx-auto d-inline border my-2">@count</h1>
                 <a id="@(slider.IsDeleted ? "restoreCategory":"deleteCategory")" class="btn w-25 @(slider.IsDeleted ? "btn-primary":"btn-danger")" asp-route-status="@ViewBag.Status" asp-route-page="@ViewBag.PageIndex" asp-action="@(slider.IsDeleted ? "Restore":"Delete")" asp-route-id="@slider.Id">@(slider.IsDeleted ? "Restore":"Delete")</a>
             </div>
         </div>

@@ -15,5 +15,8 @@ namespace Lenos.DAL
         public DbSet<Social> Socials { get; set; }
         public DbSet<CategoryBanner> CategoryBanners { get; set; }
         public DbSet<ProductPromo> ProductPromos { get; set; }
+        public DbSet<Banner> Banners { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }

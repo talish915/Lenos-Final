@@ -211,7 +211,7 @@ namespace Lenos.Areas.Manage.Controllers
                 .ToListAsync();
 
             ViewBag.PageIndex = page;
-            ViewBag.PageCount = Math.Ceiling((double)sliders.Count() / 5);
+            ViewBag.PageCount = Math.Ceiling((double)sliders.Count() / 2);
 
             return PartialView("_SliderIndexPartial", sliders.Skip((page - 1) * 2).Take(2));
         }
