@@ -147,11 +147,17 @@ namespace Lenos.Migrations
                     b.Property<decimal>("DiscountPrice")
                         .HasColumnType("money");
 
-                    b.Property<string>("Image")
+                    b.Property<string>("HoverImage")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
+
+                    b.Property<bool>("IsFeatured")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("MainImage")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("money");
@@ -264,7 +270,7 @@ namespace Lenos.Migrations
 
                     b.HasIndex("TagId");
 
-                    b.ToTable("ProductTag");
+                    b.ToTable("ProductTags");
                 });
 
             modelBuilder.Entity("Lenos.Models.Setting", b =>
@@ -416,7 +422,7 @@ namespace Lenos.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tag");
+                    b.ToTable("Tags");
                 });
 
             modelBuilder.Entity("Lenos.Models.Product", b =>

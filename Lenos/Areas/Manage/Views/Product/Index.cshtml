@@ -1,0 +1,135 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Index";
+    int count = (ViewBag.PageIndex - 1) * 5;
+    string tags = "";
+}
+
+<div class="row">
+    <div class="col-lg-2 h3 text-gray-800">
+        <h1 class="h3 my-0 text-gray-800">Product</h1>
+    </div>
+    <div class="col-lg-8 h3 text-gray-800">
+        <form class="d-flex justify-content-center">
+            <div class="form-group my-0 w-25">
+                <select class="form-control" name="status">
+                    @if (ViewBag.Status == null)
+                    {
+                        <option selected>All</option>
+                        <option value="false">Active</option>
+                        <option value="true">DeActive</option>
+                    }
+                    else if (ViewBag.Status == true)
+                    {
+                        <option>All</option>
+                        <option value="false">Active</option>
+                        <option value="true" selected>DeActive</option>
+                    }
+                    else
+                    {
+                        <option>All</option>
+                        <option value="false" selected>Active</option>
+                        <option value="true">DeActive</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group my-0 ml-4">
+                <button type="submit" class="btn btn-primary">Filter</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-2 h3 mb-4 text-gray-800">
+        <a asp-controller="Product" asp-route-status="@ViewBag.Status" asp-route-page="@ViewBag.PageIndex" asp-action="Create" asp-area="Manage" class="btn btn-success">Create</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 tagTable">
+        <table style="text-align:center" class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Discount Price</th>
+                    <th scope="col">Count</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Setting</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Product product in Model)
+                {
+                    count++;
+                    <tr>
+                        <th style="vertical-align:middle" scope="row">@count</th>
+                        <td style="width:10%">
+                            <img style="width:100%;border-radius:10px;" src="~/assets/img/product/@product.MainImage" alt="Alternate Text" />
+                        </td>
+                        <td style="vertical-align:middle">@product.Title</td>
+                        <td style="vertical-align:middle">@product.Category.Name</td>
+                        <td style="vertical-align:middle">@product.Price</td>
+                        <td style="vertical-align:middle">@product.DiscountPrice</td>
+                        <td style="vertical-align:middle">@product.Count</td>
+                        <td style="color:@(product.IsDeleted ? "red":"green");vertical-align:middle">@(product.IsDeleted ? "DeActive":"Active")</td>
+                        <td style="vertical-align:middle">
+                            <a class="btn btn-primary" asp-action="DeleteAndDetail" asp-route-status="@ViewBag.Status" asp-route-page="@ViewBag.PageIndex" asp-route-id="@product.Id">Detail And Delete</a>
+                            <a class="btn btn-warning" asp-action="Update" asp-route-status="@ViewBag.Status" asp-route-page="@ViewBag.PageIndex" asp-route-id="@product.Id">Update</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-lg-12 d-flex justify-content-center">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+
+                @if (ViewBag.PageIndex > 1)
+                {
+                    <li class="page-item">
+                        <a style="color: #AE845F; border: 1px solid #AE845F" class="page-link" asp-action="index" asp-route-status="@ViewBag.Status" asp-route-page="1" aria-label="Previous">
+                            @("<<")
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a style="color: #AE845F; border: 1px solid #AE845F" class="page-link" asp-action="index" asp-route-status="@ViewBag.Status" asp-route-page="@(ViewBag.PageIndex-1)" aria-label="Previous">
+                            @("<")
+                        </a>
+                    </li>
+                    @if (ViewBag.PageIndex == ViewBag.PageCount && ViewBag.PageIndex > 2)
+                    {
+                        <li class="page-item"><a style="color: #AE845F; border: 1px solid #AE845F" class="page-link" asp-route-status="@ViewBag.Status" asp-action="index" asp-route-page="@(ViewBag.PageIndex-2)">@(ViewBag.PageIndex-2)</a></li>
+                    }
+                    <li class="page-item"><a style="color: #AE845F; border: 1px solid #AE845F" class="page-link" asp-route-status="@ViewBag.Status" asp-action="index" asp-route-page="@(ViewBag.PageIndex-1)">@(ViewBag.PageIndex-1)</a></li>
+                 }
+
+                <li class="page-item active"><a style="background-color: #AE845F; border: 1px solid #AE845F" class="page-link text-white" asp-route-status="@ViewBag.Status" asp-action="index" asp-route-page="@ViewBag.PageIndex">@ViewBag.PageIndex</a></li>
+
+                @if (ViewBag.PageIndex < ViewBag.PageCount)
+                {
+                    <li class="page-item">
+                        <a style="color: #AE845F; border: 1px solid #AE845F" class="page-link" asp-route-status="@ViewBag.Status" asp-action="index" asp-route-page="@(ViewBag.PageIndex + 1)">@(ViewBag.PageIndex + 1)</a>
+                    </li>
+                    @if (ViewBag.PageIndex == 1 && (ViewBag.PageIndex + 2) < ViewBag.PageCount)
+                    {
+                        <li class="page-item">
+                            <a style="color: #AE845F; border: 1px solid #AE845F" class="page-link" asp-route-status="@ViewBag.Status" asp-action="index" asp-route-page="@(ViewBag.PageIndex+2)">@(ViewBag.PageIndex+2)</a>
+                        </li>
+                    }
+                    <li class="page-item">
+                        <a style="color: #AE845F; border: 1px solid #AE845F" class="page-link" asp-route-status="@ViewBag.Status" asp-route-page="@(ViewBag.PageIndex + 1)" aria-label="Next">
+                            @(">")
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a style="color: #AE845F; border: 1px solid #AE845F" class="page-link" asp-route-status="@ViewBag.Status" asp-action="index" asp-route-page="@ViewBag.PageCount" aria-label="Next">
+                            @(">>")
+                        </a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
+</div>

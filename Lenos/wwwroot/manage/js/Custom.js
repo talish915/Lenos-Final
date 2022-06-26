@@ -68,4 +68,20 @@
 
         fetch(url).then(response => { return response.text() }).then(data => { $(".productupdate").html(data) });
     })
+
+    var loadFileMain = function (event) {
+        var output = document.getElementById('MainOutput');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function () {
+            URL.revokeObjectURL(output.src)
+        }
+    };
+    var loadFileHover = function (event) {
+        var output = document.getElementById('HoverOutput');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function () {
+            URL.revokeObjectURL(output.src)
+        }
+    };
+
 })

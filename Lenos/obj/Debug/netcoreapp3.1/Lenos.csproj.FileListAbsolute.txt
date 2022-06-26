@@ -282,3 +282,13 @@ C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Ma
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Category\Index.cshtml.g.cs
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Category\Create.cshtml.g.cs
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Category\Update.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Tag\Index.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_TagIndexPartial.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Index.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\DeleteAndDetail.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Create.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Tag\Create.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Tag\Update.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Update.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_ProductUpdateImagePartial.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationFormScriptPartial.cshtml.g.cs

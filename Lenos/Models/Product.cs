@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -19,7 +20,9 @@ namespace Lenos.Models
         public string Description { get; set; }
         public int Count { get; set; }
         public string SKU { get; set; }
-        public string Image { get; set; }
+        public string MainImage { get; set; }
+        public string HoverImage { get; set; }
+        public bool IsFeatured { get; set; }
 
         public int CategoryId { get; set; }
         public Category Category { get; set; }
@@ -28,5 +31,11 @@ namespace Lenos.Models
 
         [NotMapped]
         public List<int> TagIds { get; set; } = new List<int>();
+        [NotMapped]
+        public IFormFile[] ProductImagesFile { get; set; }
+        [NotMapped]
+        public IFormFile MainImageFile { get; set; }
+        [NotMapped]
+        public IFormFile HoverImageFile { get; set; }
     }
 }
