@@ -1,0 +1,95 @@
+﻿@model ShopVM
+@{
+    ViewData["Title"] = "Index";
+}
+<main id="main">
+    <!-- Breadcrumb start -->
+    <section class="page-breadcrumb">
+        <div class="content">
+            <img src="assets/img/breadcrumb/banner-shop.jpg" alt="">
+            <div class="crumbcontent">
+                <h1>Shop</h1>
+                <div>
+                    <a href="index.html">Home</a> <span>/</span> <span>shop</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb end -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="categories">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li>
+                            <a asp-controller="Shop" asp-action="Index">All</a>
+                            <span>(@Model.Products.Count())</span>
+                        </li>
+                        @foreach (Category category in Model.Categories)
+                        {
+                            <li>
+                                <a class="shop-list" asp-controller="Shop" asp-action="SortByCategory" asp-route-id="@category.Id">@category.Name</a>
+                                <span>(@category.Products.Count())</span>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="price-range-wrap">
+                    <h4>Price</h4>
+                    <div class="price-range" data-min="20" data-max="1000"></div>
+                    <div class="range-slider">
+                        <form action="#">
+                            <button class="filter-btn">filter</button>
+                            <div class="price-input">
+                                <label for="amount">Price:</label>
+                                <input type="text" id="amount">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="tags">
+                    <h4>Product tags</h4>
+                    @foreach (Tag tag in Model.Tags)
+                    {
+                        <a class="shop-list" asp-controller="Shop" asp-action="SortByTag" asp-route-id="@tag.Id"><span>@tag.Name</span></a>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="product-option">
+                    <div class="available">
+                        <span>There are <span class="count">14 products</span> available</span>
+                    </div>
+                    <div class="filter">
+                        <div class="show-product">
+                            <p>Show</p>
+                            <span>12</span>
+                            <span>24</span>
+                            <span>All</span>
+                        </div>
+                        <div class="sorting">
+                            <div class="product-sort">
+                                <select form="order" class="nice-select" name="sortby" onchange="form.submit()">
+                                    <option value="trending">Default Sort</option>
+                                    <option value="AZ">AZ</option>
+                                    <option value="ZA">ZA</option>
+                                    <option value="rating">Price (Low &gt; High)</option>
+                                    <option value="date">Rating (Lowest)</option>
+                                    <option value="price-asc">Model (A - Z)</option>
+                                    <option value="price-asc">Model (Z - A)</option>
+                                </select>
+
+                                <form method="post" id="order"></form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row shop">
+                    @await Html.PartialAsync("_ShopProductPartial", Model.Products)
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

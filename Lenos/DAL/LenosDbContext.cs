@@ -1,4 +1,5 @@
 ﻿using Lenos.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Lenos.DAL
 {
-    public class LenosDbContext : DbContext
+    public class LenosDbContext : IdentityDbContext<AppUser>
     {
         public LenosDbContext(DbContextOptions<LenosDbContext> options) : base(options) { }
         public DbSet<Setting> Settings { get; set; }
@@ -20,5 +21,9 @@ namespace Lenos.DAL
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductTag> ProductTags { get; set; }
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<Basket> Baskets { get; set; }
+        public DbSet<AppUser> AppUsers { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
     }
 }

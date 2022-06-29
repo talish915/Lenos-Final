@@ -1,0 +1,47 @@
+﻿@model Product
+
+<div class="modal-overlay"></div>
+<div class="product-content">
+    <div class="left">
+        <div class="img modal-slick">
+            @foreach (ProductImage productImage in Model.ProductImages)
+            {
+                <img src="~/assets/img/product/@productImage.Image" alt="">
+            }
+        </div>
+    </div>
+    <div class="right">
+        <i class="bi bi-x-lg modal-close"></i>
+        <h3>@Model.Title</h3>
+        <div class="price-box">
+            @if (Model.DiscountPrice > 0)
+            {
+                <span class="price">$@Model.DiscountPrice.ToString("0.00")</span>
+                <span class="line-price">$@Model.Price.ToString("0.00")</span>
+            }
+            else
+            {
+                <span class="price">$@Model.Price.ToString("0.00")</span>
+            }
+        </div>
+        <p class="description">@Model.Description</p>
+        @if (Model.Availability == true)
+        {
+            <p class="availability">In Stock</p>
+        }
+        else
+        {
+            <p class="availability text-danger">Stock Out</p>
+        }
+        <div class="cart-qty-add">
+            <div class="quantity">
+                <div class="pro-qty">
+                    <span class="dec qtybtn">-</span>
+                    <input id="productcount" type="text" value="1">
+                    <span class="inc qtybtn">+</span>
+                </div>
+            </div>
+            <a class="add-btn addbasketbtn" asp-controller="Home" asp-action="AddToBasket" asp-route-id="@Model.Id">ADD TO CART</a>
+        </div>
+    </div>
+</div>

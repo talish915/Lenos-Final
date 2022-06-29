@@ -1,0 +1,77 @@
+﻿@model List<BasketVM>
+@{
+    double subtotal = 0;
+}
+<!-- Cart Table Area -->
+<div class="cart-table table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th class="pro-thumbnail">Image</th>
+                <th class="pro-title">Product</th>
+                <th class="pro-price">Price</th>
+                <th class="pro-quantity">Quantity</th>
+                <th class="pro-subtotal">Total</th>
+                <th class="pro-remove">Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (BasketVM basketVM in Model)
+            {
+                subtotal += basketVM.Price * basketVM.Count;
+                <tr>
+                    <td class="pro-thumbnail"><a href="#"><img class="img-fluid" src="~/assets/img/product/@basketVM.Image" alt="Product" /></a></td>
+                    <td class="pro-title"><a href="#">@basketVM.Title</a></td>
+                    <td class="pro-price"><span>$@basketVM.Price</span></td>
+
+                    <td class="pro-quantity">
+                        <div class="pro-qty">
+                            <span class="dec qtybtn">-</span>
+                            <input type="text" class="prodCount" data-id="@basketVM.ProductId" value="@basketVM.Count">
+                            <span class="inc qtybtn">+</span>
+                        </div>
+                    </td>
+
+                    <td class="pro-subtotal"><span>$@(basketVM.Price* basketVM.Count)</span></td>
+                    <td class="pro-remove"><a class="deletecard" asp-controller="Basket" asp-action="DeleteCard" asp-route-id="@basketVM.ProductId"><i class="bi bi-trash"></i></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Cart Update Option -->
+<div class="cart-update-option">
+    <div class="cart-update">
+        <a href="#" class="btn">Update Cart</a>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-5 ml-auto">
+        <!-- Cart Calculation Area -->
+        <div class="cart-calculator-wrapper">
+            <div class="cart-calculate-items">
+                <h3>Cart Totals</h3>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tr>
+                            <td>Sub Total</td>
+                            <td>$@subtotal</td>
+                        </tr>
+                        <tr>
+                            <td>Shipping</td>
+                            <td>$75</td>
+                        </tr>
+                        <tr class="total">
+                            <td>Total</td>
+                            <td class="total-amount">$@subtotal</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a href="checkout.html" class="btn d-block">Proceed Checkout</a>
+        </div>
+    </div>
+</div>

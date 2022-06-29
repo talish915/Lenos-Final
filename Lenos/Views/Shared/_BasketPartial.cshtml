@@ -1,0 +1,41 @@
+﻿@model List<BasketVM>
+@{
+    double subTotal = 0;
+    double total = 0;
+    foreach (var item in Model)
+    {
+        total += (item.Price * item.Count);
+    }
+}
+<div id="close" class="minicart-overlay"></div>
+<div class="minicart-content header-cart">
+    <h5>Your Cart <span class="notification">@Model.Count</span></h5>
+    <div class="product-box">
+        @foreach (BasketVM basketVM in Model)
+        {
+            <div class="box">
+                <div class="left">
+                    <img src="~/assets/img/product/@basketVM.Image" alt="">
+                </div>
+                <div class="center">
+                    <a href="product-details.html">@basketVM.Title</a>
+                    <span>@basketVM.Count x @basketVM.Price</span>
+                </div>
+                <div class="right">
+                    <a class="deletebasket" asp-controller="Basket" asp-action="DeleteBasket" asp-route-id="@basketVM.ProductId"><i class="bi bi-x"></i></a>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="subtotal">
+        <span>Subtotal:</span>
+        <span>@subTotal</span>
+    </div>
+    <div class="action">
+        <a class="checkout" asp-controller="Order" asp-action="Index">Checkout</a>
+        <a class="cart" asp-controller="Basket" asp-action="Index">View cart</a>
+    </div>
+    <div class="footer">
+        <p>Free shipping on all orders over $75</p>
+    </div>
+</div>

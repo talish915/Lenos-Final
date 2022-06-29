@@ -105,11 +105,15 @@ main .team-section .fullname {
   font-size: 25px;
 }
 
-main .categories h4 {
+main .shop-section {
+  padding-bottom: 4rem;
+}
+
+main .shop-section .categories h4 {
   margin-bottom: 24px;
 }
 
-main .categories ul li {
+main .shop-section .categories ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -118,7 +122,7 @@ main .categories ul li {
           justify-content: space-between;
 }
 
-main .categories ul li a {
+main .shop-section .categories ul li a {
   color: #000;
   font-size: 17px;
   font-weight: 400;
@@ -129,42 +133,42 @@ main .categories ul li a {
   transition: all 0.2s;
 }
 
-main .categories ul li a:hover {
+main .shop-section .categories ul li a:hover {
   color: #AE845F;
 }
 
-main .categories ul li span {
+main .shop-section .categories ul li span {
   font-size: 17px;
 }
 
-main .price-range-wrap {
+main .shop-section .price-range-wrap {
   padding-top: 8px;
   margin-bottom: 20px;
 }
 
-main .price-range-wrap h4 {
+main .shop-section .price-range-wrap h4 {
   margin-bottom: 30px;
 }
 
-main .price-range-wrap .price-range {
+main .shop-section .price-range-wrap .price-range {
   border-radius: 0;
   margin-right: 10px;
   margin-left: 10px;
   margin-bottom: 20px;
 }
 
-main .price-range-wrap .price-range.ui-widget-content {
+main .shop-section .price-range-wrap .price-range.ui-widget-content {
   border: none;
   background: #eeeeee;
   height: 3px;
 }
 
-main .price-range-wrap .price-range.ui-widget-content .ui-slider-range {
+main .shop-section .price-range-wrap .price-range.ui-widget-content .ui-slider-range {
   background-color: #000;
   border-radius: 0;
 }
 
-main .price-range-wrap .price-range.ui-widget-content .ui-slider-handle {
+main .shop-section .price-range-wrap .price-range.ui-widget-content .ui-slider-handle {
   border: 2px solid #000;
   background-color: #fff;
   height: 20px;
@@ -175,18 +179,18 @@ main .price-range-wrap .price-range.ui-widget-content .ui-slider-handle {
   border-radius: 50%;
 }
 
-main .price-range-wrap .range-slider {
+main .shop-section .price-range-wrap .range-slider {
   color: #333333;
   margin-top: 22px;
 }
 
-main .price-range-wrap .range-slider form {
+main .shop-section .price-range-wrap .range-slider form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-main .price-range-wrap .range-slider .price-input {
+main .shop-section .price-range-wrap .range-slider .price-input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -196,12 +200,12 @@ main .price-range-wrap .range-slider .price-input {
           align-items: center;
 }
 
-main .price-range-wrap .range-slider .price-input label {
+main .shop-section .price-range-wrap .range-slider .price-input label {
   color: #333333;
   margin-bottom: 0;
 }
 
-main .price-range-wrap .range-slider .price-input input {
+main .shop-section .price-range-wrap .range-slider .price-input input {
   margin-left: 5px;
   color: #AE845F;
   border: none;
@@ -209,7 +213,7 @@ main .price-range-wrap .range-slider .price-input input {
   pointer-events: none;
 }
 
-main .price-range-wrap .range-slider button.filter-btn {
+main .shop-section .price-range-wrap .range-slider button.filter-btn {
   border: none;
   color: #fff;
   font-size: 14px;
@@ -223,20 +227,20 @@ main .price-range-wrap .range-slider button.filter-btn {
   transition: all 0.3s;
 }
 
-main .price-range-wrap .range-slider button.filter-btn:hover {
+main .shop-section .price-range-wrap .range-slider button.filter-btn:hover {
   color: #fff;
   background-color: #4E4E4E;
 }
 
-main .tags h4 {
+main .shop-section .tags h4 {
   margin-bottom: 20px;
 }
 
-main .tags a {
+main .shop-section .tags a {
   text-decoration: none;
 }
 
-main .tags a span {
+main .shop-section .tags a span {
   border: 1px solid #EEEEEE;
   padding: 3px 6px;
   color: #76768C;
@@ -247,12 +251,12 @@ main .tags a span {
   transition: all 0.3s;
 }
 
-main .tags a span:hover {
+main .shop-section .tags a span:hover {
   background-color: #AE845F;
   color: #fff;
 }
 
-main .product-option {
+main .shop-section .product-option {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -262,19 +266,20 @@ main .product-option {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 30px;
 }
 
-main .product-option .available span {
+main .shop-section .product-option .available span {
   font-size: 14px;
   font-weight: 500;
   color: #76768C;
 }
 
-main .product-option .available .count {
+main .shop-section .product-option .available .count {
   color: #000;
 }
 
-main .product-option .filter {
+main .shop-section .product-option .filter {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -283,49 +288,49 @@ main .product-option .filter {
           align-items: center;
 }
 
-main .product-option .filter .show-product {
+main .shop-section .product-option .filter .show-product {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-right: 20px;
 }
 
-main .product-option .filter .show-product p {
+main .shop-section .product-option .filter .show-product p {
   margin-right: 10px;
   margin-bottom: 0;
 }
 
-main .product-option .filter .show-product span {
+main .shop-section .product-option .filter .show-product span {
   cursor: pointer;
   margin-right: 10px;
 }
 
-main .product-option .filter .product-sort .nice-select {
+main .shop-section .product-option .filter .product-sort .nice-select {
   width: 200px;
   font-size: 16px;
   padding: 0 10px;
 }
 
-main .product-option .filter .product-sort .nice-select .list {
+main .shop-section .product-option .filter .product-sort .nice-select .list {
   right: 0;
   left: auto;
   width: 100%;
 }
 
-main .product-option .filter .product-sort .nice-select .option {
+main .shop-section .product-option .filter .product-sort .nice-select .option {
   font-size: 13px;
   line-height: 34px;
   min-height: 34px;
 }
 
-main .product-option .filter .product-sort .nice-select:after {
+main .shop-section .product-option .filter .product-sort .nice-select:after {
   width: 8px;
   height: 8px;
   border-right: 1px solid #999;
   border-bottom: 1px solid #999;
 }
 
-main .shop .box {
+main .shop-section .shop .box {
   margin-bottom: 20px;
 }
 
@@ -1729,6 +1734,80 @@ main .wishlist-section .table tbody tr .pro-action .left a {
   padding: 20px;
 }
 
+.cart-section {
+  padding-bottom: 4rem;
+}
+
+.cart-section .cart-table .table {
+  text-align: center;
+}
+
+.cart-section .cart-table .table thead tr th {
+  background-color: #AE845F;
+  color: #fff;
+}
+
+.cart-section .cart-table .table tbody td {
+  vertical-align: middle;
+}
+
+.cart-section .cart-table .table tbody .pro-thumbnail {
+  width: 10%;
+}
+
+.cart-section .cart-table .table tbody .pro-thumbnail img {
+  width: 100%;
+}
+
+.cart-section .cart-table .table tbody .pro-title a {
+  color: #000;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.cart-section .cart-table .table tbody .pro-title a:hover {
+  color: #AE845F;
+}
+
+.cart-section .cart-table .table tbody .pro-quantity {
+  width: 155px;
+}
+
+.cart-section .cart-table .table tbody .pro-quantity .pro-qty {
+  margin: 0 auto;
+  width: 130px;
+  height: 46px;
+  border: 1px solid #ddd;
+  padding: 0 15px;
+}
+
+.cart-section .cart-table .table tbody .pro-quantity .pro-qty .qtybtn {
+  width: 35px;
+  display: block;
+  float: left;
+  line-height: 46px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 22px;
+  color: #666666;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.cart-section .cart-table .table tbody .pro-quantity .pro-qty input {
+  width: 28px;
+  float: left;
+  border: none;
+  height: 46px;
+  padding: 0;
+  text-align: center;
+  background-color: transparent;
+  outline: none;
+}
+
 #header {
   opacity: 0;
 }
@@ -2330,6 +2409,12 @@ main .feature .product-box .top .img img {
      object-fit: cover;
 }
 
+main .feature .product-box .top .cart-box .add-or-view a {
+  padding: 10px 15px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
 main .instagram {
   padding-bottom: 5rem;
 }
@@ -2517,13 +2602,7 @@ main .product-box .top .action .wishlist {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   cursor: pointer;
-}
-
-main .product-box .top .action .compare {
-  margin: 30px 0;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  cursor: pointer;
+  margin-bottom: 30px;
 }
 
 main .product-box .top .action .modal-quick {

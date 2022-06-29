@@ -1,0 +1,24 @@
+﻿@model List<BasketVM>
+@{
+    ViewData["Title"] = "Index";
+}
+<main id="main">
+    <!-- Breadcrumb start -->
+    <section class="page-breadcrumb">
+        <div class="content">
+            <img src="assets/img/breadcrumb/banner.jpg" alt="">
+            <div class="crumbcontent">
+                <h1>Cart</h1>
+                <div>
+                    <a href="index.html">Home</a> <span>/</span> <span>Cart</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb end -->
+    <div class="cart-main-wrapper section-padding cart-section">
+        <div class="container basketContainer">
+            @await Html.PartialAsync("_BasketIndexPartial", Model)
+        </div>
+    </div>
+</main>

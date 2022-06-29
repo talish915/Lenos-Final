@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Product>
+
+@foreach (Product product in Model)
+{
+    <div class="col-lg-4">
+        <div class="product-box">
+            <div class="top">
+                <a href="product-details.html">
+                    <div class="img">
+                        <img class="image" src="~/assets/img/product/@product.MainImage" alt="">
+                        <img class="hover-image" src="~/assets/img/product/@product.HoverImage" alt="">
+                    </div>
+                </a>
+                <div class="shop-info">
+                    @if (product.DiscountPrice > 0)
+                    {
+                        <span class="discount">@(((product.DiscountPrice / product.Price) * 100).ToString("0"))%</span>
+                    }
+                    <span class="hot">HOT</span>
+                </div>
+                <div class="action">
+                    <div class="wishlist"><i class="bi bi-heart"></i></div>
+                    <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
+                    <div class="modal-quick"><a class="productdetail" asp-controller="Home" asp-action="DetailModal" asp-route-id="@product.Id"><i class="bi bi-eye"></i></a></div>
+                </div>
+                <div class="cart-box">
+                    <div class="add">
+                        <a class="add-cart addToBasket" asp-controller="Home" asp-action="AddToBasket" asp-route-id="@product.Id">ADD TO CART</a>
+                    </div>
+                    <div class="add-or-view d-none">
+                        <a class="add-btn" asp-controller="Home" asp-action="AddToBasket" asp-route-id="@product.Id">ADD TO CART</a>
+                        <a class="view-btn" href="#">VIEW CART</a>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="category">
+                    <a class="category-name" href="">@product.Category.Name</a>
+                </div>
+                <a class="product-name" href="product-details.html">@product.Title</a>
+                <div class="price-box">
+                    @if (product.DiscountPrice > 0)
+                    {
+                        <span class="line-price">$@product.DiscountPrice.ToString("0.00")</span>
+                        <span class="price">$@product.Price.ToString("0.00")</span>
+                    }
+                    else
+                    {
+                        <span class="price">$@product.Price.ToString("0.00")</span>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}

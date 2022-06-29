@@ -1,4 +1,4 @@
-﻿
+﻿@model HomeVM
 @{
     ViewData["Title"] = "Index";
 }
@@ -8,58 +8,36 @@
 <main id="main">
     <!-- Home Slider Start-->
     <section class="single-item">
-        <div class="slider">
-            <img src="~/assets/img/slider/IMG.jpg" alt="">
-            <div class="slider-content">
-                <span>Now Available</span>
-                <h1>Enchanted Garden Unisex Watch</h1>
-                <a href="shop.html">PRE - ORDER NOW</a>
+        @foreach (Slider slider in Model.Sliders)
+        {
+            <div class="slider">
+                <img src="~/assets/img/slider/@slider.Image" alt="">
+                <div class="slider-content">
+                    <span>@slider.Title</span>
+                    <h1>@slider.Description</h1>
+                    <a asp-controller="Shop" asp-action="Index">PRE - ORDER NOW</a>
+                </div>
             </div>
-        </div>
-        <div class="slider">
-            <img src="~/assets/img/slider/IMG.jpg" alt="">
-            <div class="slider-content">
-                <span>Now Available</span>
-                <h1>Enchanted Garden Unisex Watch</h1>
-                <a href="shop.html">PRE - ORDER NOW</a>
-            </div>
-        </div>
+        }
     </section>
     <!-- Home Slider End -->
     <!-- Category-Banner Start -->
     <section class="category-banner">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-4 box">
-                    <a href="shop.html">
-                        <div class="img">
-                            <img src="~/assets/img/category-banner/category-banner-1.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h2>Dress Watches <span>8</span></h2>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 box">
-                    <a href="shop.html">
-                        <div class="img">
-                            <img src="~/assets/img/category-banner/category-banner-2.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h2>Men's Watches <span>16</span></h2>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 box">
-                    <a href="shop.html">
-                        <div class="img">
-                            <img src="~/assets/img/category-banner/category-banner-3.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h2>Women's Watches <span>16</span></h2>
-                        </div>
-                    </a>
-                </div>
+                @foreach (CategoryBanner categoryBanner in Model.CategoryBanners)
+                {
+                    <div class="col-lg-4 box">
+                        <a asp-controller="Shop" asp-action="Index">
+                            <div class="img">
+                                <img src="~/assets/img/category-banner/@categoryBanner.Image" alt="">
+                            </div>
+                            <div class="content">
+                                <h2>@categoryBanner.Title <span></span></h2>
+                            </div>
+                        </a>
+                    </div>
+                }
             </div>
         </div>
     </section>
@@ -72,117 +50,59 @@
                 <p>We are happy to introduce the new Lawson Collection. These are three quartz models designed with simplicity and elegance kept in mind.</p>
             </div>
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="product-box">
-                        <div class="top">
-                            <a href="product-details.html">
-                                <div class="img">
-                                    <img class="image" src="~/assets/img/product/product-1.jpg" alt="">
+                @foreach (Product product in Model.Products)
+                {
+                    <div class="col-lg-4">
+                        <div class="product-box">
+                            <div class="top">
+                                <a href="product-details.html">
+                                    <div class="img">
+                                        <img class="image" src="~/assets/img/product/@product.MainImage" alt="">
+                                        <img class="hover-image" src="~/assets/img/product/@product.HoverImage" alt="">
+                                    </div>
+                                </a>
+                                <div class="shop-info">
+                                    @if (product.DiscountPrice > 0)
+                                    {
+                                        <span class="discount">@(((product.DiscountPrice / product.Price) * 100).ToString("0"))%</span>
+                                    }
+                                    <span class="hot">HOT</span>
                                 </div>
-                            </a>
-                            <div class="shop-info">
-                                <span class="discount">-51%</span>
-                                <span class="hot">HOT</span>
-                            </div>
-                            <div class="action">
-                                <div class="wishlist"><i class="bi bi-heart"></i></div>
-                                <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
-                                <div class="modal-quick"><i class="bi bi-eye"></i></div>
-                            </div>
-                            <div class="cart-box">
-                                <div class="add">
-                                    <a class="add-cart" href="#">ADD TO CART</a>
+                                <div class="action">
+                                    <div class="wishlist"><i class="bi bi-heart"></i></div>
+                                    <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
+                                    <div class="modal-quick"><a class="productdetail" asp-controller="Home" asp-action="DetailModal" asp-route-id="@product.Id"><i class="bi bi-eye"></i></a></div>
                                 </div>
-                                <div class="add-or-view d-none">
-                                    <a class="add-btn" href="#">ADD TO CART</a>
-                                    <a class="view-btn" href="#">VIEW CART</a>
+                                <div class="cart-box">
+                                    <div class="add">
+                                        <a class="add-cart addToBasket" asp-controller="Home" asp-action="AddToBasket" asp-route-id="@product.Id">ADD TO CART</a>
+                                    </div>
+                                    <div class="add-or-view d-none">
+                                        <a class="add-btn" asp-controller="Home" asp-action="AddToBasket" asp-route-id="@product.Id">ADD TO CART</a>
+                                        <a class="view-btn" href="#">VIEW CART</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="content">
-                            <div class="category">
-                                <a class="category-name" href="">COCOMI</a>
-                            </div>
-                            <a class="product-name" href="product-details.html">TIMEX EASY READER WHITE</a>
-                            <div class="price-box">
-                                <span class="line-price">$225</span>
-                                <span class="price">$460</span>
+                            <div class="content">
+                                <div class="category">
+                                    <a class="category-name" href="">@product.Category.Name</a>
+                                </div>
+                                <a class="product-name" href="product-details.html">@product.Title</a>
+                                <div class="price-box">
+                                    @if (product.DiscountPrice > 0)
+                                    {
+                                        <span class="line-price">$@product.DiscountPrice.ToString("0.00")</span>
+                                        <span class="price">$@product.Price.ToString("0.00")</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="price">$@product.Price.ToString("0.00")</span>
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="product-box">
-                        <div class="top">
-                            <a href="product-details.html">
-                                <div class="img">
-                                    <img class="image" src="~/assets/img/product/product-2.jpg" alt="">
-                                </div>
-                            </a>
-                            <div class="shop-info">
-                                <span class="new">NEW</span>
-                            </div>
-                            <div class="action">
-                                <div class="wishlist"><i class="bi bi-heart"></i></div>
-                                <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
-                                <div class="modal-quick"><i class="bi bi-eye"></i></div>
-                            </div>
-                            <div class="cart-box">
-                                <div class="add">
-                                    <a class="add-cart" href="#">ADD TO CART</a>
-                                </div>
-                                <div class="add-or-view d-none">
-                                    <a class="add-btn" href="#">ADD TO CART</a>
-                                    <a class="view-btn" href="#">VIEW CART</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="category">
-                                <a class="category-name" href="">Olivia burton</a>
-                            </div>
-                            <a class="product-name" href="product-details.html">Modern Wood No. 0</a>
-                            <div class="price-box">
-                                <span class="line-price">$460</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="product-box">
-                        <div class="top">
-                            <a href="product-details.html">
-                                <div class="img">
-                                    <img class="image" src="~/assets/img/product/product-3.jpg" alt="">
-                                </div>
-                            </a>
-                            <div class="action">
-                                <div class="wishlist"><i class="bi bi-heart"></i></div>
-                                <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
-                                <div class="modal-quick"><i class="bi bi-eye"></i></div>
-                            </div>
-                            <div class="cart-box">
-                                <div class="add">
-                                    <a class="add-cart" href="#">ADD TO CART</a>
-                                </div>
-                                <div class="add-or-view d-none">
-                                    <a class="add-btn" href="#">ADD TO CART</a>
-                                    <a class="view-btn" href="#">VIEW CART</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="category">
-                                <a class="category-name" href="">Olivia burton,</a>
-                                <a class="category-name" href="">Timex</a>
-                            </div>
-                            <a class="product-name" href="product-details.html">TIMEX EASY READER WHITE</a>
-                            <div class="price-box">
-                                <span class="line-price">$460</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </section>
@@ -190,28 +110,34 @@
     <!-- Product-Promo start -->
     <section class="product-promo">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7 left">
-                    <img src="~/assets/img/product-promo/product-promo-1.jpg" alt="">
+            @foreach (ProductPromo promo in Model.ProductPromos)
+            {
+                <div class="row align-items-center">
+                    <div class="col-lg-7 left">
+                        <img src="~/assets/img/product-promo/@promo.Image" alt="">
+                    </div>
+                    <div class="col-lg-5 right">
+                        <h1>@promo.Title</h1>
+                        <p>@promo.Description</p>
+                        <a asp-controller="Shop" asp-action="Index">SHOP THE LOOK</a>
+                    </div>
                 </div>
-                <div class="col-lg-5 right">
-                    <h1>Spring Winter 2022</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                    <a href="shop.html">SHOP THE LOOK</a>
-                </div>
-            </div>
+            }
         </div>
     </section>
     <!-- Product-Promo end -->
     <!-- Banner start -->
-    <section class="banner">
-        <img src="~/assets/img/banner/banner.jpg" alt="">
-        <div class="content">
-            <h4>10% Off & The Best Indie Art Ever!</h4>
-            <h1>Be The First To Get Limited Editions</h1>
-            <a href="shop.html">SHOP NEW COLLECTION</a>
-        </div>
-    </section>
+    @foreach (Banner banner in Model.Banners)
+    {
+        <section class="banner">
+            <img src="~/assets/img/banner/@banner.Image" alt="">
+            <div class="content">
+                <h4>@banner.Title</h4>
+                <h1>@banner.SubTitle</h1>
+                <a asp-controller="Shop" asp-action="Index">SHOP NEW COLLECTION</a>
+            </div>
+        </section>
+    }
     <!-- Banner end -->
     <!-- Feature Product start -->
     <section class="feature">
@@ -221,223 +147,62 @@
                 <p>We are happy to introduce the new Lawson Collection. These are three quartz models designed with simplicity and elegance kept in mind.</p>
             </div>
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="product-box">
-                        <div class="top">
-                            <a href="product-details.html">
-                                <div class="img">
-                                    <img class="image" src="~/assets/img/product/product-1.jpg" alt="">
+                @foreach (Product featureProduct in Model.Products.Where(p => p.IsFeatured))
+                {
+                    <div class="col-lg-3">
+                        <div class="product-box">
+                            <div class="top">
+                                <a href="product-details.html">
+                                    <div class="img">
+                                        <img class="image" src="~/assets/img/product/@featureProduct.MainImage" alt="">
+                                        <img class="hover-image" src="~/assets/img/product/@featureProduct.HoverImage" alt="">
+                                    </div>
+                                </a>
+                                <div class="shop-info">
+                                    @if (featureProduct.DiscountPrice > 0)
+                                    {
+                                        <span class="discount">@(((featureProduct.DiscountPrice / featureProduct.Price) * 100).ToString("0"))%</span>
+                                    }
+                                    <span class="hot">HOT</span>
                                 </div>
-                            </a>
-                            <div class="shop-info">
-                                <span class="discount">-51%</span>
-                                <span class="hot">HOT</span>
-                            </div>
-                            <div class="action">
-                                <div class="wishlist"><i class="bi bi-heart"></i></div>
-                                <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
-                                <div class="modal-quick"><i class="bi bi-eye"></i></div>
-                            </div>
-                            <div class="cart-box">
-                                <div class="add">
-                                    <a class="add-cart" href="#">ADD TO CART</a>
+                                <div class="action">
+                                    <div class="wishlist"><i class="bi bi-heart"></i></div>
+                                    <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
+                                    <div class="modal-quick"><a class="productdetail" asp-controller="Home" asp-action="DetailModal" asp-route-id="@featureProduct.Id"><i class="bi bi-eye"></i></a></div>
                                 </div>
-                                <div class="add-or-view d-none">
-                                    <a class="add-btn" href="#">ADD TO CART</a>
-                                    <a class="view-btn" href="#">VIEW CART</a>
+                                <div class="cart-box">
+                                    <div class="add">
+                                        <a class="add-cart addToBasket" asp-controller="Home" asp-action="AddToBasket" asp-route-id="@featureProduct.Id">ADD TO CART</a>
+                                    </div>
+                                    <div class="add-or-view d-none">
+                                        <a class="add-btn" href="#">ADD TO CART</a>
+                                        <a class="view-btn" href="#">VIEW CART</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="content">
-                            <div class="category">
-                                <a class="category-name" href="">COCOMI</a>
-                            </div>
-                            <a class="product-name" href="product-details.html">TIMEX EASY READER WHITE</a>
-                            <div class="price-box">
-                                <span class="line-price">$225</span>
-                                <span class="price">$460</span>
+                            <div class="content">
+                                <div class="category">
+                                    <a class="category-name" href="">@featureProduct.Category.Name</a>
+                                </div>
+                                <a class="product-name" asp-controller="Product" asp-action="Index">@featureProduct.Title</a>
+                                <div class="price-box">
+                                    @if (featureProduct.DiscountPrice > 0)
+                                    {
+                                        <span class="line-price">$@featureProduct.DiscountPrice.ToString("0.00")</span>
+                                        <span class="price">$@featureProduct.Price.ToString("0.00")</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="price">$@featureProduct.Price.ToString("0.00")</span>
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="product-box">
-                        <div class="top">
-                            <a href="product-details.html">
-                                <div class="img">
-                                    <img class="image" src="~/assets/img/product/product-2.jpg" alt="">
-                                </div>
-                            </a>
-                            <div class="shop-info">
-                                <span class="new">NEW</span>
-                            </div>
-                            <div class="action">
-                                <div class="wishlist"><i class="bi bi-heart"></i></div>
-                                <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
-                                <div class="modal-quick"><i class="bi bi-eye"></i></div>
-                            </div>
-                            <div class="cart-box">
-                                <div class="add">
-                                    <a class="add-cart" href="#">ADD TO CART</a>
-                                </div>
-                                <div class="add-or-view d-none">
-                                    <a class="add-btn" href="#">ADD TO CART</a>
-                                    <a class="view-btn" href="#">VIEW CART</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="category">
-                                <a class="category-name" href="">Olivia burton</a>
-                            </div>
-                            <a class="product-name" href="product-details.html">Modern Wood No. 0</a>
-                            <div class="price-box">
-                                <span class="line-price">$460</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="product-box">
-                        <div class="top">
-                            <a href="product-details.html">
-                                <div class="img">
-                                    <img class="image" src="~/assets/img/product/product-3.jpg" alt="">
-                                </div>
-                            </a>
-                            <div class="action">
-                                <div class="wishlist"><i class="bi bi-heart"></i></div>
-                                <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
-                                <div class="modal-quick"><i class="bi bi-eye"></i></div>
-                            </div>
-                            <div class="cart-box">
-                                <div class="add">
-                                    <a class="add-cart" href="#">ADD TO CART</a>
-                                </div>
-                                <div class="add-or-view d-none">
-                                    <a class="add-btn" href="#">ADD TO CART</a>
-                                    <a class="view-btn" href="#">VIEW CART</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="category">
-                                <a class="category-name" href="">Olivia burton,</a>
-                                <a class="category-name" href="">Timex</a>
-                            </div>
-                            <a class="product-name" href="product-details.html">TIMEX EASY READER WHITE</a>
-                            <div class="price-box">
-                                <span class="line-price">$460</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="product-box">
-                        <div class="top">
-                            <a href="product-details.html">
-                                <div class="img">
-                                    <img class="image" src="~/assets/img/product/product-4.jpg" alt="">
-                                    <img class="hover-image" src="~/assets/img/product/product-2.jpg" alt="">
-                                </div>
-                            </a>
-                            <div class="action">
-                                <div class="wishlist"><i class="bi bi-heart"></i></div>
-                                <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
-                                <div class="modal-quick"><i class="bi bi-eye"></i></div>
-                            </div>
-                            <div class="cart-box">
-                                <div class="add">
-                                    <a class="add-cart" href="#">ADD TO CART</a>
-                                </div>
-                                <div class="add-or-view d-none">
-                                    <a class="add-btn" href="#">ADD TO CART</a>
-                                    <a class="view-btn" href="#">VIEW CART</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="category">
-                                <a class="category-name" href="">Olivia burton,</a>
-                                <a class="category-name" href="">Timex</a>
-                            </div>
-                            <a class="product-name" href="product-details.html">TIMEX EASY READER WHITE</a>
-                            <div class="price-box">
-                                <span class="line-price">$460</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </section>
     <!-- Feature Product end -->
-    <!-- Instagram Post start -->
-    <section class="instagram">
-        <div class="container">
-            <div class="title">
-                <h1>lenos.store</h1>
-                <p>Follow us on Instagram</p>
-            </div>
-            <div class="instagram-slick">
-                <div class="box">
-                    <div class="img">
-                        <a href="https://www.instagram.com/" target="_blank">
-                            <img src="~/assets/img/instagram-post/instagram.png" alt="">
-                            <div class="overlay"></div>
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="img">
-                        <a href="https://www.instagram.com/" target="_blank">
-                            <img src="~/assets/img/instagram-post/instagram.png" alt="">
-                            <div class="overlay"></div>
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="img">
-                        <a href="https://www.instagram.com/" target="_blank">
-                            <img src="~/assets/img/instagram-post/instagram.png" alt="">
-                            <div class="overlay"></div>
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="img">
-                        <a href="https://www.instagram.com/" target="_blank">
-                            <img src="~/assets/img/instagram-post/instagram.png" alt="">
-                            <div class="overlay"></div>
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="img">
-                        <a href="https://www.instagram.com/" target="_blank">
-                            <img src="~/assets/img/instagram-post/instagram.png" alt="">
-                            <div class="overlay"></div>
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="img">
-                        <a href="https://www.instagram.com/" target="_blank">
-                            <img src="~/assets/img/instagram-post/instagram.png" alt="">
-                            <div class="overlay"></div>
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Instagram Post end -->
-
 </main>
 <!-- Main end -->

@@ -1,4 +1,19 @@
-﻿<!DOCTYPE html>
+﻿@inject LayoutService LayoutService
+@using Microsoft.AspNetCore.Identity;
+@inject UserManager<AppUser> userManager;
+@{
+    List<BasketVM> basketVMs = await LayoutService.GetBasket();
+    Setting setting = await LayoutService.GetSetting();
+    List<Social> social = await LayoutService.GetSocial();
+    AppUser appUser = null;
+    if (User.Identity.IsAuthenticated)
+    {
+        appUser = userManager.Users.FirstOrDefault(u => u.UserName == User.Identity.Name && !u.IsAdmin);
+    }
+}
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,10 +49,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 left">
-                        <p><i class="fa-solid fa-location-dot"></i>283 N. Glenwood Street, Levittown, NY</p>
+                        <p><i class="fa-solid fa-location-dot"></i>@setting.Address</p>
                     </div>
                     <div class="col-lg-4 center text-center">
-                        <p>Best special offers every week! <span>40%</span> Off!</p>
+                        <p>@setting.Offer</p>
                     </div>
                     <div class="col-lg-4 right d-flex justify-content-end">
                         <ul>
@@ -84,15 +99,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-2 left">
-                        <a href="index.html"><img src="~/assets/img/logo.png" alt=""></a>
+                        <a asp-controller="Home" asp-action="Index"><img src="~/assets/img/@setting.Logo" alt=""></a>
                     </div>
                     <div class="col-lg-8 center">
                         <ul>
-                            <li><a href="index.html">HOME</a></li>
-                            <li><a href="about.html">ABOUT</a></li>
-                            <li><a href="shop.html">SHOP</a></li>
-                            <li><a href="blog.html">BLOG</a></li>
-                            <li><a href="contacts.html">CONTACTS</a></li>
+                            <li><a asp-controller="Home" asp-action="Index">HOME</a></li>
+                            <li><a asp-controller="About" asp-action="Index">ABOUT</a></li>
+                            <li><a asp-controller="Shop" asp-action="Index">SHOP</a></li>
+                            <li><a asp-controller="Contacts" asp-action="Index">CONTACTS</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-2 right">
@@ -111,7 +125,7 @@
                                     c0.2,0,0.4-0.2,0.4-0.4V3.8h3v1.1c0,0.2,0.2,0.4,0.4,0.4s0.4-0.2,0.4-0.4V3.8H9l0.6,6.7C9.7,10.6,9.6,10.9,9.4,11L9.4,11z">
                                 </path>
                             </svg>
-                            <span class="basket-count absolute">0</span>
+                            <span class="basket-count absolute notification">@basketVMs.Count</span>
                         </a>
                     </div>
                 </div>
@@ -127,19 +141,19 @@
                 <div class="row">
                     <div class="col-lg-4 left">
                         <div class="img">
-                            <a href="index.html">
-                                <img src="~/assets/img/logo.png" alt="">
+                            <a asp-controller="Home" asp-action="Index">
+                                <img src="~/assets/img/@setting.Logo" alt="">
                             </a>
                         </div>
-                        <a class="tel" href="tel: +8012356789">+80 123 567 89</a>
-                        <p class="address">283 N. Glenwood Street, Levittown, NY</p>
-                        <a class="mail" href="mailto: help.lenos@gmail.com">help.lenos@gmail.com</a>
+                        <a class="tel" href="tel: @setting.Phone">@setting.Phone</a>
+                        <p class="address">@setting.Address</p>
+                        <a class="mail" href="mailto: @setting.Email">@setting.Email</a>
                         <div class="socials">
                             <ul>
-                                <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-                                <li><a href=""><i class="fa-brands fa-pinterest-p"></i></a></li>
-                                <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+                                @foreach (Social item in social)
+                                {
+                                    <li><a href="@item.Link"><i class="@item.Icon"></i></a></li>
+                                }
                             </ul>
                         </div>
                     </div>
@@ -163,7 +177,7 @@
                             <li><a href="">My Account</a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-4 right">
+                    @*<div class="col-lg-4 right">
                         <i class="bi bi-envelope"></i>
                         <h5>SUBSCRIBE OUR NEWSLETTER</h5>
                         <p>Plus, hear about the latest and greatest from our family of brands</p>
@@ -171,7 +185,7 @@
                             <input name="email_addres" placeholder="Email Address..." type="text" required>
                             <button class="btn-subscribe">SUBSCRIBE</button>
                         </form>
-                    </div>
+                    </div>*@
                 </div>
             </div>
         </div>
@@ -191,127 +205,12 @@
     <!-- Footer end -->
     <!-- Quick Modal start -->
     <div class="product-modal d-none">
-        <div class="modal-overlay"></div>
-        <div class="product-content">
-            <div class="left">
-                <div class="img modal-slick">
-                    <img src="~/assets/img/product/product-4.jpg" alt="">
-                    <img src="~/assets/img/product/product-3.jpg" alt="">
-                    <img src="~/assets/img/product/product-2.jpg" alt="">
-                    <img src="~/assets/img/product/product-1.jpg" alt="">
-                </div>
-            </div>
-            <div class="right">
-                <i class="bi bi-x-lg modal-close"></i>
-                <h3>Cocomi Rainbow Rose Gold</h3>
-                <div class="price-box">
-                    <span class="price">$225</span>
-                    <span class="line-price">$325</span>
-                    <span class="precent">Saved 31%</span>
-                </div>
-                <p class="description">Donec accumsan auctor iaculis. Sed suscipit arcu ligula, at egestas magna molestie a. Proin ac ex maximus, ultrices justo</p>
-                <p class="availability">In Stock</p>
-                <div class="cart-qty-add">
-                    <div class="quantity">
-                        <div class="pro-qty"><input type="text" value="1"></div>
-                    </div>
-                    <a class="add-btn" href="">ADD TO CART</a>
-                </div>
-            </div>
-        </div>
+        
     </div>
     <!-- Quick Modal end -->
     <!-- Mini Cart start -->
     <div class="minicart d-none">
-        <div class="minicart-overlay"></div>
-        <div class="minicart-content">
-            <h5>Your Cart <span>1</span></h5>
-            <div class="product-box">
-                <div class="box">
-                    <div class="left">
-                        <img src="~/assets/img/product/product-1.jpg" alt="">
-                    </div>
-                    <div class="center">
-                        <a href="product-details.html">Quangin Silver (2h3vh4vf8)</a>
-                        <span>1 x $550</span>
-                    </div>
-                    <div class="right">
-                        <i class="bi bi-x"></i>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="left">
-                        <img src="~/assets/img/product/product-1.jpg" alt="">
-                    </div>
-                    <div class="center">
-                        <a href="product-details.html">Quangin Silver (2h3vh4vf8)</a>
-                        <span>1 x $550</span>
-                    </div>
-                    <div class="right">
-                        <i class="bi bi-x"></i>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="left">
-                        <img src="~/assets/img/product/product-1.jpg" alt="">
-                    </div>
-                    <div class="center">
-                        <a href="product-details.html">Quangin Silver (2h3vh4vf8)</a>
-                        <span>1 x $550</span>
-                    </div>
-                    <div class="right">
-                        <i class="bi bi-x"></i>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="left">
-                        <img src="~/assets/img/product/product-1.jpg" alt="">
-                    </div>
-                    <div class="center">
-                        <a href="product-details.html">Quangin Silver (2h3vh4vf8)</a>
-                        <span>1 x $550</span>
-                    </div>
-                    <div class="right">
-                        <i class="bi bi-x"></i>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="left">
-                        <img src="~/assets/img/product/product-1.jpg" alt="">
-                    </div>
-                    <div class="center">
-                        <a href="product-details.html">Quangin Silver (2h3vh4vf8)</a>
-                        <span>1 x $550</span>
-                    </div>
-                    <div class="right">
-                        <i class="bi bi-x"></i>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="left">
-                        <img src="~/assets/img/product/product-1.jpg" alt="">
-                    </div>
-                    <div class="center">
-                        <a href="product-details.html">Quangin Silver (2h3vh4vf8)</a>
-                        <span>1 x $550</span>
-                    </div>
-                    <div class="right">
-                        <i class="bi bi-x"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="subtotal">
-                <span>Subtotal:</span>
-                <span>$550</span>
-            </div>
-            <div class="action">
-                <a class="checkout" href="checkout.html">Checkout</a>
-                <a class="cart" href="cart.html">View cart</a>
-            </div>
-            <div class="footer">
-                <p>Free shipping on all orders over $75</p>
-            </div>
-        </div>
+        @await Html.PartialAsync("_BasketPartial", basketVMs)
     </div>
     <!-- Mini Cart end -->
     <!-- Go To Top -->
@@ -329,5 +228,5 @@
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js" integrity="sha512-eYSzo+20ajZMRsjxB6L7eyqo5kuXuS2+wEbbOkpaur+sA2shQameiJiWEzCIDwJqaB0a4a6tCuEvCOBHUg3Skg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raty/3.1.1/jquery.raty.js" integrity="sha512-QLAUYcnE+TzNuEdbLs0lZMNil3yinJT2lEtxhLOa2JhKfUJzsLxPcnV///PcwwY0xRPsMHS39iyOjw5hJKWl6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="~/assets/js/main.js"></script>
+<script src="~/assets/js/JavaScript.js"></script>
 </html>

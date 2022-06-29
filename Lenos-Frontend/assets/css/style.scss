@@ -7,6 +7,7 @@
 @import '_register.scss';
 @import '_product-details.scss';
 @import '_my-account.scss';
+@import '_cart.scss';
 
 #header{
     opacity: 0;
@@ -535,6 +536,15 @@ main{
                         object-fit: cover;
                     }
                 }
+                .cart-box{
+                    .add-or-view{
+                        a{
+                            padding: 10px 15px;
+                            font-size: 12px;
+                            font-weight: 400;
+                        }
+                    }
+                }
             }
         }
     }
@@ -700,11 +710,7 @@ main{
                 .wishlist {
                     transition: all 0.3s;
                     cursor: pointer;
-                }
-                .compare{
-                    margin: 30px 0;
-                    transition: all 0.5s;
-                    cursor: pointer;
+                    margin-bottom: 30px;
                 }
                 .modal-quick{
                     transition: all 0.7s;
@@ -1167,7 +1173,6 @@ footer{
                             background-color: transparent;
                             outline: none;
                         }
-
                     }
                 }
                 a{

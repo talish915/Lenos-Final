@@ -227,7 +227,6 @@ C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\bin\Debug\netcoreapp3.1\runtimes\win-x
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Lenos.csproj.AssemblyReference.cache
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Lenos.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Lenos.AssemblyInfoInputs.cache
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Lenos.AssemblyInfo.cs
@@ -292,3 +291,17 @@ C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Ma
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Update.cshtml.g.cs
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_ProductUpdateImagePartial.cshtml.g.cs
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationFormScriptPartial.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\About\Index.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Shop\Index.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Contacts\Index.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_BasketPartial.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_BasketIndexPartial.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Basket\Index.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductModalPartial.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ShopProductPartial.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Lenos.csproj.AssemblyReference.cache
