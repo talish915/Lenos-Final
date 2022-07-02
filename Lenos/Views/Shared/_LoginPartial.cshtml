@@ -1,0 +1,30 @@
+﻿@model LoginVM
+<h2>Sign In</h2>
+<form method="post">
+    <div class="col-lg-12 ">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+    </div>
+    <div class="col-lg-12 ">
+        <input asp-for="Email" placeholder="Email Address *" type="email" required>
+    </div>
+    <div class="col-lg-12">
+        <input asp-for="Password" placeholder="Password *" type="password" required>
+    </div>
+    <div class="col-lg-12 d-flex justify-content-between mt-3">
+        <div class="re-checkbox">
+            <input type="checkbox" asp-for="RememberMe">
+            <label asp-for="RememberMe">Remember Me</label>
+        </div>
+        <a class="forget" href="">Forget Password?</a>
+    </div>
+    <div class="col-lg-12 mt-4">
+        <button>Login</button>
+    </div>
+</form>
+<div class="register">
+    <a asp-controller="Account" asp-action="Register">Register</a>
+</div>
+
+@section Script{
+    <partial name="_ValidationFormScriptPartial">
+}

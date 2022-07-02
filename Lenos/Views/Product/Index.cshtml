@@ -1,0 +1,399 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main id="main">
+    <div class="container">
+        <div class="product">
+            <div class="row">
+                <div class="col-lg-6 pro-slider">
+                    <div class="product-large-slider">
+                        @foreach (ProductImage product in Model.ProductImages)
+                        {
+                            <div style="background-color: #fff;" class="pro-large-img img-zoom">
+                                <img src="~/assets/img/product/@product.Image" alt="" />
+                            </div>
+                        }
+                    </div>
+                    <div class="pro-nav slick-row-5">
+                        @foreach (ProductImage productImage in Model.ProductImages)
+                        {
+                            <div class="pro-nav-thumb"><img src="~/assets/img/product/@productImage.Image" alt="" /></div>
+                        }
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="product-content">
+                        <div class="pro-bread"><a asp-controller="Home" asp-action="Index">Home</a> / <a asp-controller="Shop" asp-action="GetByCategory" asp-route-id="@Model.Category.Id">@Model.Category.Name</a> / @Model.Title</div>
+                        <h1 class="pro-name">@Model.Title</h1>
+                        <div class="pro-price">
+                            @if (Model.DiscountPrice > 0)
+                            {
+                                <span style="font-size: 23px; font-weight: 400; color: #AE845F;" class="line-price">$@Model.DiscountPrice.ToString("0.00")</span>
+                                <span style="font-size: 20px; font-weight: 400; text-decoration: line-through; color: #7C7676;" class="price">$@Model.Price.ToString("0.00")</span>
+                            }
+                            else
+                            {
+                                <span style="font-size: 23px; font-weight: 400; color: #AE845F;" class="price">$@Model.Price.ToString("0.00")</span>
+                            }
+                        </div>
+                        <p class="pro-desc">@Model.Description</p>
+                        @if (Model.Availability == true)
+                        {
+                            <p class="availability">In Stock</p>
+                        }
+                        else
+                        {
+                            <p class="availability text-danger">Stock Out</p>
+                        }
+                        <div class="pro-qty-add">
+                            <div class="quantity">
+                                <div class="pro-qty">
+                                    <span class="dec qtybtn">-</span>
+                                    <input id="productcount" type="text" value="1">
+                                    <span class="inc qtybtn">+</span>
+                                </div>
+                            </div>
+                            <a class="add-btn addbasketbtn" asp-controller="Home" asp-action="AddToBasket" asp-route-id="@Model.Id">ADD TO CART</a>
+                        </div>
+                        <a class="wishlist addordeletewishlist" asp-controller="Wishlist" asp-action="AddOrDeleteWishlist" asp-route-id="@Model.Id"><i class="bi bi-heart"></i>ADD TO WISHLIST</a>
+                        <ul>
+                            <li>SKU: <span>U2022</span></li>
+                            <li>Categories: <a asp-controller="Shop" asp-action="GetByCategory" asp-route-id="@Model.Category.Id">@Model.Category.Name</a></li>
+                            <li>
+                                Tags: @foreach (ProductTag productTag in Model.ProductTags)
+                                {
+                                    <a href="">@productTag.Tag.Name</a>
+                                }
+                            </li>
+                            <li class="shared-icons">Share: <div id="share"></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="tabs">
+                <ul class="nav">
+                    <li><a href="#tabs-1">Description</a></li>
+                    <li><a href="#tabs-2">Additional Information</a></li>
+                    <li><a href="#tabs-3">Reviews</a></li>
+                </ul>
+                <div class="all-tabs">
+                    <div id="tabs-1">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h4 class="title">How it made?</h4>
+                                <p>Looking back over the last 50 years of watch design, we’ve taken notes from classic design principles to create this collection, both understated in silhouette and colour palette.</p>
+                                <p>The 7mm case is the thinnest in our collection and is proportionally balanced by an acutely tapered crown. The watch features some of our core branding elements: a red accent on the second hand and modest logo on the face and buckle.</p>
+                                <h4 class="title">How to preservation</h4>
+                                <ul>
+                                    <li>Duis felis neque porta sed elit</li>
+                                    <li>Class aptent taciti sociosqu torquent conubia</li>
+                                    <li>Etiam gravida quis magna posue tincidunt</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="img">
+                                    <img src="~/assets/img/product/product-1.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tabs-2">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td>Weight</td>
+                                    <td>0.8 kg</td>
+                                </tr>
+                                <tr>
+                                    <td>Dimensions</td>
+                                    <td>35 x 50 x 45 cm</td>
+                                </tr>
+                                <tr>
+                                    <td>Color</td>
+                                    <td>Black, Gold</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="tabs-3">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="reviews-summary">
+                                    <h4 class="rev-average">0</h4>
+                                    <div class="rev-stars">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <p class="rev-count">0 Reviews</p>
+                                    <div class="rev-bar">
+                                        <label class="stars-title" title="5 Stars">5 Stars</label>
+                                        <div class="rating-graph" title="0%">
+                                            <div class="percentage bar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="rating-percentage">0%</div>
+                                    </div>
+                                    <div class="rev-bar">
+                                        <label class="stars-title" title="4 Stars">4 Stars</label>
+                                        <div class="rating-graph" title="0%">
+                                            <div class="percentage bar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="rating-percentage">0%</div>
+                                    </div>
+                                    <div class="rev-bar">
+                                        <label class="stars-title" title="3 Stars">3 Stars</label>
+                                        <div class="rating-graph" title="0%">
+                                            <div class="percentage bar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="rating-percentage">0%</div>
+                                    </div>
+                                    <div class="rev-bar">
+                                        <label class="stars-title" title="2 Stars">2 Stars</label>
+                                        <div class="rating-graph" title="0%">
+                                            <div class="percentage bar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="rating-percentage">0%</div>
+                                    </div>
+                                    <div class="rev-bar">
+                                        <label class="stars-title" title="1 Star">1 Star</label>
+                                        <div class="rating-graph" title="0%">
+                                            <div class="percentage bar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="rating-percentage">0%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <form action="">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="comment-form-rating">
+                                                <label>Your rating:</label>
+                                                <div id="stars"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <label for="comment_title">Give your review a title</label>
+                                            <input id="comment_title" name="comment_title" placeholder="Give your review a title" type="text">
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <label for="comment">Your Review</label>
+                                            <textarea id="comment" placeholder="Your Review *" name="comment"></textarea>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label for="full_name">Full Name</label>
+                                            <input id="full_name" name="full_name" placeholder="Full Name *" type="text" required>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label for="email_address">Email</label>
+                                            <input id="email_address" name="email_address" placeholder="Email *" type="text" required>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <button class="btn-submit">SUBMIT</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="review-user">
+                                    <div class="col-lg-12 user-img">
+                                        <div class="img">
+                                            <img src="assets/img/icon/user.png" alt="">
+                                        </div>
+                                        <span>Your review is awaiting approval</span>
+                                    </div>
+                                    <div class="col-lg-12 stars-date">
+                                        <div class="rev-stars">
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star"></i>
+                                            <i class="bi bi-star"></i>
+                                        </div>
+                                        <ul>
+                                            <li>June 13, 2022 at 8:31 pm</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <p class="rev-title">Lorem ipsum dolor sit amet.</p>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <p class="rev">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, pariatur!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="related">
+            <h1>Related Products</h1>
+            <div class="row">
+                <div class="col-lg-3 box">
+                    <div class="product-box">
+                        <div class="top">
+                            <a href="product-details.html">
+                                <div class="img">
+                                    <img class="image" src="assets/img/product/product-1.jpg" alt="">
+                                </div>
+                            </a>
+                            <div class="shop-info">
+                                <span class="discount">-51%</span>
+                                <span class="hot">HOT</span>
+                            </div>
+                            <div class="action">
+                                <div class="wishlist"><i class="bi bi-heart"></i></div>
+                                <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
+                                <div class="modal-quick"><i class="bi bi-eye"></i></div>
+                            </div>
+                            <div class="cart-box">
+                                <div class="add">
+                                    <a class="add-cart" href="#">ADD TO CART</a>
+                                </div>
+                                <div class="add-or-view d-none">
+                                    <a class="add-btn" href="#">ADD TO CART</a>
+                                    <a class="view-btn" href="#">VIEW CART</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="category">
+                                <a class="category-name" href="">COCOMI</a>
+                            </div>
+                            <a class="product-name" href="product-details.html">TIMEX EASY READER WHITE</a>
+                            <div class="price-box">
+                                <span class="line-price">$225</span>
+                                <span class="price">$460</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 box">
+                    <div class="product-box">
+                        <div class="top">
+                            <a href="product-details.html">
+                                <div class="img">
+                                    <img class="image" src="assets/img/product/product-1.jpg" alt="">
+                                </div>
+                            </a>
+                            <div class="shop-info">
+                                <span class="discount">-51%</span>
+                                <span class="hot">HOT</span>
+                            </div>
+                            <div class="action">
+                                <div class="wishlist"><i class="bi bi-heart"></i></div>
+                                <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
+                                <div class="modal-quick"><i class="bi bi-eye"></i></div>
+                            </div>
+                            <div class="cart-box">
+                                <div class="add">
+                                    <a class="add-cart" href="#">ADD TO CART</a>
+                                </div>
+                                <div class="add-or-view d-none">
+                                    <a class="add-btn" href="#">ADD TO CART</a>
+                                    <a class="view-btn" href="#">VIEW CART</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="category">
+                                <a class="category-name" href="">COCOMI</a>
+                            </div>
+                            <a class="product-name" href="product-details.html">TIMEX EASY READER WHITE</a>
+                            <div class="price-box">
+                                <span class="line-price">$225</span>
+                                <span class="price">$460</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 box">
+                    <div class="product-box">
+                        <div class="top">
+                            <a href="product-details.html">
+                                <div class="img">
+                                    <img class="image" src="assets/img/product/product-1.jpg" alt="">
+                                </div>
+                            </a>
+                            <div class="shop-info">
+                                <span class="discount">-51%</span>
+                                <span class="hot">HOT</span>
+                            </div>
+                            <div class="action">
+                                <div class="wishlist"><i class="bi bi-heart"></i></div>
+                                <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
+                                <div class="modal-quick"><i class="bi bi-eye"></i></div>
+                            </div>
+                            <div class="cart-box">
+                                <div class="add">
+                                    <a class="add-cart" href="#">ADD TO CART</a>
+                                </div>
+                                <div class="add-or-view d-none">
+                                    <a class="add-btn" href="#">ADD TO CART</a>
+                                    <a class="view-btn" href="#">VIEW CART</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="category">
+                                <a class="category-name" href="">COCOMI</a>
+                            </div>
+                            <a class="product-name" href="product-details.html">TIMEX EASY READER WHITE</a>
+                            <div class="price-box">
+                                <span class="line-price">$225</span>
+                                <span class="price">$460</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 box">
+                    <div class="product-box">
+                        <div class="top">
+                            <a href="product-details.html">
+                                <div class="img">
+                                    <img class="image" src="assets/img/product/product-1.jpg" alt="">
+                                </div>
+                            </a>
+                            <div class="shop-info">
+                                <span class="discount">-51%</span>
+                                <span class="hot">HOT</span>
+                            </div>
+                            <div class="action">
+                                <div class="wishlist"><i class="bi bi-heart"></i></div>
+                                <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
+                                <div class="modal-quick"><i class="bi bi-eye"></i></div>
+                            </div>
+                            <div class="cart-box">
+                                <div class="add">
+                                    <a class="add-cart" href="#">ADD TO CART</a>
+                                </div>
+                                <div class="add-or-view d-none">
+                                    <a class="add-btn" href="#">ADD TO CART</a>
+                                    <a class="view-btn" href="#">VIEW CART</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="category">
+                                <a class="category-name" href="">COCOMI</a>
+                            </div>
+                            <a class="product-name" href="product-details.html">TIMEX EASY READER WHITE</a>
+                            <div class="price-box">
+                                <span class="line-price">$225</span>
+                                <span class="price">$460</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+@section Style{
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-ui-slider@1.12.1/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+}

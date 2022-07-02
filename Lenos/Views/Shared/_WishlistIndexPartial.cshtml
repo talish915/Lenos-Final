@@ -1,0 +1,43 @@
+﻿@model List<WishlistVM>
+
+<table class="table table-bordered">
+    <tbody>
+        @foreach (WishlistVM wishlistVM in Model)
+        {
+            <tr>
+                <td class="pro-img"><a href="#"><img class="img-fluid" src="~/assets/img/product/@wishlistVM.Image" alt="Product" /></a></td>
+                <td class="pro-content">
+                    <a href="#">@wishlistVM.Title</a>
+                    <div class="pro-price">
+                        @if (wishlistVM.DiscountPrice > 0)
+                        {
+                            <span class="price">$@wishlistVM.DiscountPrice.ToString("0.00")</span>
+                            <span class="line-price">$@wishlistVM.Price.ToString("0.00")</span>
+                        }
+                        else
+                        {
+                            <span class="price">$@wishlistVM.Price.ToString("0.00")</span>
+                        }
+                    </div>
+                    <div class="pro-date">
+                        <span>@wishlistVM.AddDate.ToString("dd MMM yyy")</span>
+                    </div>
+                </td>
+                <td class="pro-action">
+                    @if (wishlistVM.Availability == true)
+                    {
+                        <p class="availability text-success">In Stock</p>
+                    }
+                    else
+                    {
+                        <p class="availability text-danger">Stock Out</p>
+                    }
+                    <a class="add-cart addToBasket" asp-controller="Home" asp-action="AddToBasket" asp-route-id="@wishlistVM.ProductId">ADD TO CART</a>
+                </td>
+                <td>
+                    <a class="addordeletewishlist" asp-controller="Wishlist" asp-action="AddOrDeleteWishlist" asp-route-id="@wishlistVM.ProductId"><i class="bi bi-trash"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

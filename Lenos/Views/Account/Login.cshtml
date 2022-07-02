@@ -1,0 +1,28 @@
+﻿@model LoginVM
+@{
+    ViewData["Title"] = "Login";
+}
+
+<main id="main">
+    <!-- Breadcrumb start -->
+    <section class="page-breadcrumb">
+        <div class="content">
+            <img src="assets/img/breadcrumb/banner.jpg" alt="">
+            <div class="crumbcontent">
+                <h1>Login</h1>
+                <div>
+                    <a href="index.html">Home</a> <span>/</span> <span>Login</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb end -->
+
+    <section class="login-section">
+        <div class="container">
+            <div class="col-lg-8 mx-auto sign-in">
+                @await Html.PartialAsync("_LoginPartial")
+            </div>
+        </div>
+    </section>
+</main>

@@ -569,7 +569,7 @@ main .wishlist-section .table tbody tr .pro-action .left a {
   padding-left: 15px;
 }
 
-.login-section .sign-in input[type=text], .login-section .sign-in input[type=password] {
+.login-section .sign-in input[type=text], .login-section .sign-in input[type=password], .login-section .sign-in input[type=email] {
   width: 100%;
   padding: 10px 25px;
   margin: 10px 0;
@@ -578,40 +578,40 @@ main .wishlist-section .table tbody tr .pro-action .left a {
   transition: all 0.3s;
 }
 
-.login-section .sign-in input[type=text]::-webkit-input-placeholder, .login-section .sign-in input[type=password]::-webkit-input-placeholder {
+.login-section .sign-in input[type=text]::-webkit-input-placeholder, .login-section .sign-in input[type=password]::-webkit-input-placeholder, .login-section .sign-in input[type=email]::-webkit-input-placeholder {
   font-style: italic;
 }
 
-.login-section .sign-in input[type=text]:-ms-input-placeholder, .login-section .sign-in input[type=password]:-ms-input-placeholder {
+.login-section .sign-in input[type=text]:-ms-input-placeholder, .login-section .sign-in input[type=password]:-ms-input-placeholder, .login-section .sign-in input[type=email]:-ms-input-placeholder {
   font-style: italic;
 }
 
-.login-section .sign-in input[type=text]::-ms-input-placeholder, .login-section .sign-in input[type=password]::-ms-input-placeholder {
+.login-section .sign-in input[type=text]::-ms-input-placeholder, .login-section .sign-in input[type=password]::-ms-input-placeholder, .login-section .sign-in input[type=email]::-ms-input-placeholder {
   font-style: italic;
 }
 
-.login-section .sign-in input[type=text]::placeholder, .login-section .sign-in input[type=password]::placeholder {
+.login-section .sign-in input[type=text]::placeholder, .login-section .sign-in input[type=password]::placeholder, .login-section .sign-in input[type=email]::placeholder {
   font-style: italic;
 }
 
-.login-section .sign-in input[type=text]:focus-visible, .login-section .sign-in input[type=password]:focus-visible {
+.login-section .sign-in input[type=text]:focus-visible, .login-section .sign-in input[type=password]:focus-visible, .login-section .sign-in input[type=email]:focus-visible {
   outline: none;
   border: 1px solid #AE845F;
 }
 
-.login-section .sign-in input[type=text]:focus-visible::-webkit-input-placeholder, .login-section .sign-in input[type=password]:focus-visible::-webkit-input-placeholder {
+.login-section .sign-in input[type=text]:focus-visible::-webkit-input-placeholder, .login-section .sign-in input[type=password]:focus-visible::-webkit-input-placeholder, .login-section .sign-in input[type=email]:focus-visible::-webkit-input-placeholder {
   color: #000;
 }
 
-.login-section .sign-in input[type=text]:focus-visible:-ms-input-placeholder, .login-section .sign-in input[type=password]:focus-visible:-ms-input-placeholder {
+.login-section .sign-in input[type=text]:focus-visible:-ms-input-placeholder, .login-section .sign-in input[type=password]:focus-visible:-ms-input-placeholder, .login-section .sign-in input[type=email]:focus-visible:-ms-input-placeholder {
   color: #000;
 }
 
-.login-section .sign-in input[type=text]:focus-visible::-ms-input-placeholder, .login-section .sign-in input[type=password]:focus-visible::-ms-input-placeholder {
+.login-section .sign-in input[type=text]:focus-visible::-ms-input-placeholder, .login-section .sign-in input[type=password]:focus-visible::-ms-input-placeholder, .login-section .sign-in input[type=email]:focus-visible::-ms-input-placeholder {
   color: #000;
 }
 
-.login-section .sign-in input[type=text]:focus-visible::placeholder, .login-section .sign-in input[type=password]:focus-visible::placeholder {
+.login-section .sign-in input[type=text]:focus-visible::placeholder, .login-section .sign-in input[type=password]:focus-visible::placeholder, .login-section .sign-in input[type=email]:focus-visible::placeholder {
   color: #000;
 }
 
@@ -688,7 +688,7 @@ main .wishlist-section .table tbody tr .pro-action .left a {
   padding-left: 15px;
 }
 
-.register-section .sign-up input[type=text], .register-section .sign-up input[type=password] {
+.register-section .sign-up input[type=text], .register-section .sign-up input[type=password],.register-section .sign-up input[type=email] {
   width: 100%;
   padding: 10px 25px;
   margin: 10px 0;
@@ -697,40 +697,40 @@ main .wishlist-section .table tbody tr .pro-action .left a {
   transition: all 0.3s;
 }
 
-.register-section .sign-up input[type=text]::-webkit-input-placeholder, .register-section .sign-up input[type=password]::-webkit-input-placeholder {
+.register-section .sign-up input[type=text]::-webkit-input-placeholder, .register-section .sign-up input[type=password]::-webkit-input-placeholder, .register-section .sign-up input[type=email] {
   font-style: italic;
 }
 
-.register-section .sign-up input[type=text]:-ms-input-placeholder, .register-section .sign-up input[type=password]:-ms-input-placeholder {
+.register-section .sign-up input[type=text]:-ms-input-placeholder, .register-section .sign-up input[type=password]:-ms-input-placeholder, .register-section .sign-up input[type=email]:-ms-input-placeholder {
   font-style: italic;
 }
 
-.register-section .sign-up input[type=text]::-ms-input-placeholder, .register-section .sign-up input[type=password]::-ms-input-placeholder {
+.register-section .sign-up input[type=text]::-ms-input-placeholder, .register-section .sign-up input[type=password]::-ms-input-placeholder, .register-section .sign-up input[type=email]::-ms-input-placeholder {
   font-style: italic;
 }
 
-.register-section .sign-up input[type=text]::placeholder, .register-section .sign-up input[type=password]::placeholder {
+.register-section .sign-up input[type=text]::placeholder, .register-section .sign-up input[type=password]::placeholder, .register-section .sign-up input[type=email]::placeholder {
   font-style: italic;
 }
 
-.register-section .sign-up input[type=text]:focus-visible, .register-section .sign-up input[type=password]:focus-visible {
+.register-section .sign-up input[type=text]:focus-visible, .register-section .sign-up input[type=password]:focus-visible, .register-section .sign-up input[type=email]:focus-visible {
   outline: none;
   border: 1px solid #AE845F;
 }
 
-.register-section .sign-up input[type=text]:focus-visible::-webkit-input-placeholder, .register-section .sign-up input[type=password]:focus-visible::-webkit-input-placeholder {
+.register-section .sign-up input[type=text]:focus-visible::-webkit-input-placeholder, .register-section .sign-up input[type=password]:focus-visible::-webkit-input-placeholder, .register-section .sign-up input[type=email]:focus-visible::-webkit-input-placeholder {
+    color: #000;
+}
+
+.register-section .sign-up input[type=text]:focus-visible:-ms-input-placeholder, .register-section .sign-up input[type=password]:focus-visible:-ms-input-placeholder, .register-section .sign-up input[type=email]:focus-visible:-ms-input-placeholder {
   color: #000;
 }
 
-.register-section .sign-up input[type=text]:focus-visible:-ms-input-placeholder, .register-section .sign-up input[type=password]:focus-visible:-ms-input-placeholder {
+.register-section .sign-up input[type=text]:focus-visible::-ms-input-placeholder, .register-section .sign-up input[type=password]:focus-visible::-ms-input-placeholder, .register-section .sign-up input[type=email]:focus-visible::-ms-input-placeholder {
   color: #000;
 }
 
-.register-section .sign-up input[type=text]:focus-visible::-ms-input-placeholder, .register-section .sign-up input[type=password]:focus-visible::-ms-input-placeholder {
-  color: #000;
-}
-
-.register-section .sign-up input[type=text]:focus-visible::placeholder, .register-section .sign-up input[type=password]:focus-visible::placeholder {
+.register-section .sign-up input[type=text]:focus-visible::placeholder, .register-section .sign-up input[type=password]:focus-visible::placeholder, .register-section .sign-up input[type=email]:focus-visible::placeholder {
   color: #000;
 }
 

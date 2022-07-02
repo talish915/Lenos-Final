@@ -305,3 +305,12 @@ C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Ba
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductModalPartial.cshtml.g.cs
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ShopProductPartial.cshtml.g.cs
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Lenos.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Wishlist\Index.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_WishlistIndexPartial.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Product\Index.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_RegisterPartial.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Account\Profile.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProfileFormPartial.cshtml.g.cs

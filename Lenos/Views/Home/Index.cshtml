@@ -55,7 +55,7 @@
                     <div class="col-lg-4">
                         <div class="product-box">
                             <div class="top">
-                                <a href="product-details.html">
+                                <a asp-controller="Product" asp-action="Index" asp-route-id="@product.Id">
                                     <div class="img">
                                         <img class="image" src="~/assets/img/product/@product.MainImage" alt="">
                                         <img class="hover-image" src="~/assets/img/product/@product.HoverImage" alt="">
@@ -64,13 +64,12 @@
                                 <div class="shop-info">
                                     @if (product.DiscountPrice > 0)
                                     {
-                                        <span class="discount">@(((product.DiscountPrice / product.Price) * 100).ToString("0"))%</span>
+                                        <span class="discount">@((((product.Price - product.DiscountPrice) * 100) / product.Price).ToString("0"))%</span>
                                     }
                                     <span class="hot">HOT</span>
                                 </div>
                                 <div class="action">
-                                    <div class="wishlist"><i class="bi bi-heart"></i></div>
-                                    <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
+                                    <div class="wishlist"><a class="addordeletewishlist" asp-controller="Wishlist" asp-action="AddOrDeleteWishlist" asp-route-id="@product.Id"><i class="bi bi-heart"></i></a></div>
                                     <div class="modal-quick"><a class="productdetail" asp-controller="Home" asp-action="DetailModal" asp-route-id="@product.Id"><i class="bi bi-eye"></i></a></div>
                                 </div>
                                 <div class="cart-box">
@@ -152,7 +151,7 @@
                     <div class="col-lg-3">
                         <div class="product-box">
                             <div class="top">
-                                <a href="product-details.html">
+                                <a asp-controller="Product" asp-action="Index" asp-route-id="@featureProduct.Id">
                                     <div class="img">
                                         <img class="image" src="~/assets/img/product/@featureProduct.MainImage" alt="">
                                         <img class="hover-image" src="~/assets/img/product/@featureProduct.HoverImage" alt="">
@@ -161,13 +160,12 @@
                                 <div class="shop-info">
                                     @if (featureProduct.DiscountPrice > 0)
                                     {
-                                        <span class="discount">@(((featureProduct.DiscountPrice / featureProduct.Price) * 100).ToString("0"))%</span>
+                                        <span class="discount">@((((featureProduct.Price - featureProduct.DiscountPrice) * 100) / featureProduct.Price).ToString("0"))%</span>
                                     }
                                     <span class="hot">HOT</span>
                                 </div>
                                 <div class="action">
-                                    <div class="wishlist"><i class="bi bi-heart"></i></div>
-                                    <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
+                                    <div class="wishlist"><a class="addordeletewishlist" asp-controller="Wishlist" asp-action="AddOrDeleteWishlist" asp-route-id="@featureProduct.Id"><i class="bi bi-heart"></i></a></div>
                                     <div class="modal-quick"><a class="productdetail" asp-controller="Home" asp-action="DetailModal" asp-route-id="@featureProduct.Id"><i class="bi bi-eye"></i></a></div>
                                 </div>
                                 <div class="cart-box">

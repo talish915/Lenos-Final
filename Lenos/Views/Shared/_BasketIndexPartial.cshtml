@@ -21,7 +21,7 @@
                 subtotal += basketVM.Price * basketVM.Count;
                 <tr>
                     <td class="pro-thumbnail"><a href="#"><img class="img-fluid" src="~/assets/img/product/@basketVM.Image" alt="Product" /></a></td>
-                    <td class="pro-title"><a href="#">@basketVM.Title</a></td>
+                    <td style="width: 30%" class="pro-title"><a href="#">@basketVM.Title</a></td>
                     <td class="pro-price"><span>$@basketVM.Price</span></td>
 
                     <td class="pro-quantity">
@@ -33,7 +33,7 @@
                     </td>
 
                     <td class="pro-subtotal"><span>$@(basketVM.Price* basketVM.Count)</span></td>
-                    <td class="pro-remove"><a class="deletecard" asp-controller="Basket" asp-action="DeleteCard" asp-route-id="@basketVM.ProductId"><i class="bi bi-trash"></i></a></td>
+                    <td class="pro-remove"><a style="color: red" class="deletecard" asp-controller="Basket" asp-action="DeleteCard" asp-route-id="@basketVM.ProductId"><i class="bi bi-trash"></i></a></td>
                 </tr>
             }
         </tbody>

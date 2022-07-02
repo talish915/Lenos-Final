@@ -1,0 +1,28 @@
+﻿@model RegisterVM
+@{
+    ViewData["Title"] = "Register";
+}
+
+<main id="main">
+    <!-- Breadcrumb start -->
+    <section class="page-breadcrumb">
+        <div class="content">
+            <img src="assets/img/breadcrumb/banner.jpg" alt="">
+            <div class="crumbcontent">
+                <h1>Register</h1>
+                <div>
+                    <a href="index.html">Home</a> <span>/</span> <span>Register</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb end -->
+
+    <section class="register-section">
+        <div class="container">
+            <div class="col-lg-8 mx-auto sign-up">
+                @await Html.PartialAsync("_RegisterPartial")
+            </div>
+        </div>
+    </section>
+</main>

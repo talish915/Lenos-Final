@@ -1,0 +1,26 @@
+﻿@model List<WishlistVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main id="main">
+    <!-- Breadcrumb start -->
+    <section class="page-breadcrumb">
+        <div class="content">
+            <img src="assets/img/breadcrumb/banner.jpg" alt="">
+            <div class="crumbcontent">
+                <h1>Wishlist</h1>
+                <div>
+                    <a href="index.html">Home</a> <span>/</span> <span>Wishlist</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb end -->
+
+    <section class="wishlist-section">
+        <div class="container wishlist-container">
+            @await Html.PartialAsync("_WishlistIndexPartial",Model)
+        </div>
+    </section>
+</main>

@@ -19,8 +19,7 @@
                     <span class="hot">HOT</span>
                 </div>
                 <div class="action">
-                    <div class="wishlist"><i class="bi bi-heart"></i></div>
-                    <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
+                    <div class="wishlist"><a class="addordeletewishlist" asp-controller="Wishlist" asp-action="AddOrDeleteWishlist" asp-route-id="@product.Id"><i class="bi bi-heart"></i></a></div>
                     <div class="modal-quick"><a class="productdetail" asp-controller="Home" asp-action="DetailModal" asp-route-id="@product.Id"><i class="bi bi-eye"></i></a></div>
                 </div>
                 <div class="cart-box">

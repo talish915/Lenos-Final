@@ -1,6 +1,7 @@
 ﻿using Lenos.DAL;
 using Lenos.Models;
 using Lenos.ViewModels.Basket;
+using Lenos.ViewModels.Wishlist;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -54,5 +55,28 @@ namespace Lenos.Services
         {
             return await _context.Socials.Where(s => !s.IsDeleted).ToListAsync();
         }
+        public async Task<List<WishlistVM>> GetWishlist()
+        {
+            string cookieBasket = _httpContextAccessor.HttpContext.Request.Cookies["wishlist"];
+            List<WishlistVM> wishlistVMs = null;
+
+            if (!string.IsNullOrWhiteSpace(cookieBasket))
+            {
+                wishlistVMs = JsonConvert.DeserializeObject<List<WishlistVM>>(cookieBasket);
+            }
+            else
+            {
+                wishlistVMs = new List<WishlistVM>();
+            }
+            foreach (WishlistVM wishlistVM in wishlistVMs)
+            {
+                Product dbProduct = await _context.Products.FirstOrDefaultAsync(p => p.Id == wishlistVM.ProductId);
+                wishlistVM.Image = dbProduct.MainImage;
+                wishlistVM.Price = dbProduct.DiscountPrice > 0 ? dbProduct.DiscountPrice : dbProduct.Price;
+                wishlistVM.Title = dbProduct.Title;
+            }
+            return wishlistVMs;
+        }
+
     }
 }

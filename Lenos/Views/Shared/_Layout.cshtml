@@ -5,6 +5,7 @@
     List<BasketVM> basketVMs = await LayoutService.GetBasket();
     Setting setting = await LayoutService.GetSetting();
     List<Social> social = await LayoutService.GetSocial();
+    List<WishlistVM> wishlistVMs = await LayoutService.GetWishlist();
     AppUser appUser = null;
     if (User.Identity.IsAuthenticated)
     {
@@ -26,11 +27,10 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-ui-slider@1.12.1/jquery-ui.css">
+    @RenderSection("Style", required:false)
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" />
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-minima.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/raty/3.1.1/jquery.raty.css" integrity="sha512-eAw/PBoRwV3poi1Cgw4W6dZ/7XyetSWjhSqnCevCghOJ6J+TCcJgt8qcEml8It83K6GQVZbXeFA8d3z8pgo82w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <title>Lenos</title>
     <link rel="stylesheet" href="~/assets/css/style.css">
 </head>
@@ -110,10 +110,17 @@
                         </ul>
                     </div>
                     <div class="col-lg-2 right">
-                        <a href=""><i class="far fa-user"></i></a>
-                        <a href="wishlist.html" class="relative">
+                        @if (appUser != null)
+                        {
+                            <a asp-controller="Account" asp-action="Profile"><i class="far fa-user"></i></a>
+                        }
+                        else
+                        {
+                            <a asp-controller="Account" asp-action="Login"><i class="far fa-user"></i></a>
+                        }
+                        <a asp-controller="Wishlist" asp-action="Index" class="relative">
                             <i class="fa-regular fa-heart"></i>
-                            <span class="wishlist-count absolute">6</span>
+                            <span class="wishlist-count absolute wishlistCount">@wishlistVMs.Count</span>
                         </a>
                         <a href="#" class="relative minicart-btn">
                             <svg width="23px" height="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
@@ -125,7 +132,7 @@
                                     c0.2,0,0.4-0.2,0.4-0.4V3.8h3v1.1c0,0.2,0.2,0.4,0.4,0.4s0.4-0.2,0.4-0.4V3.8H9l0.6,6.7C9.7,10.6,9.6,10.9,9.4,11L9.4,11z">
                                 </path>
                             </svg>
-                            <span class="basket-count absolute notification">@basketVMs.Count</span>
+                            <span class="basket-count absolute basketCount">@basketVMs.Count</span>
                         </a>
                     </div>
                 </div>
@@ -228,5 +235,6 @@
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js" integrity="sha512-eYSzo+20ajZMRsjxB6L7eyqo5kuXuS2+wEbbOkpaur+sA2shQameiJiWEzCIDwJqaB0a4a6tCuEvCOBHUg3Skg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raty/3.1.1/jquery.raty.js" integrity="sha512-QLAUYcnE+TzNuEdbLs0lZMNil3yinJT2lEtxhLOa2JhKfUJzsLxPcnV///PcwwY0xRPsMHS39iyOjw5hJKWl6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="~/assets/js/JavaScript.js"></script>
+<script src="~/assets/js/main.js"></script>
+@RenderSection("Scripts",false)
 </html>

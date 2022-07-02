@@ -140,7 +140,9 @@
             logo: "i: bi bi-pinterest"
         }]
     });
+
     $("#tabs").tabs();
+
     $('#stars').raty({ starType: 'i' });
 
 
@@ -168,6 +170,11 @@
         }).then(data => {
             $(".minicart").html(data)
             UpdateBasketCount()
+            $(".minicart-overlay").click(function () {
+                $(".minicart").addClass("d-none")
+                $("body").removeAttr("class", "minicart-active")
+                $(".minicart").removeClass("d-block")
+            })
         })
     })
 
@@ -175,7 +182,15 @@
         fetch("/basket/GetBasketCount").then(
             response => response.json()
         ).then(data => {
-            $('.notification').text(data.count);
+            $('.basketCount').text(data.count);
+        })
+    }
+
+    function UpdateWishlistCount() {
+        fetch("/wishlist/GetWishlistCount").then(
+            response => response.json()
+        ).then(data => {
+            $('.wishlistCount').text(data.wishlistcount);
         })
     }
 
@@ -187,6 +202,18 @@
         fetch(url).then(response => response.text())
             .then(data => {
                 $(".shop").html(data)
+            })
+    })
+
+    $(document).on("click", ".addordeletewishlist", function (e) {
+        e.preventDefault();
+
+        let url = $(this).attr("href");
+
+        fetch(url).then(response => response.text())
+            .then(data => {
+                $(".wishlist-container").html(data)
+                UpdateWishlistCount()
             })
     })
 
