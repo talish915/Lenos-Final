@@ -9,7 +9,10 @@ using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Threading.Tasks;
 
 namespace Lenos.Controllers
@@ -40,35 +43,85 @@ namespace Lenos.Controllers
         {
             if (!ModelState.IsValid) return View();
 
-            AppUser appUser = new AppUser
+            AppUser appUser = await _userManager.FindByNameAsync(registerVM.UserName);
+            if (appUser == null)
             {
-                FullName = registerVM.FullName,
-                Email = registerVM.Email,
-                UserName = registerVM.UserName,
-                IsAdmin = false
-            };
-
-            IdentityResult identityResult = await _userManager.CreateAsync(appUser, registerVM.Password);
-
-            if (!identityResult.Succeeded)
-            {
-                foreach (var item in identityResult.Errors)
+                appUser = new AppUser
                 {
-                    ModelState.AddModelError("", item.Description);
+                    FullName = registerVM.FullName,
+                    Email = registerVM.Email,
+                    UserName = registerVM.UserName,
+                    IsAdmin = false
+                };
+                if (registerVM.UserName == null)
+                {
+                    ModelState.AddModelError("Username", "Please fill this field");
+                    return View();
+
                 }
+                IdentityResult result = await _userManager.CreateAsync(appUser, registerVM.Password);
+                if (!result.Succeeded)
+                {
+                    foreach (IdentityError error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+                    return View();
+                }
+
+            }
+            else
+            {
+                ModelState.AddModelError("", "This username already taken");
                 return View();
             }
-
             await _userManager.AddToRoleAsync(appUser, "Member");
 
-            await _signInManager.SignInAsync(appUser, true);
+            string token = await _userManager.GenerateEmailConfirmationTokenAsync(appUser);
+            string link = Url.Action(nameof(VerifyEmail), "Account", new { email = appUser.Email, token }, Request.Scheme, Request.Host.ToString());
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress("lenosfinal042@gmail.com", "Lenos");
+            mail.To.Add(new MailAddress(appUser.Email));
+            mail.Subject = "Email Verification";
+            string body = string.Empty;
+            using (StreamReader reader = new StreamReader("wwwroot/assets/template/VerifyEmail.html"))
+            {
+                body = reader.ReadToEnd();
+            }
 
-            return Json(new { status=200});
+            mail.Body = body.Replace("{link}", link);
+            mail.IsBodyHtml = true;
+
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+
+            smtp.Credentials = new NetworkCredential("lenosfinal042@gmail.com", "sforrdqjpqqvlufv");
+            smtp.Send(mail);
+            TempData["Verify"] = true;
+            return RedirectToAction("Index", "Home");
+        }
+        public async Task<IActionResult> VerifyEmail(string email, string token)
+        {
+            AppUser user = await _userManager.FindByEmailAsync(email);
+
+            if (user == null) return BadRequest();
+            _context.SaveChanges();
+
+            await _userManager.ConfirmEmailAsync(user, token);
+            await _signInManager.SignInAsync(user, true);
+            TempData["Verified"] = true;
+
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult Login()
         {
-          
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("index", "home");
+            }
             return View();
         }
 
@@ -255,6 +308,85 @@ namespace Lenos.Controllers
             }
 
             return RedirectToAction("Profile");
+        }
+
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ForgotPassword(AccountVM account)
+        {
+            AppUser user = await _userManager.FindByEmailAsync(account.AppUser.Email);
+            if (user == null)
+            {
+                ModelState.AddModelError("", "No account exists with this email!");
+                return View();
+            }
+
+            string token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            string link = Url.Action(nameof(ResetPassword), "Account", new { email = user.Email, token }, Request.Scheme, Request.Host.ToString());
+
+
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress("lenosfinal042@gmail.com", "Lenos");
+            mail.To.Add(new MailAddress(user.Email));
+
+            mail.Subject = "Reset Password";
+            mail.Body = $"<a href='{link}'>Reset password</a>";
+            mail.IsBodyHtml = true;
+
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+
+            smtp.Credentials = new NetworkCredential("lenosfinal042@gmail.com", "sforrdqjpqqvlufv");
+            smtp.Send(mail);
+            TempData["Verify"] = true;
+            return RedirectToAction("Index", "Home");
+        }
+
+        public async Task<IActionResult> ResetPassword(string email, string token)
+        {
+
+
+            AppUser user = await _userManager.FindByEmailAsync(email);
+            if (user == null) return BadRequest();
+            AccountVM model = new AccountVM
+            {
+                AppUser = user,
+                Token = token
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword(AccountVM account)
+        {
+
+            AppUser user = await _userManager.FindByEmailAsync(account.AppUser.Email);
+            AccountVM model = new AccountVM
+            {
+                AppUser = user,
+                Token = account.Token
+            };
+            if (!ModelState.IsValid) return View(model);
+            IdentityResult result = await _userManager.ResetPasswordAsync(user, account.Token, account.Password);
+            if (!result.Succeeded)
+            {
+                foreach (IdentityError error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+                return View(model);
+            }
+            TempData["Reseted"] = true;
+
+            return RedirectToAction("Index", "Home");
         }
 
         #region Create Role

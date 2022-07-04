@@ -156,6 +156,11 @@
         }).then(data => {
             $(".minicart").html(data);
             UpdateBasketCount()
+            $(".minicart-overlay").click(function () {
+                $(".minicart").addClass("d-none")
+                $("body").removeAttr("class", "minicart-active")
+                $(".minicart").removeClass("d-block")
+            })
         })
     })
 

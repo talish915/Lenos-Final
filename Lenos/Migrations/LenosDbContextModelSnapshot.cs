@@ -28,7 +28,8 @@ namespace Lenos.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(255)")

@@ -1,0 +1,102 @@
+﻿@model OrderVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<main id="main">
+    <!-- Breadcrumb start -->
+    <section class="page-breadcrumb">
+        <div class="content">
+            <img src="assets/img/breadcrumb/banner.jpg" alt="">
+            <div class="crumbcontent">
+                <h1>Checkout</h1>
+                <div>
+                    <a href="index.html">Home</a> <span>/</span> <span>Checkout</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb end -->
+
+    <section class="checkout-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Billing Details</h2>
+                    @await Html.PartialAsync("_OrderPartial",Model)
+                </div>
+                <div class="col-lg-6">
+                    <h2>Your Order Summary</h2>
+                    <div class="order-summary-table text-center">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Products</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a href="product-details.html">Suscipit Vestibulum <strong> × 1</strong></a>
+                                    </td>
+                                    <td>$165.00</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="product-details.html">Ami Vestibulum suscipit <strong> × 4</strong></a>
+                                    </td>
+                                    <td>$165.00</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="product-details.html">Vestibulum suscipit <strong> × 2</strong></a>
+                                    </td>
+                                    <td>$165.00</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>Sub Total</td>
+                                    <td><strong>$400</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Shipping</td>
+                                    <td class="d-flex justify-content-center">
+                                        <ul class="shipping-type">
+                                            <li>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="flatrate" name="shipping" class="custom-control-input" checked />
+                                                    <label class="custom-control-label" for="flatrate">
+                                                        Flat
+                                                        Rate: $70.00
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="freeshipping" name="shipping" class="custom-control-input" />
+                                                    <label class="custom-control-label" for="freeshipping">
+                                                        Free
+                                                        Shipping
+                                                    </label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Total Amount</td>
+                                    <td><strong>$470</strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="order-btn">
+                        <button type="submit" form="orderForm">PLACE ORDER</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

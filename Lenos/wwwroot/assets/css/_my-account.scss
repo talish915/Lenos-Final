@@ -46,12 +46,14 @@
             margin: 10px 0;
             border: 1px solid #EEEEEE;
             transition: all 0.3s;
+			background-color: #F7F7F7;
             &::placeholder{
                 font-style: italic;
             }
             &:focus-visible{
                 outline: none;
                 border: 1px solid #AE845F;
+				background-color: #fff;
                 &::placeholder{
                     color: #000;
                 }

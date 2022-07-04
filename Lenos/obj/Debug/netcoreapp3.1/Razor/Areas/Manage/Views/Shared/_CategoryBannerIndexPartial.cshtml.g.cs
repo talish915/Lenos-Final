@@ -19,8 +19,22 @@ using Lenos.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\Areas\Manage\Views\_ViewImports.cshtml"
+using Lenos.Enums;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\Areas\Manage\Views\_ViewImports.cshtml"
+using Lenos.ViewModels.Account;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8f2d19fe5309aee1a8d8e4c1480f8c7b354243f4", @"/Areas/Manage/Views/Shared/_CategoryBannerIndexPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fb42f590fcab9117d81a155519d8288bdfbe4035", @"/Areas/Manage/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ae5f3a3b7c8b6dfeba431ba50cbaf1c7197147c6", @"/Areas/Manage/Views/_ViewImports.cshtml")]
     public class Areas_Manage_Views_Shared__CategoryBannerIndexPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<CategoryBanner>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("style", new global::Microsoft.AspNetCore.Html.HtmlString("width: 100%; height: 420px; object-fit:cover"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -70,7 +84,7 @@ using Lenos.Models;
 #line hidden
 #nullable disable
             WriteLiteral("        <div class=\"col-lg-4 mb-5\">\r\n            <div class=\"border py-3 px-3\">\r\n                <div style=\"position: relative\" class=\"slider\">\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "8f2d19fe5309aee1a8d8e4c1480f8c7b354243f45369", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "8f2d19fe5309aee1a8d8e4c1480f8c7b354243f45744", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -103,7 +117,7 @@ AddHtmlAttributeValue("", 444, categoryBanner.Image, 444, 21, false);
 #line hidden
 #nullable disable
             WriteLiteral("</h2>\r\n                </div>\r\n                <div class=\"mt-4 align-items-center d-flex justify-content-between\">\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f2d19fe5309aee1a8d8e4c1480f8c7b354243f47685", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f2d19fe5309aee1a8d8e4c1480f8c7b354243f48060", async() => {
                 WriteLiteral("Update");
             }
             );
@@ -143,7 +157,7 @@ AddHtmlAttributeValue("", 444, categoryBanner.Image, 444, 21, false);
 #line hidden
 #nullable disable
             WriteLiteral("</h1>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f2d19fe5309aee1a8d8e4c1480f8c7b354243f410463", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f2d19fe5309aee1a8d8e4c1480f8c7b354243f410838", async() => {
 #nullable restore
 #line 18 "C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\Areas\Manage\Views\Shared\_CategoryBannerIndexPartial.cshtml"
                                                                                                                                                                                                                                                                                                                                           Write(categoryBanner.IsDeleted ? "Restore":"Delete");

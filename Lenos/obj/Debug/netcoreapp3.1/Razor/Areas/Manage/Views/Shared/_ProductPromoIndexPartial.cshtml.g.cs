@@ -19,8 +19,22 @@ using Lenos.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\Areas\Manage\Views\_ViewImports.cshtml"
+using Lenos.Enums;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\Areas\Manage\Views\_ViewImports.cshtml"
+using Lenos.ViewModels.Account;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"caf3fa646b2d1c2ce97b35d4d8fe53c2795596ab", @"/Areas/Manage/Views/Shared/_ProductPromoIndexPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fb42f590fcab9117d81a155519d8288bdfbe4035", @"/Areas/Manage/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ae5f3a3b7c8b6dfeba431ba50cbaf1c7197147c6", @"/Areas/Manage/Views/_ViewImports.cshtml")]
     public class Areas_Manage_Views_Shared__ProductPromoIndexPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<ProductPromo>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("alt", new global::Microsoft.AspNetCore.Html.HtmlString("Alternate Text"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -69,7 +83,7 @@ using Lenos.Models;
 #line hidden
 #nullable disable
             WriteLiteral("        <div class=\"col-lg-12 bg-white border py-3 mb-5\">\r\n            <div class=\"row align-items-center\">\r\n                <div class=\"col-lg-7\">\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "caf3fa646b2d1c2ce97b35d4d8fe53c2795596ab4962", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "caf3fa646b2d1c2ce97b35d4d8fe53c2795596ab5337", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -109,7 +123,7 @@ AddHtmlAttributeValue("", 384, productPromo.Image, 384, 19, false);
 #line hidden
 #nullable disable
             WriteLiteral("</p>\r\n                </div>\r\n            </div>\r\n            <div class=\"mt-4 align-items-center d-flex justify-content-between\">\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "caf3fa646b2d1c2ce97b35d4d8fe53c2795596ab7449", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "caf3fa646b2d1c2ce97b35d4d8fe53c2795596ab7824", async() => {
                 WriteLiteral("Update");
             }
             );
@@ -149,7 +163,7 @@ AddHtmlAttributeValue("", 384, productPromo.Image, 384, 19, false);
 #line hidden
 #nullable disable
             WriteLiteral("</h1>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "caf3fa646b2d1c2ce97b35d4d8fe53c2795596ab10221", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "caf3fa646b2d1c2ce97b35d4d8fe53c2795596ab10596", async() => {
 #nullable restore
 #line 21 "C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\Areas\Manage\Views\Shared\_ProductPromoIndexPartial.cshtml"
                                                                                                                                                                                                                                                                                                                                   Write(productPromo.IsDeleted ? "Restore":"Delete");

@@ -74,10 +74,10 @@
                                 </div>
                                 <div class="cart-box">
                                     <div class="add">
-                                        <a class="add-cart addToBasket" asp-controller="Home" asp-action="AddToBasket" asp-route-id="@product.Id">ADD TO CART</a>
+                                        <a class="add-cart addToBasket" asp-controller="Basket" asp-action="AddToBasket" asp-route-id="@product.Id">ADD TO CART</a>
                                     </div>
                                     <div class="add-or-view d-none">
-                                        <a class="add-btn" asp-controller="Home" asp-action="AddToBasket" asp-route-id="@product.Id">ADD TO CART</a>
+                                        <a class="add-btn addToBasket" asp-controller="Basket" asp-action="AddToBasket" asp-route-id="@product.Id">ADD TO CART</a>
                                         <a class="view-btn" href="#">VIEW CART</a>
                                     </div>
                                 </div>
@@ -106,25 +106,6 @@
         </div>
     </section>
     <!-- Trending end -->
-    <!-- Product-Promo start -->
-    <section class="product-promo">
-        <div class="container">
-            @foreach (ProductPromo promo in Model.ProductPromos)
-            {
-                <div class="row align-items-center">
-                    <div class="col-lg-7 left">
-                        <img src="~/assets/img/product-promo/@promo.Image" alt="">
-                    </div>
-                    <div class="col-lg-5 right">
-                        <h1>@promo.Title</h1>
-                        <p>@promo.Description</p>
-                        <a asp-controller="Shop" asp-action="Index">SHOP THE LOOK</a>
-                    </div>
-                </div>
-            }
-        </div>
-    </section>
-    <!-- Product-Promo end -->
     <!-- Banner start -->
     @foreach (Banner banner in Model.Banners)
     {
@@ -170,10 +151,10 @@
                                 </div>
                                 <div class="cart-box">
                                     <div class="add">
-                                        <a class="add-cart addToBasket" asp-controller="Home" asp-action="AddToBasket" asp-route-id="@featureProduct.Id">ADD TO CART</a>
+                                        <a class="add-cart addToBasket" asp-controller="Basket" asp-action="AddToBasket" asp-route-id="@featureProduct.Id">ADD TO CART</a>
                                     </div>
                                     <div class="add-or-view d-none">
-                                        <a class="add-btn" href="#">ADD TO CART</a>
+                                        <a class="add-btn addToBasket" asp-controller="Basket" asp-action="AddToBasket" asp-route-id="@featureProduct.Id">ADD TO CART</a>
                                         <a class="view-btn" href="#">VIEW CART</a>
                                     </div>
                                 </div>
@@ -202,5 +183,24 @@
         </div>
     </section>
     <!-- Feature Product end -->
+    <!-- Product-Promo start -->
+    <section class="product-promo">
+        <div class="container">
+            @foreach (ProductPromo promo in Model.ProductPromos)
+            {
+                <div class="row align-items-center">
+                    <div class="col-lg-7 left">
+                        <img src="~/assets/img/product-promo/@promo.Image" alt="">
+                    </div>
+                    <div class="col-lg-5 right">
+                        <h1>@promo.Title</h1>
+                        <p>@promo.Description</p>
+                        <a asp-controller="Shop" asp-action="Index">SHOP THE LOOK</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+    <!-- Product-Promo end -->
 </main>
 <!-- Main end -->

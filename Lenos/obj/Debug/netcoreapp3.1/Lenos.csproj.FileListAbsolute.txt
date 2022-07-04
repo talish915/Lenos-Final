@@ -304,7 +304,6 @@ C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Sh
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Basket\Index.cshtml.g.cs
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductModalPartial.cshtml.g.cs
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ShopProductPartial.cshtml.g.cs
-C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Lenos.csproj.AssemblyReference.cache
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Wishlist\Index.cshtml.g.cs
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_WishlistIndexPartial.cshtml.g.cs
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Product\Index.cshtml.g.cs
@@ -314,3 +313,16 @@ C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Ac
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProfileFormPartial.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Order\Create.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_OrderPartial.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Lenos.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Order\Index.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Order\Update.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Account\Login.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\bin\Debug\netcoreapp3.1\NETCore.MailKit.dll
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Account\ForgotPassword.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Lenos-Final\Lenos\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs

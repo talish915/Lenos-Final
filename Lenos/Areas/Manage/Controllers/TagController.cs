@@ -1,6 +1,7 @@
 ﻿using Lenos.DAL;
 using Lenos.Extensions;
 using Lenos.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 namespace Lenos.Areas.Manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class TagController : Controller
     {
         private readonly LenosDbContext _context;

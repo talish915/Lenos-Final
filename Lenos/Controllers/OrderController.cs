@@ -73,6 +73,9 @@ namespace Lenos.Controllers
             }
 
             List<Basket> baskets = await _context.Baskets.Include(b => b.Product).Where(b => b.AppUserId == appUser.Id).ToListAsync();
+
+            if (baskets.Count == 0) return RedirectToAction("index", "shop");
+
             List<OrderItem> orderItems = new List<OrderItem>();
             double total = 0;
 
@@ -105,7 +108,7 @@ namespace Lenos.Controllers
             };
 
             _context.Baskets.RemoveRange(baskets);
-            HttpContext.Response.Cookies.Append("basket", "");
+            HttpContext.Response.Cookies.Delete("basket");
             await _context.Orders.AddAsync(order);
             await _context.SaveChangesAsync();
 

@@ -33,58 +33,6 @@ namespace Lenos.Controllers
             };
             return View(homeVM);
         }
-        public async Task<IActionResult> AddToBasket(int? id, int count = 1)
-        {
-            if (id == null) return BadRequest();
-            Product dBproduct = await _context.Products.FirstOrDefaultAsync(p => p.Id == id && !p.IsDeleted);
-            if (dBproduct == null) return NotFound();
-
-            //List<Product> products = null;
-            List<BasketVM> basketVMs = null;
-
-            string cookie = HttpContext.Request.Cookies["basket"];
-
-            if (cookie != null)
-            {
-                basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(cookie);
-                if (basketVMs.Any(b => b.ProductId == id))
-                {
-                    basketVMs.Find(b => b.ProductId == id).Count += count;
-                }
-                else
-                {
-                    basketVMs.Add(new BasketVM
-                    {
-                        ProductId = (int)id,
-                        Count = count,
-                    });
-                }
-            }
-            else
-            {
-                basketVMs = new List<BasketVM>();
-
-                basketVMs.Add(new BasketVM()
-                {
-                    ProductId = (int)id,
-                    Count = count,
-                });
-            }
-
-
-            HttpContext.Response.Cookies.Append("basket", JsonConvert.SerializeObject(basketVMs));
-
-            foreach (BasketVM basketVM in basketVMs)
-            {
-                Product dbProduct = await _context.Products
-                    .FirstOrDefaultAsync(p => p.Id == basketVM.ProductId);
-                basketVM.Image = dbProduct.MainImage;
-                basketVM.Price = dbProduct.DiscountPrice > 0 ? dbProduct.DiscountPrice : dbProduct.Price;
-                basketVM.Title = dbProduct.Title;
-            }
-
-            return PartialView("_BasketPartial", basketVMs);
-        }
 
         public async Task<IActionResult> DetailModal(int? id)
         {
