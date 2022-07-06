@@ -1,4 +1,4 @@
-﻿@model ShopVM
+﻿@model IEnumerable<Product>
 @{
     ViewData["Title"] = "Index";
 }
@@ -24,13 +24,13 @@
                     <h4>Categories</h4>
                     <ul>
                         <li>
-                            <a asp-controller="Shop" asp-action="Index">All</a>
-                            <span>(@Model.Products.Count())</span>
+                            <a asp-controller="Shop" class="shopFilter shop-list category active-category" data-id="0">All</a>
+                            <span>(@Model.Count())</span>
                         </li>
-                        @foreach (Category category in Model.Categories)
+                        @foreach (Category category in ViewBag.Categories)
                         {
                             <li>
-                                <a class="shop-list" asp-controller="Shop" asp-action="SortByCategory" asp-route-id="@category.Id">@category.Name</a>
+                                <a  asp-controller="Shop" class="shopFilter shop-list category" data-id="@category.Id">@category.Name</a>
                                 <span>(@category.Products.Count())</span>
                             </li>
                         }
@@ -41,7 +41,7 @@
                     <div class="price-range" data-min="20" data-max="1000"></div>
                     <div class="range-slider">
                         <form action="#">
-                            <button class="filter-btn">filter</button>
+                            <button class="filter-btn shopFilter">filter</button>
                             <div class="price-input">
                                 <label for="amount">Price:</label>
                                 <input type="text" id="amount">
@@ -51,43 +51,39 @@
                 </div>
                 <div class="tags">
                     <h4>Product tags</h4>
-                    @foreach (Tag tag in Model.Tags)
+                    @foreach (Tag tag in ViewBag.Tags)
                     {
-                        <a class="shop-list" asp-controller="Shop" asp-action="SortByTag" asp-route-id="@tag.Id"><span>@tag.Name</span></a>
+                        <a class="shopFilter shop-list tag"  data-id="@tag.Id">@tag.Name</a>
                     }
                 </div>
             </div>
             <div class="col-lg-9">
                 <div class="product-option">
                     <div class="available">
-                        <span>There are <span class="count">14 products</span> available</span>
+                        <span>There are <span class="count">@Model.Count() products</span> available</span>
                     </div>
                     <div class="filter">
                         <div class="show-product">
                             <p>Show</p>
-                            <span>12</span>
-                            <span>24</span>
-                            <span>All</span>
+                            <a class="shopFilter shop-list countby" data-id="1">12</a>
+                            <a class="shopFilter shop-list countby" data-id="2">24</a>
+                            <a class="shopFilter shop-list countby active-countby" data-id="3">All</a>
                         </div>
                         <div class="sorting">
                             <div class="product-sort">
-                                <select form="order" class="nice-select" name="sortby" onchange="form.submit()">
-                                    <option value="trending">Default Sort</option>
-                                    <option value="AZ">AZ</option>
-                                    <option value="ZA">ZA</option>
-                                    <option value="rating">Price (Low &gt; High)</option>
-                                    <option value="date">Rating (Lowest)</option>
-                                    <option value="price-asc">Model (A - Z)</option>
-                                    <option value="price-asc">Model (Z - A)</option>
+                                <select class="sortby selectfilter" name="sortby">
+                                    <option value="1" selected>Default Sort</option>
+                                    <option value="2">AZ</option>
+                                    <option value="3">ZA</option>
+                                    <option value="4">New</option>
+                                    <option value="5">Old</option>
                                 </select>
-
-                                <form method="post" id="order"></form>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row shop">
-                    @await Html.PartialAsync("_ShopProductPartial", Model.Products)
+                <div class="row shop-products">
+                    @await Html.PartialAsync("_ShopProductPartial", Model)
                 </div>
             </div>
         </div>

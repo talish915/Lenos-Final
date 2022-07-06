@@ -5,7 +5,7 @@
     <div class="col-lg-4">
         <div class="product-box">
             <div class="top">
-                <a href="product-details.html">
+                <a asp-controller="Product" asp-action="Index" asp-route-id="@product.Id">
                     <div class="img">
                         <img class="image" src="~/assets/img/product/@product.MainImage" alt="">
                         <img class="hover-image" src="~/assets/img/product/@product.HoverImage" alt="">
@@ -14,9 +14,8 @@
                 <div class="shop-info">
                     @if (product.DiscountPrice > 0)
                     {
-                        <span class="discount">@(((product.DiscountPrice / product.Price) * 100).ToString("0"))%</span>
+                        <span class="discount">@((((product.Price - product.DiscountPrice) * 100) / product.Price).ToString("0"))%</span>
                     }
-                    <span class="hot">HOT</span>
                 </div>
                 <div class="action">
                     <div class="wishlist"><a class="addordeletewishlist" asp-controller="Wishlist" asp-action="AddOrDeleteWishlist" asp-route-id="@product.Id"><i class="bi bi-heart"></i></a></div>
@@ -24,19 +23,19 @@
                 </div>
                 <div class="cart-box">
                     <div class="add">
-                        <a class="add-cart addToBasket" asp-controller="Home" asp-action="AddToBasket" asp-route-id="@product.Id">ADD TO CART</a>
+                        <a class="add-cart addToBasket" asp-controller="Basket" asp-action="AddToBasket" asp-route-id="@product.Id">ADD TO CART</a>
                     </div>
                     <div class="add-or-view d-none">
-                        <a class="add-btn" asp-controller="Home" asp-action="AddToBasket" asp-route-id="@product.Id">ADD TO CART</a>
-                        <a class="view-btn" href="#">VIEW CART</a>
+                        <a class="add-btn addToBasket" asp-controller="Basket" asp-action="AddToBasket" asp-route-id="@product.Id">ADD TO CART</a>
+                        <a class="view-btn" asp-controller="Basket" asp-action="Index">VIEW CART</a>
                     </div>
                 </div>
             </div>
             <div class="content">
                 <div class="category">
-                    <a class="category-name" href="">@product.Category.Name</a>
+                    <a asp-controller="Shop" class="category-name shopFilter shop-list category" data-id="@product.Category.Id">@product.Category.Name</a>
                 </div>
-                <a class="product-name" href="product-details.html">@product.Title</a>
+                <a class="product-name" asp-controller="Product" asp-action="Index" asp-route-id="@product.Id">@product.Title</a>
                 <div class="price-box">
                     @if (product.DiscountPrice > 0)
                     {

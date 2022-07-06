@@ -232,162 +232,48 @@
         <div class="related">
             <h1>Related Products</h1>
             <div class="row">
-                <div class="col-lg-3 box">
-                    <div class="product-box">
-                        <div class="top">
-                            <a href="product-details.html">
-                                <div class="img">
-                                    <img class="image" src="assets/img/product/product-1.jpg" alt="">
+                @foreach (var item in ViewBag.Products)
+                {
+                    <div class="col-lg-3 box">
+                        <div class="product-box">
+                            <div class="top">
+                                <a href="product-details.html">
+                                    <div class="img">
+                                        <img class="image" src="~/assets/img/product/@item.MainImage" alt="">
+                                    </div>
+                                </a>
+                                <div class="shop-info">
+                                    <span class="discount">-51%</span>
+                                    <span class="hot">HOT</span>
                                 </div>
-                            </a>
-                            <div class="shop-info">
-                                <span class="discount">-51%</span>
-                                <span class="hot">HOT</span>
-                            </div>
-                            <div class="action">
-                                <div class="wishlist"><i class="bi bi-heart"></i></div>
-                                <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
-                                <div class="modal-quick"><i class="bi bi-eye"></i></div>
-                            </div>
-                            <div class="cart-box">
-                                <div class="add">
-                                    <a class="add-cart" href="#">ADD TO CART</a>
+                                <div class="action">
+                                    <div class="wishlist"><i class="bi bi-heart"></i></div>
+                                    <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
+                                    <div class="modal-quick"><i class="bi bi-eye"></i></div>
                                 </div>
-                                <div class="add-or-view d-none">
-                                    <a class="add-btn" href="#">ADD TO CART</a>
-                                    <a class="view-btn" href="#">VIEW CART</a>
+                                <div class="cart-box">
+                                    <div class="add">
+                                        <a class="add-cart" href="#">ADD TO CART</a>
+                                    </div>
+                                    <div class="add-or-view d-none">
+                                        <a class="add-btn" href="#">ADD TO CART</a>
+                                        <a class="view-btn" href="#">VIEW CART</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="content">
-                            <div class="category">
-                                <a class="category-name" href="">COCOMI</a>
-                            </div>
-                            <a class="product-name" href="product-details.html">TIMEX EASY READER WHITE</a>
-                            <div class="price-box">
-                                <span class="line-price">$225</span>
-                                <span class="price">$460</span>
+                            <div class="content">
+                                <div class="category">
+                                    <a class="category-name" href="">COCOMI</a>
+                                </div>
+                                <a class="product-name" href="product-details.html">TIMEX EASY READER WHITE</a>
+                                <div class="price-box">
+                                    <span class="line-price">$225</span>
+                                    <span class="price">$460</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 box">
-                    <div class="product-box">
-                        <div class="top">
-                            <a href="product-details.html">
-                                <div class="img">
-                                    <img class="image" src="assets/img/product/product-1.jpg" alt="">
-                                </div>
-                            </a>
-                            <div class="shop-info">
-                                <span class="discount">-51%</span>
-                                <span class="hot">HOT</span>
-                            </div>
-                            <div class="action">
-                                <div class="wishlist"><i class="bi bi-heart"></i></div>
-                                <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
-                                <div class="modal-quick"><i class="bi bi-eye"></i></div>
-                            </div>
-                            <div class="cart-box">
-                                <div class="add">
-                                    <a class="add-cart" href="#">ADD TO CART</a>
-                                </div>
-                                <div class="add-or-view d-none">
-                                    <a class="add-btn" href="#">ADD TO CART</a>
-                                    <a class="view-btn" href="#">VIEW CART</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="category">
-                                <a class="category-name" href="">COCOMI</a>
-                            </div>
-                            <a class="product-name" href="product-details.html">TIMEX EASY READER WHITE</a>
-                            <div class="price-box">
-                                <span class="line-price">$225</span>
-                                <span class="price">$460</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 box">
-                    <div class="product-box">
-                        <div class="top">
-                            <a href="product-details.html">
-                                <div class="img">
-                                    <img class="image" src="assets/img/product/product-1.jpg" alt="">
-                                </div>
-                            </a>
-                            <div class="shop-info">
-                                <span class="discount">-51%</span>
-                                <span class="hot">HOT</span>
-                            </div>
-                            <div class="action">
-                                <div class="wishlist"><i class="bi bi-heart"></i></div>
-                                <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
-                                <div class="modal-quick"><i class="bi bi-eye"></i></div>
-                            </div>
-                            <div class="cart-box">
-                                <div class="add">
-                                    <a class="add-cart" href="#">ADD TO CART</a>
-                                </div>
-                                <div class="add-or-view d-none">
-                                    <a class="add-btn" href="#">ADD TO CART</a>
-                                    <a class="view-btn" href="#">VIEW CART</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="category">
-                                <a class="category-name" href="">COCOMI</a>
-                            </div>
-                            <a class="product-name" href="product-details.html">TIMEX EASY READER WHITE</a>
-                            <div class="price-box">
-                                <span class="line-price">$225</span>
-                                <span class="price">$460</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 box">
-                    <div class="product-box">
-                        <div class="top">
-                            <a href="product-details.html">
-                                <div class="img">
-                                    <img class="image" src="assets/img/product/product-1.jpg" alt="">
-                                </div>
-                            </a>
-                            <div class="shop-info">
-                                <span class="discount">-51%</span>
-                                <span class="hot">HOT</span>
-                            </div>
-                            <div class="action">
-                                <div class="wishlist"><i class="bi bi-heart"></i></div>
-                                <div class="compare"><i class="bi bi-arrow-down-up"></i></div>
-                                <div class="modal-quick"><i class="bi bi-eye"></i></div>
-                            </div>
-                            <div class="cart-box">
-                                <div class="add">
-                                    <a class="add-cart" href="#">ADD TO CART</a>
-                                </div>
-                                <div class="add-or-view d-none">
-                                    <a class="add-btn" href="#">ADD TO CART</a>
-                                    <a class="view-btn" href="#">VIEW CART</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="category">
-                                <a class="category-name" href="">COCOMI</a>
-                            </div>
-                            <a class="product-name" href="product-details.html">TIMEX EASY READER WHITE</a>
-                            <div class="price-box">
-                                <span class="line-price">$225</span>
-                                <span class="price">$460</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </div>

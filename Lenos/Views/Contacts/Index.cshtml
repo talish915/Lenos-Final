@@ -1,4 +1,4 @@
-﻿
+﻿@model Contact
 @{
     ViewData["Title"] = "Index";
 }
@@ -44,19 +44,19 @@
                 <div class="col-lg-6 right">
                     <h2 class="title">Contact Us</h2>
                     <p class="subtitle">Your email address will not be published. Required fields are marked *</p>
-                    <form action="">
+                    <form method="post">
                         <div class="row">
                             <div class="col-lg-6">
-                                <input name="full_name" placeholder="Your Full Name *" type="text" required>
+                                <input asp-for="FullName" placeholder="Fullname *" type="text" required>
                             </div>
                             <div class="col-lg-6">
-                                <input name="phone" placeholder="Your Phone *" type="text" required>
+                                <input asp-for="Phone" placeholder="Phone *" type="text" required>
                             </div>
                             <div class="col-lg-12">
-                                <input name="email_address" placeholder="Your Email *" type="text" required>
+                                <input asp-for="Email" placeholder="Email *" type="email" required>
                             </div>
                             <div class="col-lg-12">
-                                <textarea placeholder="Message *" name="message" class="form-control2" required></textarea>
+                                <textarea placeholder="Message *" asp-for="Message" class="form-control2" required></textarea>
                             </div>
                             <div class="col-lg-5">
                                 <button class="btn-submit" type="submit">SUBMIT</button>

@@ -17,50 +17,113 @@ namespace Lenos.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
+            ViewBag.PageIndex = page;
+            ViewBag.Categories = await _context.Categories.Where(p => !p.IsDeleted).Include(p=>p.Products).ToListAsync();
+            ViewBag.Tags = await _context.Tags.Where(p => !p.IsDeleted).ToListAsync();
 
-            ShopVM shopVM = new ShopVM
-            {
-                Products = await _context.Products.Include(p => p.ProductTags).Include(p => p.Category)
-                .Where(c => !c.IsDeleted).ToListAsync(),
-                Categories = await _context.Categories.Include(c => c.Products).Where(c => !c.IsDeleted).ToListAsync(),
-                Tags = await _context.Tags.Include(p => p.ProductTags).Where(c => !c.IsDeleted).ToListAsync(),
-
-            };
-            return View(shopVM);
+            List<Product> products = await _context.Products
+                    .Where(p => !p.IsDeleted
+                    && !p.Category.IsDeleted)
+                    .ToListAsync();
+            ViewBag.PageCount = Math.Ceiling((double)products.Count() / 5);
+            return View(products.Skip((page - 1) * 5).Take(5));
         }
-
-        public async Task<IActionResult> SortByCategory(int? id)
+        public async Task<IActionResult> Filter(string tags, string countby, int sortby, int category,int minprice,int maxprice)
         {
-            IEnumerable<Product> product = await _context.Products.Include(p => p.Category).Where(p => id == p.Category.Id && !p.IsDeleted).ToListAsync();
+            IQueryable<Product> products = _context.Products
+                .Include(p => p.Category)
+                .Include(p => p.ProductTags).ThenInclude(p => p.Tag).Where(p => !p.IsDeleted);
 
-            if (product == null) return NotFound();
-
-
-
-            return PartialView("_ShopProductPartial",product);
-        }
-
-        public async Task<IActionResult> SortByTag(int? id)
-        {
-            IEnumerable<ProductTag> productTags = await _context.ProductTags.Include(p => p.Product).ToListAsync();
-
-            List<Product> product = new List<Product>();
-
-            foreach (ProductTag item in productTags)
+            if (
+                string.IsNullOrWhiteSpace(countby)
+                && string.IsNullOrWhiteSpace(category.ToString())
+                && string.IsNullOrWhiteSpace(tags)
+                && string.IsNullOrWhiteSpace(sortby.ToString())
+                && string.IsNullOrWhiteSpace(minprice.ToString())
+                && string.IsNullOrWhiteSpace(maxprice.ToString())
+                )
             {
-                if (item.TagId == id)
+                return PartialView("_ShopProductPartial", products.ToList());
+            }
+            
+            if (!string.IsNullOrWhiteSpace(category.ToString()) && category != 0)
+            {
+                    products = products
+                        .Where(p => p.CategoryId == category);
+            }
+            if (!string.IsNullOrWhiteSpace(tags))
+            {
+                string[] tag = tags.Split(",");
+                foreach (var t in tag)
                 {
-                    product.Add(item.Product);
+                    products = products
+                        .Where(p => p.ProductTags.Any(p=>p.Tag.Id.ToString() == t.ToString()));
+
                 }
             }
-
-            if (product == null) return NotFound();
-
-
-
-            return PartialView("_ShopProductPartial", product);
+            if (!string.IsNullOrWhiteSpace(countby))
+            {
+                switch (countby)
+                {
+                    case "1":
+                        products = products.Take(12);
+                        break;
+                    case "2":
+                        products = products.Take(24);
+                        break;
+                    default:
+                        products = products;
+                        break;
+                }
+            }
+            if (!string.IsNullOrWhiteSpace(sortby.ToString()))
+            {
+                switch (sortby)
+                {
+                    case 1:
+                        products = products;
+                        break;
+                    case 2:
+                        products = products.OrderBy(p => p.Title);
+                        break;
+                    case 3:
+                        products = products.OrderByDescending(p => p.Title);
+                        break;
+                    case 4:
+                        products = products.OrderBy(p => p.CreatedAt);
+                        break;
+                    case 5:
+                        products = products.OrderByDescending(p => p.CreatedAt);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            if (!string.IsNullOrWhiteSpace(minprice.ToString()))
+            {
+                if (products.Any(p => p.DiscountPrice > 0))
+                {
+                    products = products.Where(p => p.DiscountPrice > minprice);
+                }
+                else
+                {
+                    products = products.Where(p => p.Price > minprice);
+                }
+            }
+            if (!string.IsNullOrWhiteSpace(maxprice.ToString()))
+            {
+                if (products.Any(p => p.DiscountPrice > 0))
+                {
+                    products = products.Where(p => p.DiscountPrice < maxprice);
+                }
+                else
+                {
+                    products = products.Where(p => p.Price < maxprice);
+                }
+            }
+            return PartialView("_ShopProductPartial", products.ToList());
         }
     }
 }

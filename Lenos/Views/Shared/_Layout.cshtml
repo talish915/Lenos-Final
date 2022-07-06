@@ -27,7 +27,7 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    @RenderSection("Style", required:false)
+    @RenderSection("Style", required: false)
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" />
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-minima.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/raty/3.1.1/jquery.raty.css" integrity="sha512-eAw/PBoRwV3poi1Cgw4W6dZ/7XyetSWjhSqnCevCghOJ6J+TCcJgt8qcEml8It83K6GQVZbXeFA8d3z8pgo82w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -112,7 +112,7 @@
                     <div class="col-lg-2 right">
                         @if (appUser != null)
                         {
-                            <a asp-controller="Account" asp-action="Profile"><i class="far fa-user"></i></a>
+                            <a style="display:flex;align-items:center;text-decoration:none;" asp-controller="Account" asp-action="Profile"><span style="margin-right:5px; font-size:15px;font-weight:500;">@appUser.UserName</span> <i class="far fa-user"></i></a>
                         }
                         else
                         {
@@ -185,14 +185,14 @@
                         </ul>
                     </div>
                     @*<div class="col-lg-4 right">
-                        <i class="bi bi-envelope"></i>
-                        <h5>SUBSCRIBE OUR NEWSLETTER</h5>
-                        <p>Plus, hear about the latest and greatest from our family of brands</p>
-                        <form action="">
-                            <input name="email_addres" placeholder="Email Address..." type="text" required>
-                            <button class="btn-subscribe">SUBSCRIBE</button>
-                        </form>
-                    </div>*@
+                            <i class="bi bi-envelope"></i>
+                            <h5>SUBSCRIBE OUR NEWSLETTER</h5>
+                            <p>Plus, hear about the latest and greatest from our family of brands</p>
+                            <form action="">
+                                <input name="email_addres" placeholder="Email Address..." type="text" required>
+                                <button class="btn-subscribe">SUBSCRIBE</button>
+                            </form>
+                        </div>*@
                 </div>
             </div>
         </div>
@@ -212,7 +212,7 @@
     <!-- Footer end -->
     <!-- Quick Modal start -->
     <div class="product-modal d-none">
-        
+
     </div>
     <!-- Quick Modal end -->
     <!-- Mini Cart start -->
@@ -236,5 +236,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js" integrity="sha512-eYSzo+20ajZMRsjxB6L7eyqo5kuXuS2+wEbbOkpaur+sA2shQameiJiWEzCIDwJqaB0a4a6tCuEvCOBHUg3Skg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raty/3.1.1/jquery.raty.js" integrity="sha512-QLAUYcnE+TzNuEdbLs0lZMNil3yinJT2lEtxhLOa2JhKfUJzsLxPcnV///PcwwY0xRPsMHS39iyOjw5hJKWl6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="~/assets/js/main.js"></script>
-@RenderSection("Scripts",false)
+@RenderSection("Scripts", false)
 </html>

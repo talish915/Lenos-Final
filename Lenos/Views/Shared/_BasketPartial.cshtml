@@ -1,10 +1,9 @@
 ﻿@model List<BasketVM>
 @{
     double subTotal = 0;
-    double total = 0;
     foreach (var item in Model)
     {
-        total += (item.Price * item.Count);
+        subTotal += (item.Price * item.Count);
     }
 }
 <div id="close" class="minicart-overlay"></div>
@@ -19,7 +18,7 @@
                 </div>
                 <div class="center">
                     <a href="product-details.html">@basketVM.Title</a>
-                    <span>@basketVM.Count x @basketVM.Price</span>
+                    <span>@basketVM.Count x $@basketVM.Price</span>
                 </div>
                 <div class="right">
                     <a class="deletebasket" asp-controller="Basket" asp-action="DeleteBasket" asp-route-id="@basketVM.ProductId"><i class="bi bi-x"></i></a>
@@ -29,7 +28,7 @@
     </div>
     <div class="subtotal">
         <span>Subtotal:</span>
-        <span>@subTotal</span>
+        <span>$@subTotal</span>
     </div>
     <div class="action">
         <a class="checkout" asp-controller="Order" asp-action="Create">Checkout</a>
