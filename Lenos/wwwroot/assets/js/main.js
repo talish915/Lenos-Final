@@ -41,7 +41,6 @@
         asNavFor: '.pro-nav'
     });
 
-
     // product details slider nav active
     $('.pro-nav').slick({
         slidesToShow: 4,
@@ -49,11 +48,6 @@
         arrows: false,
         focusOnSelect: true
     });
-
-    $(".add-cart").click(function () {
-        $(".add").addClass("d-none")
-        $(".add-or-view").removeClass("d-none")
-    })
 
     $(".modal-quick").click(function () {
         $(".product-modal").addClass("d-block")
@@ -215,13 +209,6 @@
         }]
     });
 
-    $("#tabs").tabs();
-
-    $('#stars').raty({ starType: 'i' });
-
-
-
-
     $(document).on("click", ".addToBasket", function (e) {
         e.preventDefault();
         let url = $(this).attr("href");
@@ -230,10 +217,16 @@
         }).then(data => {
             $(".minicart").html(data);
             UpdateBasketCount()
+
             $(".minicart-overlay").click(function () {
                 $(".minicart").addClass("d-none")
                 $("body").removeAttr("class", "minicart-active")
                 $(".minicart").removeClass("d-block")
+            })
+            $(".minicart-btn").click(function () {
+                $(".minicart").addClass("d-block")
+                $("body").attr("class", "minicart-active")
+                $(".minicart").removeClass("d-none")
             })
         })
     })
@@ -254,6 +247,11 @@
                 $("body").removeAttr("class", "minicart-active")
                 $(".minicart").removeClass("d-block")
             })
+            $(".minicart-btn").click(function () {
+                $(".minicart").addClass("d-block")
+                $("body").attr("class", "minicart-active")
+                $(".minicart").removeClass("d-none")
+            })
         })
     })
 
@@ -272,17 +270,6 @@
             $('.wishlistCount').text(data.wishlistcount);
         })
     }
-
-    //$(document).on("click", ".shop-list", function (e) {
-    //    e.preventDefault();
-
-    //    let url = $(this).attr("href");
-
-    //    fetch(url).then(response => response.text())
-    //        .then(data => {
-    //            $(".shop").html(data)
-    //        })
-    //})
 
     $(document).on("click", ".addordeletewishlist", function (e) {
         e.preventDefault();

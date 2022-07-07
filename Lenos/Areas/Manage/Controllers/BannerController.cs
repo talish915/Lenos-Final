@@ -161,8 +161,8 @@ namespace Lenos.Areas.Manage.Controllers
                 dbBanner.Image = dbBanner.BannerImage.CreateFile(_env, "assets", "img", "slider");
             }
 
-            dbBanner.Title = dbBanner.Title;
-            dbBanner.SubTitle = dbBanner.SubTitle;
+            dbBanner.Title = banner.Title;
+            dbBanner.SubTitle = banner.SubTitle;
 
             dbBanner.UpdatedAt = DateTime.UtcNow.AddHours(4);
             await _context.SaveChangesAsync();

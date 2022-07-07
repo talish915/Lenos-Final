@@ -19,7 +19,7 @@ namespace Lenos.Controllers
         }
         public async Task<IActionResult> Index(int? id)
         {
-            ViewBag.Products = await _context.Products.Where(p => !p.IsDeleted).ToListAsync();
+            ViewBag.Products = await _context.Products.Include(p => p.Category).Include(p => p.ProductTags).ThenInclude(p => p.Tag).Where(p => !p.IsDeleted).Take(4).ToListAsync();
             ViewBag.Tags = await _context.Tags.Include(p => p.ProductTags).Where(p => !p.IsDeleted).ToListAsync();
 
             Product product = await _context.Products

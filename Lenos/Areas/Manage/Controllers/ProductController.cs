@@ -177,7 +177,6 @@ namespace Lenos.Areas.Manage.Controllers
                 ModelState.AddModelError("ProductImagesFile", "Product Images File Sekil Mutleq Secilmelidir");
                 return View();
             }
-            
             product.Availability = product.Count > 0 ? true : false;
             product.CreatedAt = DateTime.UtcNow.AddHours(4);
 

@@ -27,8 +27,8 @@ namespace Lenos.Controllers
                     .Where(p => !p.IsDeleted
                     && !p.Category.IsDeleted)
                     .ToListAsync();
-            ViewBag.PageCount = Math.Ceiling((double)products.Count() / 5);
-            return View(products.Skip((page - 1) * 5).Take(5));
+            ViewBag.PageCount = Math.Ceiling((double)products.Count() / 12);
+            return View(products.Skip((page - 1) * 12).Take(12));
         }
         public async Task<IActionResult> Filter(string tags, string countby, int sortby, int category,int minprice,int maxprice)
         {
@@ -92,10 +92,10 @@ namespace Lenos.Controllers
                         products = products.OrderByDescending(p => p.Title);
                         break;
                     case 4:
-                        products = products.OrderBy(p => p.CreatedAt);
+                        products = products.OrderByDescending(p => p.CreatedAt);
                         break;
                     case 5:
-                        products = products.OrderByDescending(p => p.CreatedAt);
+                        products = products.OrderBy(p => p.CreatedAt);
                         break;
                     default:
                         break;

@@ -19,7 +19,6 @@ namespace Lenos.Models
         public bool Availability { get; set; }
         public string Description { get; set; }
         public int Count { get; set; }
-        public string SKU { get; set; }
         public string MainImage { get; set; }
         public string HoverImage { get; set; }
         public bool IsFeatured { get; set; }

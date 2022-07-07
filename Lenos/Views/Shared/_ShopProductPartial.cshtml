@@ -25,10 +25,6 @@
                     <div class="add">
                         <a class="add-cart addToBasket" asp-controller="Basket" asp-action="AddToBasket" asp-route-id="@product.Id">ADD TO CART</a>
                     </div>
-                    <div class="add-or-view d-none">
-                        <a class="add-btn addToBasket" asp-controller="Basket" asp-action="AddToBasket" asp-route-id="@product.Id">ADD TO CART</a>
-                        <a class="view-btn" asp-controller="Basket" asp-action="Index">VIEW CART</a>
-                    </div>
                 </div>
             </div>
             <div class="content">
@@ -44,7 +40,7 @@
                     }
                     else
                     {
-                        <span class="price">$@product.Price.ToString("0.00")</span>
+                        <span class="line-price">$@product.Price.ToString("0.00")</span>
                     }
                 </div>
             </div>

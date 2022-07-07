@@ -1,4 +1,4 @@
-﻿
+﻿@model AboutVM
 @{
     ViewData["Title"] = "Index";
 }
@@ -18,20 +18,23 @@
     </section>
     <!-- Breadcrumb end -->
     <!-- Product-Promo start -->
-    <section class="product-promo">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7 left">
-                    <img src="assets/img/product-promo/product-promo-1.jpg" alt="">
-                </div>
-                <div class="col-lg-5 right">
-                    <h1>Spring Winter 2022</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                    <a href="">SHOP THE LOOK</a>
+    @foreach (ProductPromo promo in Model.ProductPromos)
+    {
+        <section class="product-promo">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 left">
+                        <img src="~/assets/img/product-promo/@promo.Image" alt="">
+                    </div>
+                    <div class="col-lg-5 right">
+                        <h1>@promo.Title</h1>
+                        <p>@promo.Description</p>
+                        <a asp-controller="Shop" asp-action="Index">SHOP THE LOOK</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    }
     <!-- Product-Promo end -->
     <!-- Our Mission start -->
     <section class="our-mission-section">
@@ -56,21 +59,14 @@
             <h1>We Pride Ourselves On Have A Team Of Highly Skilled</h1>
             <p>Preorder now to receive exclusive deals & gifts</p>
             <div class="row">
-                <div class="col-lg-4">
-                    <img src="assets/img/about/team-1.jpg" alt="">
-                    <span class="position">Founder, Chief Creative</span>
-                    <span class="fullname">John Doe</span>
-                </div>
-                <div class="col-lg-4">
-                    <img src="assets/img/about/team-2.jpg" alt="">
-                    <span class="position">Founder, COO</span>
-                    <span class="fullname">Valeriia Nadopta</span>
-                </div>
-                <div class="col-lg-4">
-                    <img src="assets/img/about/team-3.png" alt="">
-                    <span class="position">Founder, CEO</span>
-                    <span class="fullname">Jennifer C</span>
-                </div>
+                @foreach (OurTeam ourTeam in Model.OurTeams)
+                {
+                    <div class="col-lg-4">
+                        <img src="~/assets/img/about/@ourTeam.Image" alt="">
+                        <span class="position">@ourTeam.Position</span>
+                        <span class="fullname">@ourTeam.FullName</span>
+                    </div>
+                }
             </div>
         </div>
     </section>

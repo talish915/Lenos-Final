@@ -65,9 +65,9 @@
                     <div class="filter">
                         <div class="show-product">
                             <p>Show</p>
-                            <a class="shopFilter shop-list countby" data-id="1">12</a>
+                            <a class="shopFilter shop-list countby active-countby" data-id="1">12</a>
                             <a class="shopFilter shop-list countby" data-id="2">24</a>
-                            <a class="shopFilter shop-list countby active-countby" data-id="3">All</a>
+                            <a class="shopFilter shop-list countby" data-id="3">All</a>
                         </div>
                         <div class="sorting">
                             <div class="product-sort">
@@ -84,6 +84,56 @@
                 </div>
                 <div class="row shop-products">
                     @await Html.PartialAsync("_ShopProductPartial", Model)
+                </div>
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+
+                            @if (ViewBag.PageIndex > 1)
+                            {
+                                <li class="page-item">
+                                    <a style="color: #AE845F; border: 1px solid #AE845F" class="page-link" asp-action="index" asp-route-status="@ViewBag.Status" asp-route-page="1" aria-label="Previous">
+                                        @("<<")
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a style="color: #AE845F; border: 1px solid #AE845F" class="page-link" asp-action="index" asp-route-status="@ViewBag.Status" asp-route-page="@(ViewBag.PageIndex-1)" aria-label="Previous">
+                                        @("<")
+                                    </a>
+                                </li>
+                                @if (ViewBag.PageIndex == ViewBag.PageCount && ViewBag.PageIndex > 2)
+                                {
+                                    <li class="page-item"><a style="color: #AE845F; border: 1px solid #AE845F" class="page-link" asp-route-status="@ViewBag.Status" asp-action="index" asp-route-page="@(ViewBag.PageIndex-2)">@(ViewBag.PageIndex-2)</a></li>
+                                }
+                                <li class="page-item"><a style="color: #AE845F; border: 1px solid #AE845F" class="page-link" asp-route-status="@ViewBag.Status" asp-action="index" asp-route-page="@(ViewBag.PageIndex-1)">@(ViewBag.PageIndex-1)</a></li>
+                            }
+
+                            <li class="page-item active"><a style="background-color: #AE845F; border: 1px solid #AE845F" class="page-link text-white" asp-route-status="@ViewBag.Status" asp-action="index" asp-route-page="@ViewBag.PageIndex">@ViewBag.PageIndex</a></li>
+
+                            @if (ViewBag.PageIndex < ViewBag.PageCount)
+                            {
+                                <li class="page-item">
+                                    <a style="color: #AE845F; border: 1px solid #AE845F" class="page-link" asp-route-status="@ViewBag.Status" asp-action="index" asp-route-page="@(ViewBag.PageIndex + 1)">@(ViewBag.PageIndex + 1)</a>
+                                </li>
+                                @if (ViewBag.PageIndex == 1 && (ViewBag.PageIndex + 2) < ViewBag.PageCount)
+                                {
+                                    <li class="page-item">
+                                        <a style="color: #AE845F; border: 1px solid #AE845F" class="page-link" asp-route-status="@ViewBag.Status" asp-action="index" asp-route-page="@(ViewBag.PageIndex+2)">@(ViewBag.PageIndex+2)</a>
+                                    </li>
+                                }
+                                <li class="page-item">
+                                    <a style="color: #AE845F; border: 1px solid #AE845F" class="page-link" asp-route-status="@ViewBag.Status" asp-route-page="@(ViewBag.PageIndex + 1)" aria-label="Next">
+                                        @(">")
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a style="color: #AE845F; border: 1px solid #AE845F" class="page-link" asp-route-status="@ViewBag.Status" asp-action="index" asp-route-page="@ViewBag.PageCount" aria-label="Next">
+                                        @(">>")
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
