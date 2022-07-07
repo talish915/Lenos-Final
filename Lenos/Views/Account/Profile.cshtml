@@ -44,10 +44,12 @@
                                     <div class="tab-pane" id="dashboard">
                                         <div class="myaccount-content">
                                             <h3>Dashboard</h3>
-                                            <div class="welcome">
-                                                <p>Hello, <strong>Alex Tuntuni</strong> (If Not <strong>Tuntuni !</strong><a href="login-register.html" class="logout"> Logout</a>)</p>
-                                            </div>
-                                            <p class="mb-0">From your account dashboard. you can easily check & view your recent orders, manage your shipping and billing addresses and edit your password and account details.</p>
+                                            @foreach (var item in Model.Orders)
+                                            {
+                                                orderCount++;
+                                                orderItemCount = 0;
+                                            }
+                                            <p class="text-black-50">Your Orders: @orderCount</p>
                                         </div>
                                     </div>
                                     <!-- Single Tab Content End -->
@@ -68,7 +70,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @foreach (var item in Model.Orders)
+                                                        @foreach (var item in Model.Orders.OrderByDescending(o => o.CreatedAt))
                                                         {
                                                             orderCount++;
                                                             orderItemCount = 0;

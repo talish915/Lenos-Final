@@ -1,0 +1,103 @@
+main{
+    .map-section{
+        padding-bottom: 3rem;
+        iframe{
+            filter: brightness( 100% ) contrast( 100% ) saturate( 0% ) blur( 0px ) hue-rotate( 0deg );
+            height: 500px;
+        }
+    }
+
+    .contact-section{
+        padding-bottom: 5rem;
+        .title{
+            margin-bottom: 30px;
+        }
+        .subtitle{
+            color: #767676;
+            font-size: 16px;
+        }
+        .left{
+            padding-right: 4rem;
+            a{
+                display: block;
+                color: #000;
+                text-decoration: none;
+            }
+            .tel{
+                margin-top: 30px;
+            }
+            .address{
+                margin-top: 15px;
+            }
+            .mail{
+                color: #AE845F;
+                text-decoration: underline;
+                display: inline-block;
+            }
+            .socials{
+                margin-top: 20px;
+                ul{
+                    display: flex;
+                    li{
+                        margin-right: 10px;
+                        a{
+                            background-color: #F5F3F2;
+                            padding: 20px;
+                            border: 1px solid #DDDDDD;
+                            border-radius: 50%;
+                            position: relative;
+                            i{
+                                font-size: 14px;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%,-50%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .right{
+            input{
+                width: 100%;
+                padding: 10px 25px;
+                margin: 10px 0;
+                border: 1px solid #EEEEEE;
+                transition: all 0.3s;
+                background-color: #F7F7F7;
+                &:focus-visible{
+                    outline: none;
+                    border: 1px solid #AE845F;
+                    background-color: #fff;
+                    &::placeholder{
+                        color: #000;
+                    }
+                }
+            }
+            textarea{
+                width: 100%;
+                padding: 10px 25px;
+                margin: 10px 0;
+                border: 1px solid #EEEEEE;
+                transition: all 0.3s;
+                max-height: 200px;
+                background-color: #F7F7F7;
+                &:focus-visible{
+                    outline: none;
+                    border: 1px solid #AE845F;
+                    background-color: #fff;
+                    &::placeholder{
+                        color: #000;
+                    }
+                }
+            }
+            .btn-submit{
+                background-color: #AE845F;
+                color: #fff;
+                border: none;
+                padding: 10px 30px;
+            }
+        }
+    }
+}
